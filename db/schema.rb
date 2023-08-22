@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_22_190357) do
+ActiveRecord::Schema.define(version: 2023_08_22_201759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,31 @@ ActiveRecord::Schema.define(version: 2023_08_22_190357) do
     t.bigint "recipe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "title"
+    t.boolean "gluten_free"
+    t.boolean "vegan"
+    t.boolean "vegetarian"
+    t.boolean "breakfast"
+    t.boolean "kosher"
+    t.boolean "peanut_free"
+    t.boolean "halal"
+    t.boolean "dinner"
+    t.boolean "lunch"
+    t.boolean "dessert"
+    t.boolean "appetizer"
+    t.string "photo"
+    t.integer "time"
+    t.integer "number_of_servings"
+    t.text "instructions"
+    t.string "country"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "ingredients", null: false
   end
 
   create_table "users", force: :cascade do |t|
