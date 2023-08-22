@@ -1,4 +1,6 @@
 node_modules
-config/master.key
 tmp/cache
 tmp/sockets
+config/master.key
+config/database.yml
+config/credentials.yml.enc
