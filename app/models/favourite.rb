@@ -15,9 +15,7 @@ class Favourite < ApplicationRecord
   #retrieve all users who have favourited said recipe
   users_who_favourited_recipe = User.joins(:favourites).where(favourites: { recipe_id: recipe_id })
 
-  #QUERY
-  #user
-  scope :for_user, ->(user_id) { where(user_id: user_id) }
+ 
 
 
 end

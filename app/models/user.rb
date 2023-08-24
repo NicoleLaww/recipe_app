@@ -2,6 +2,7 @@ class User < ApplicationRecord
   #VALIDATIONS
 
   has_secure_password
+
   has_many :favourites
   has_many :recipes
   validates :name, presence: true
@@ -12,30 +13,51 @@ class User < ApplicationRecord
   #QUERIES 
 
   #create user
-  user = User.create(name: "Jane Doe", email: "jannydough@example.com", password: "secure_password", username: "janedoe")
+  #self = class method, not instance(more for specific details of certain object)
+  def self.create_users(name, email, password, username)
+    user = User.create(name: name, email: email, password: password, username: username)
+  end
+
   #retrieve all users
-  all_users = User.all
+  def self.all_users
+    User.all
+  end
+
   #retrieve user by id
-  user = User.find(id)
+  def self.user_id
+    user = User.find(id)
+  end
+
   #retrieve by name
-  users_named_jane = User.where(name: "Jane")
+  def self.user_by_name(name)
+    users_named_jane = User.where(name: name)
+  end
+
   #update users email
-  user = User.find(id)
-  user.update(email: "updatednewemail@example.com")
+  def self.update_email(email)
+    user = User.find(id)
+    user.update(email: email)
+  end
+
   #delete user
-  user = User.find(id)
-  user.destroy
-  #order users by name ASC & DESC
-  users_ordered_by_name = User.order(name: :asc)
-  users_ordered_by_name = User.order(name: :desc)
+  def self.delete_user
+    user = User.find(id)
+    user.destroy
+  end
+
+  #order users by name ASC
+  def self.order_asc
+    users_ordered_by_name = User.order(name: :asc)
+  end
+
+   #order users by name DESC
+  def self.order_desc
+    users_ordered_by_name = User.order(name: :desc)
+  end
+
   #count total number of users
-  user_count = User.count
+  def self.total_users
+    user_count = User.count
+  end
 
-  #QUERIES
-
-  #name
-  scope :by_name, ->(name) { where(name: name) }
-  #name asc or desc
-  scope :ordered_by_name_asc, -> { order(name: :asc) }
-  scope :ordered_by_name_desc, -> { order(name: :desc) }
 end

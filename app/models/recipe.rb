@@ -64,29 +64,7 @@ specific_recipe = Recipe.find_by(title: "Vegi Paneer")
 #retrive by country
 italian_recipes = Recipe.where(country: "India")
 
-#QUERIES
 
-  #dietary restrictions
-  scope :gluten_free, -> { where(gluten_free: true) }
-  scope :vegan, -> { where(vegan: true) }
-  scope :vegetarian, -> { where(vegetarian: true) }
-  scope :kosher, -> { where(kosher: true) }
-  scope :peanut_free, -> { where(peanut_free: true) }
-  scope :halal, -> { where(halal: true) }
-  #meal types
-  scope :breakfast, -> { where(breakfast: true) }
-  scope :lunch, -> { where(lunch: true) }
-  scope :dinner, -> { where(dinner: true) }
-  scope :appetizer, -> { where(appetizer: true) }
-  #user
-  scope :by_user, ->(user_id) { where(user_id: user_id) }
-  #time
-  scope :with_min_time, ->(min_time) { where("time >= ?", min_time) }
-  scope :with_max_time, ->(max_time) { where("time <= ?", max_time) }
-  #title
-  scope :by_title, ->(title) { where(title: title) }
-  #country
-  scope :by_country, ->(country) { where(country: country) }
 
 
 
