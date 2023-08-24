@@ -2,22 +2,35 @@ class UsersController < ApplicationController
   
   # Displays user profile 
   def show 
-    @user = User.find(params[:id])
+    if !current_user
+      redirect_to login_path, alert: 'Please login.'
+    else 
+      @user = User.find(params[:id])
+    end 
   end 
   
   # Loads edit form
   def edit
-    @user = User.find(params[:id])
+    if !current_user
+      redirect_to login_path, alert: 'Please login.'
+    else 
+      @user = User.find(params[:id])
+    end 
   end
 
   # Saves edit form 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+    if !current_user
+      redirect_to login_path, alert: 'Please log in to update your profile.'
     else
-      render :edit
-  end
+      @user = User.find(params[:id])
+        if @user.update(user_params)
+         redirect_to @user, notice: 'User was successfully updated.'
+        else
+          render :edit
+        end 
+    end
+ end
   
   # Delete a user
   def destroy 

@@ -7,13 +7,18 @@ class RegistrationsController < ApplicationController
 
   # Saves form 
   def create
-    @user = User.new(user_params)
-    if @user.save 
-      redirect_to recipes_path, notice: 'User successfully registered.'
-    else 
-      render :new 
-    end 
-  end
+    if existing_account
+      redirect_to login_path, alert: 'Invalid credentials. Please login or use a different email.'
+    else
+      @user = User.new(user_params)
+      if @user.save 
+        redirect_to recipes_path, notice: 'User successfully registered.'
+      else 
+        render :new 
+      end
+    end
+  end 
+
 
   # Specify params for user registration 
   private

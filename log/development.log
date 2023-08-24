@@ -212,3 +212,945 @@ Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3285
   [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8265251585885103705)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:44:42 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230824175942_add_password_digest_to_users.rb
+
+
+):
+  
+activerecord (6.1.7.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.4) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-08-24 14:45:03 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230824175942_add_password_digest_to_users.rb
+
+
+):
+  
+activerecord (6.1.7.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.4) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2023-08-24 14:45:04 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8265251585885103705)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20230824175942)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230824175942"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8265251585885103705)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-08-24 14:45:04 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nicole/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nicole/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.3ms | Allocations: 273)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2434)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:45:14 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 143)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /Users/nicole/lighthouse/finals/recipe_app/babel-virtual-resolve-base.js
+    at new NodeError (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:203:5)
+    at packageResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:873:9)
+    at moduleResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:902:20)
+    at defaultResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:985:15)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:999:12)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/import-meta-resolve.js:13:10)
+    at tryImportMetaResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:137:45)
+    at resolveStandardizedNameForImport (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:159:19)
+    at resolveStandardizedName (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:168:12)
+    at loadPlugin (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:47:20)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:291:5)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/gensync-utils/functional.js:21:23
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:350:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:317:14)
+    at chainWalker.next (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 1876.4ms | Allocations: 27553)
+Completed 500 Internal Server Error in 1884ms (ActiveRecord: 0.0ms | Allocations: 31882)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:46:10 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /Users/nicole/lighthouse/finals/recipe_app/babel-virtual-resolve-base.js
+    at new NodeError (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:203:5)
+    at packageResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:873:9)
+    at moduleResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:902:20)
+    at defaultResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:985:15)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:999:12)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/import-meta-resolve.js:13:10)
+    at tryImportMetaResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:137:45)
+    at resolveStandardizedNameForImport (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:159:19)
+    at resolveStandardizedName (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:168:12)
+    at loadPlugin (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:47:20)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:291:5)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/gensync-utils/functional.js:21:23
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:350:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:317:14)
+    at chainWalker.next (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 994.0ms | Allocations: 5045)
+Completed 500 Internal Server Error in 1002ms (ActiveRecord: 3.0ms | Allocations: 7156)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:47:40 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 321)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /Users/nicole/lighthouse/finals/recipe_app/babel-virtual-resolve-base.js
+    at new NodeError (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:203:5)
+    at packageResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:873:9)
+    at moduleResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:902:20)
+    at defaultResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:985:15)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:999:12)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/import-meta-resolve.js:13:10)
+    at tryImportMetaResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:137:45)
+    at resolveStandardizedNameForImport (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:159:19)
+    at resolveStandardizedName (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:168:12)
+    at loadPlugin (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:47:20)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:291:5)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/gensync-utils/functional.js:21:23
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:350:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:317:14)
+    at chainWalker.next (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 1024.0ms | Allocations: 9738)
+Completed 500 Internal Server Error in 1039ms (ActiveRecord: 2.0ms | Allocations: 17592)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2023-08-24 14:49:39 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nicole/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nicole/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 474)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3288)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:49:52 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 145)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /Users/nicole/lighthouse/finals/recipe_app/babel-virtual-resolve-base.js
+    at new NodeError (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:203:5)
+    at packageResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:873:9)
+    at moduleResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:902:20)
+    at defaultResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:985:15)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:999:12)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/import-meta-resolve.js:13:10)
+    at tryImportMetaResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:137:45)
+    at resolveStandardizedNameForImport (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:159:19)
+    at resolveStandardizedName (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:168:12)
+    at loadPlugin (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:47:20)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:291:5)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/gensync-utils/functional.js:21:23
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:350:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:317:14)
+    at chainWalker.next (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 873.3ms | Allocations: 9494)
+Completed 500 Internal Server Error in 906ms (ActiveRecord: 3.0ms | Allocations: 16649)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:50:44 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 427)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /Users/nicole/lighthouse/finals/recipe_app/babel-virtual-resolve-base.js
+    at new NodeError (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:203:5)
+    at packageResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:873:9)
+    at moduleResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:902:20)
+    at defaultResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:985:15)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:999:12)
+    at resolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/import-meta-resolve.js:13:10)
+    at tryImportMetaResolve (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:137:45)
+    at resolveStandardizedNameForImport (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:159:19)
+    at resolveStandardizedName (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:168:12)
+    at loadPlugin (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/files/plugins.js:47:20)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:291:5)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/Users/nicole/lighthouse/finals/recipe_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/gensync-utils/functional.js:21:23
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:350:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/config-chain.js:317:14)
+    at chainWalker.next (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 962.4ms | Allocations: 28507)
+Completed 500 Internal Server Error in 1001ms (ActiveRecord: 20.8ms | Allocations: 37995)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:57:08 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 321)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/process/promises:279
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: [BABEL]: --- PLACEHOLDER PACKAGE ---
+This @babel/plugin-proposal-private-property-in-object version is not meant to
+be imported. Something is importing
+@babel/plugin-proposal-private-property-in-object without declaring it in its
+dependencies (or devDependencies) in the package.json file.
+Add "@babel/plugin-proposal-private-property-in-object" to your devDependencies
+to work around this error. This will make this message go away.
+ (While processing: /Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js)
+    at Object.<anonymous> (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js:28:7)
+    at Module._compile (/Users/nicole/lighthouse/finals/recipe_app/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1250:10)
+    at Module.load (node:internal/modules/cjs/loader:1074:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:909:12)
+    at Module.require (node:internal/modules/cjs/loader:1098:19)
+    at require (/Users/nicole/lighthouse/finals/recipe_app/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at loadPartialConfigAsync (/Users/nicole/lighthouse/finals/recipe_app/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/Users/nicole/lighthouse/finals/recipe_app/node_modules/babel-loader/lib/index.js:126:26)
+
+  Rendered layout layouts/application.html.erb (Duration: 1072.8ms | Allocations: 9733)
+Completed 500 Internal Server Error in 1091ms (ActiveRecord: 5.3ms | Allocations: 17582)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/nicole/lighthouse/finals/recipe_app/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 14:58:25 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 8140)
+Completed 200 OK in 51ms (Views: 39.3ms | ActiveRecord: 2.0ms | Allocations: 16042)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:58:43 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3888)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 4470)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:58:45 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3725)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4159)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:58:45 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3725)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4159)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 14:58:46 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3725)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4159)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:00:49 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 8107)
+Completed 200 OK in 53ms (Views: 41.6ms | ActiveRecord: 2.0ms | Allocations: 16132)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:01:54 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3984)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 6551)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:02:13 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4012)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6535)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:03:08 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3973)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 1.6ms | Allocations: 8217)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:03:37 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 8103)
+Completed 200 OK in 55ms (Views: 42.5ms | ActiveRecord: 2.3ms | Allocations: 16147)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:04:01 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4012)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 1.5ms | Allocations: 8263)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:04:29 -0400
+  
+SyntaxError (/Users/nicole/lighthouse/finals/recipe_app/app/controllers/recipes_controller.rb:7: syntax error, unexpected local variable or method, expecting `end'
+    puts "Line 7" filter_params
+                  ^~~~~~~~~~~~~
+):
+  
+app/controllers/recipes_controller.rb:7: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/recipes_controller.rb:7: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/recipes_controller.rb:7: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:04:52 -0400
+  
+SyntaxError (/Users/nicole/lighthouse/finals/recipe_app/app/controllers/recipes_controller.rb:6: syntax error, unexpected local variable or method, expecting `end'
+    puts "Line 6" filter_params
+                  ^~~~~~~~~~~~~
+):
+  
+app/controllers/recipes_controller.rb:6: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/recipes_controller.rb:6: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/recipes_controller.rb:6: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:05:03 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3983)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 1.4ms | Allocations: 8231)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:05:15 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4010)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 1.6ms | Allocations: 8235)
+
+
+Started GET "/recipes?gluten_free=1&vegetarian=1" for 127.0.0.1 at 2023-08-24 15:05:29 -0400
+Processing by RecipesController#index as */*
+  Parameters: {"gluten_free"=>"1", "vegetarian"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 57)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4010)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 1.5ms | Allocations: 8213)
+
+
+Started GET "/favourites" for 127.0.0.1 at 2023-08-24 16:39:26 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FavouritesController#index as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 19ms (ActiveRecord: 4.9ms | Allocations: 7335)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-24 16:39:26 -0400
+Processing by SessionsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 8074)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 10329)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-08-24 16:39:56 -0400
+Processing by RecipesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 137)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4051)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 7061)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2023-08-24 16:40:01 -0400
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (5.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 14.3ms | Allocations: 3529)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=1):
+  
+app/controllers/recipes_controller.rb:11:in `show'
+Started GET "/recipes/new" for 127.0.0.1 at 2023-08-24 16:40:10 -0400
+Processing by RecipesController#new as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms | Allocations: 1393)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-24 16:40:10 -0400
+Processing by SessionsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3886)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4309)
+
+
+Started GET "/recipes/edut" for 127.0.0.1 at 2023-08-24 16:40:29 -0400
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"edut"}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms | Allocations: 1320)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=edut):
+  
+app/controllers/recipes_controller.rb:11:in `show'
+Started GET "/recipes/edit" for 127.0.0.1 at 2023-08-24 16:40:31 -0400
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"edit"}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms | Allocations: 1294)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=edit):
+  
+app/controllers/recipes_controller.rb:11:in `show'
+Started GET "/recipe.1" for 127.0.0.1 at 2023-08-24 16:40:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/recipe.1"):
+  
+Started GET "/recipe/1" for 127.0.0.1 at 2023-08-24 16:40:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/recipe/1"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2023-08-24 16:40:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/registration/new"):
+  
+Started GET "/registration" for 127.0.0.1 at 2023-08-24 16:40:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/registration"):
+  
+Started GET "/registrations" for 127.0.0.1 at 2023-08-24 16:41:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/registrations"):
+  
+Started GET "/registrations/new" for 127.0.0.1 at 2023-08-24 16:41:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/registrations/new"):
+  
+Started GET "/registrations/new" for 127.0.0.1 at 2023-08-24 16:41:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/registrations/new"):
+  
+Started GET "/register" for 127.0.0.1 at 2023-08-24 16:41:31 -0400
+Processing by RegistrationsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4068)
+Completed 200 OK in 17ms (Views: 5.6ms | ActiveRecord: 2.1ms | Allocations: 9128)
+
+
+Started GET "/register/new" for 127.0.0.1 at 2023-08-24 16:41:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/register/new"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-08-24 16:41:52 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController
+Did you mean?  update
+               destroy
+               existing_account
+               edit):
+  
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/user/1" for 127.0.0.1 at 2023-08-24 16:41:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2023-08-24 16:41:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+Started GET "/login" for 127.0.0.1 at 2023-08-24 16:42:20 -0400
+Processing by SessionsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3876)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 4316)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-08-24 16:42:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started POST "/favourites/1" for 127.0.0.1 at 2023-08-24 16:43:05 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/favourites/1"):
+  

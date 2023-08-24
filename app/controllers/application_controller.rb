@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  helper_method :current_user
+  def existing_account
+    @existing_account = User.find_by(email: params[:email])
+  end 
+  
+  helper_method :current_user, :existing_account
 
 end
