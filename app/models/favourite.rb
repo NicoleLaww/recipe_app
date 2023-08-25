@@ -9,13 +9,13 @@ class Favourite < ApplicationRecord
   #QUERIES
 
   #creates favourite record
-  Favourite.create(user_id: user_id, recipe_id: recipe_id)
+  def self.create_fav_recipe
+    Favourite.create(user_id: user_id, recipe_id: recipe_id)
+  end
+
   #retrieve all favourites for user
-  user_favourites = Favourite.for_user(user_id)
-  #retrieve all users who have favourited said recipe
-  users_who_favourited_recipe = User.joins(:favourites).where(favourites: { recipe_id: recipe_id })
-
- 
-
+  def self.retrieve_all_recipes
+    user_favourites = Favourite.for_user(user_id)
+  end
 
 end
