@@ -1,13 +1,13 @@
 class FavouritesController < ApplicationController
   
-  # Displays all the favourites 
-  def index 
-    if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    else 
-      @favourites = Favourite.where(user_id: current_user.id)
-    end 
-  end 
+  # # Displays all the favourites - MOVED, will delete soon, keeping as a back up
+  # def index 
+  #   if !current_user
+  #     redirect_to login_path, alert: 'Please login!'
+  #   else 
+  #     @favourites = Favourite.where(user_id: current_user.id)
+  #   end 
+  # end 
 
   # Creates new favourite 
   def create
