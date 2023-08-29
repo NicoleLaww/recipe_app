@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
-  
+
+# Displays all user favourites
+  def favourites
+     if !current_user
+      redirect_to login_path, alert: 'Please login.'
+    else 
+        @favourites = Favourite.where(user_id: current_user.id)
+    end 
+  end 
+
   # Displays user profile 
   def show 
     if !current_user
