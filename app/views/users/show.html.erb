@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeWebsite</title>
+    <title>User Profile</title>
+    <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  
+    <h1>User Information</h1>
+    <div>Name: <%= @user.name %></div>
+    <div>Username: <%= @user.username %></div>
+    <div>Email: <%= @user.email %></div>
+    <div>Password: HIDDEN </div>
+
+    <!-- Edit button -->
+    <h2>Edit Profile</h2>
+    <div>
+      <%= link_to "Edit Profile", edit_user_path(@user) %>
+    </div> 
+
+    <!-- Favourites button -->
+    <h2>Favourites</h2>
+    <div>
+      <%= link_to "Favourites", user_favourites_path(@user) %>
+    </div>
+
+    <!-- List of user recipes --> 
+    <h2>Your Recipes</h2>
+    <% @user.recipes.each do |recipe| %>
+      <div>
+        <%= recipe.photo %>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+      </div>
+    <% end %>
+
   </body>
 </html>
