@@ -10,7 +10,6 @@
     <div>Name: <%= @user.name %></div>
     <div>Username: <%= @user.username %></div>
     <div>Email: <%= @user.email %></div>
-    <div>Password: HIDDEN </div>
 
     <!-- Edit button -->
     <h2>Edit Profile</h2>
@@ -21,7 +20,7 @@
     <!-- Favourites button -->
     <h2>Favourites</h2>
     <div>
-      <%= link_to "Favourites", user_favourites_path(@user) %>
+      <%= link_to "Favourites", favourites_user_path(@user) %>
     </div>
 
     <!-- List of user recipes --> 
