@@ -1835,3 +1835,338 @@ Completed 200 OK in 62ms (Views: 35.9ms | ActiveRecord: 0.0ms | Allocations: 328
   [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jtest"], ["LIMIT", 1]]
   [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jeff Test"], ["email", "jtest@gmail.com"], ["username", "jtest"], ["created_at", "2023-08-24 19:33:20.909321"], ["updated_at", "2023-08-24 19:33:20.909321"], ["password_digest", "$2a$12$4RVkvtcouqCnfa5LfxMxS.1zl3bMUo7ElrgYgqr1oGnnoUZthQVx2"]]
   [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 10.0.2.2 at 2023-08-27 06:48:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230824175942_add_password_digest_to_users.rb
+
+
+):
+  
+activerecord (6.1.7.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.4) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8265251585885103705)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20230824175942)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230824175942"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8265251585885103705)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 10.0.2.2 at 2023-08-27 06:49:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.9ms | Allocations: 469)
+Completed 200 OK in 32ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 3702)
+
+
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 06:49:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 158)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/vagrant/.rvm/gems/ruby-3.1.1/gems/webpacker-5.4.4/lib/webpacker/runner.rb:13:in ``': No such file or directory - yarn (Errno::ENOENT)
+	from /home/vagrant/.rvm/gems/ruby-3.1.1/gems/webpacker-5.4.4/lib/webpacker/runner.rb:13:in `initialize'
+	from /home/vagrant/.rvm/gems/ruby-3.1.1/gems/webpacker-5.4.4/lib/webpacker/runner.rb:6:in `new'
+	from /home/vagrant/.rvm/gems/ruby-3.1.1/gems/webpacker-5.4.4/lib/webpacker/runner.rb:6:in `run'
+	from ./bin/webpack:17:in `block in <main>'
+	from ./bin/webpack:16:in `chdir'
+	from ./bin/webpack:16:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 515.9ms | Allocations: 27680)
+Completed 200 OK in 548ms (Views: 519.4ms | ActiveRecord: 0.0ms | Allocations: 33595)
+
+
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 06:59:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3849)
+Completed 200 OK in 14ms (Views: 13.6ms | Allocations: 4401)
+
+
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 06:59:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 29.8ms | Allocations: 5272)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 5374)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms | Allocations: 11342)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipes' for #<ActionView::Base:0x000000000082a0>
+Did you mean?  @recipes):
+     8:   
+     9:    <h1>Hello</h1>
+    10: 
+    11:    <%= recipes[0].name %>
+    12: 
+    13:   </body>
+    14: </html>
+  
+app/views/recipes/index.html.erb:11
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 06:59:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (9.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3563)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3665)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 9.5ms | Allocations: 9633)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     8:   
+     9:    <h1>Hello</h1>
+    10: 
+    11:    <%= @recipes[0].name %>
+    12: 
+    13:   </body>
+    14: </html>
+  
+app/views/recipes/index.html.erb:11
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 07:02:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:12
+  Rendered recipes/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3564)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3666)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.8ms | Allocations: 9641)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     9:    <h1>Hello</h1>
+    10: 
+    11: 
+    12:    <%= @recipes[0].name %>
+    13: 
+    14:   </body>
+    15: </html>
+  
+app/views/recipes/index.html.erb:12
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 07:03:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:12
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2896)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2973)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms | Allocations: 3465)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     9:    <h1>Hello</h1>
+    10: 
+    11: 
+    12:    <%= @recipes.size() %>
+    13: 
+    14:   </body>
+    15: </html>
+  
+app/views/recipes/index.html.erb:12
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 07:03:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:12
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 93.2ms | Allocations: 10895)
+Completed 200 OK in 116ms (Views: 95.3ms | ActiveRecord: 3.0ms | Allocations: 16922)
+
+
+Started GET "/" for 10.0.2.2 at 2023-08-27 08:37:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.0ms | Allocations: 469)
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3395)
+
+
+Started GET "/recipes" for 10.0.2.2 at 2023-08-27 08:37:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 11562)
+Completed 200 OK in 72ms (Views: 54.5ms | ActiveRecord: 4.2ms | Allocations: 16187)
+
+
+Started GET "/registrations" for 10.0.2.2 at 2023-08-27 09:19:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/registrations"):
+  
+Started GET "/register" for 10.0.2.2 at 2023-08-27 09:19:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 8897)
+Completed 200 OK in 69ms (Views: 49.7ms | ActiveRecord: 2.3ms | Allocations: 19044)
+
+
+Started POST "/users" for 10.0.2.2 at 2023-08-27 09:19:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController
+Did you mean?  current_user
+               update
+               edit
+               destroy):
+  
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/register" for 10.0.2.2 at 2023-08-27 09:19:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 606)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4378)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 4886)
+
+
