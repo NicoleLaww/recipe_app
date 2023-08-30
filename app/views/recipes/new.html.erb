@@ -1,10 +1,84 @@
-<!DOCTYPE html>
-<html>
+<section class="new-recipe">
+
   <head>
-    <title>RecipeWebsite</title>
+    <title>Tasteful Traditions</title>
   </head>
 
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
   <body>
-  
+
+    <%= form_for @recipe: do |f| %>
+      
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.label :number_of_servings %>
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      # Ingredients
+    </div>
+
+    <div>
+      # Instructions/Preparation (step by step)
+    </div>
+
+    # Recipe category (breakfast, lunch, etc.)
+    <div>
+
+    </div>
+
+    # All options that apply to the recipe
+     <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      <%= f.check_box :vegeterian %>
+      <%= f.label :vegeterian, "Vegeterian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    # Link to all recipes:
+    <div class="well">
+      <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    </div>
+
   </body>
 </html>
