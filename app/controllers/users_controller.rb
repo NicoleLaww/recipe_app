@@ -1,45 +1,31 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:favourites, :show, :edit, :update, :destroy]
+  before_action :require_authorization, only: [:favourites, :show, :edit, :update, :destroy]
 
 # Displays all user favourites
   def favourites
-     if !current_user
-      redirect_to login_path, alert: 'Please login.'
-    else 
-        @favourites = Favourite.where(user_id: current_user.id)
-        render 'users/favourites/favourites'
-    end 
+      @favourites = Favourite.where(user_id: current_user.id)
+      render 'users/favourites/favourites' 
   end 
 
   # Displays user profile 
   def show 
-    if !current_user
-      redirect_to login_path, alert: 'Please login.'
-    else 
-      @user = User.find(params[:id])
-    end 
+    @user = User.find(params[:id])
   end 
   
   # Loads edit form
   def edit
-    if !current_user
-      redirect_to login_path, alert: 'Please login.'
-    else 
-      @user = User.find(params[:id])
-    end 
+    @user = User.find(params[:id])
   end
 
   # Saves edit form 
   def update
-    if !current_user
-      redirect_to login_path, alert: 'Please log in to update your profile.'
-    else
-      @user = User.find(params[:id])
-        if @user.update(user_params)
-         redirect_to @user, notice: 'User was successfully updated.'
-        else
-          render :edit
-        end 
-    end
+    @user = User.find(params[:id])
+      if @user.update(user_params)
+        redirect_to @user, notice: 'User was successfully updated.'
+      else
+        render :edit
+      end 
  end
   
   # Delete a user
@@ -54,4 +40,20 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :username)
   end
+
+  # Have to be logged in, if not redirects to login page 
+  def require_login
+    unless current_user
+      redirect_to login_path, alert: 'Please login'
+    end 
+  end
+
+  # Restricts access to other users' pages 
+  def require_authorization
+    unless current_user && current_user.id.to_s == params[:id]
+      redirect_to root_path, alert: "You don't have permission to access this page."
+    end
+  end
 end
+
+
