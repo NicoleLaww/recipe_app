@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
       redirect_to login_path, alert: 'Please login!'
     else 
       @recipe = Recipe.new 
+      render 'users/recipes/new'
     end 
   end 
 
@@ -39,7 +40,8 @@ class RecipesController < ApplicationController
     if !current_user
       redirect_to login_path, alert: 'Please login!'
     else 
-    @recipe = Recipe.find(params[:id])
+      @recipe = Recipe.find(params[:id])
+      render 'users/recipes/edit'
     end 
   end 
 

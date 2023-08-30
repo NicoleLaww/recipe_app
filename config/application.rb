@@ -35,9 +35,9 @@ module RecipeWebsite
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    # config.after_initialize do
-    # ActiveRecord::Base.logger.level = Logger::DEBUG
-    
-    # end
+    config.after_initialize do
+    ActiveRecord::Base.logger.level = Logger::DEBUG
+  
+    end
   end
 end

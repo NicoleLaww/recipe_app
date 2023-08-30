@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       redirect_to login_path, alert: 'Please login.'
     else 
         @favourites = Favourite.where(user_id: current_user.id)
+        render 'users/favourites/favourites'
     end 
   end 
 
