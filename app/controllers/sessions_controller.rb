@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 # Display form for login
   def new
-    puts "hitting new controller"
+      if current_user
+      redirect_to @current_user, notice: 'Already logged in.' 
+    else
+      render :new, alert: 'Please log in.'
+    end 
   end
 
 # Submits login details 
