@@ -11436,3 +11436,1374 @@ Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.9ms | Allocations: 536
 >>>>>>> 61c49bf (Work on the New recipe file:)
 >>>>>>> 761e6cd (Work on the New recipe file:)
   [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+Started GET "/" for 10.0.2.2 at 2023-08-30 02:19:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-3.1.1/gems/railties-6.1.7.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.4ms | Allocations: 468)
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 3392)
+
+
+Started GET "/register" for 10.0.2.2 at 2023-08-30 02:19:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 44.3ms | Allocations: 8386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.8ms | Allocations: 12472)
+Completed 200 OK in 94ms (Views: 67.5ms | ActiveRecord: 3.8ms | Allocations: 21927)
+
+
+Started POST "/register" for 10.0.2.2 at 2023-08-30 02:20:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cristina Yang", "username"=>"crisyang", "email"=>"cristinayang@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cristinayang@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "crisyang"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (9.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cristina Yang"], ["email", "cristinayang@email.com"], ["username", "crisyang"], ["created_at", "2023-08-30 02:20:08.050662"], ["updated_at", "2023-08-30 02:20:08.050662"], ["password_digest", "$2a$12$A6Fne2whJUVxvm21KmiVVeBGx9p4AL2G17dVJDjqxm5dsDwPIzwrq"]]
+  ↳ app/controllers/registrations_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 210ms (ActiveRecord: 13.6ms | Allocations: 10289)
+
+
+Started GET "/recipes" for 10.0.2.2 at 2023-08-30 02:20:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 6726)
+Completed 200 OK in 30ms (Views: 22.5ms | ActiveRecord: 1.8ms | Allocations: 9711)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-08-30 02:20:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 5808)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 7014)
+
+
+Started POST "/login" for 10.0.2.2 at 2023-08-30 02:20:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cristinayang@email.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cristinayang@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 174ms (ActiveRecord: 0.5ms | Allocations: 1728)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-08-30 02:20:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 71.3ms | Allocations: 8882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 81.7ms | Allocations: 12474)
+Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 1.2ms | Allocations: 15421)
+
+
+Started GET "/recipes/new" for 10.0.2.2 at 2023-08-30 02:21:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.7ms | Allocations: 1702)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=new):
+  
+app/controllers/recipes_controller.rb:11:in `show'
+Started GET "/users/11" for 10.0.2.2 at 2023-08-30 02:21:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 5805)
+Completed 200 OK in 30ms (Views: 23.6ms | ActiveRecord: 1.9ms | Allocations: 7754)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-08-30 02:21:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1606)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5089)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 5480)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-08-30 02:21:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 5593)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 1.7ms | Allocations: 7330)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:21:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1522)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1599)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 12444)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <section class="new-recipe">
+
+  <head>
+    <title>Tasteful Traditions</title>
+  </head>
+
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
+  <body>
+
+    <%= form_for @recipe: do |f| %>
+      
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.label :number_of_servings %>
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      # Ingredients
+    </div>
+
+    <div>
+      # Instructions/Preparation (step by step)
+    </div>
+
+    # Recipe category (breakfast, lunch, etc.)
+    <div>
+
+    </div>
+
+    # All options that apply to the recipe
+     <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      <%= f.check_box :vegeterian %>
+      <%= f.label :vegeterian, "Vegeterian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    # Link to all recipes:
+    <div class="well">
+      <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    </div>
+
+  </body>
+</html>
+):
+1:    <section class="new-recipe">
+2:    
+3:      <head>
+4:        <title>Tasteful Traditions</title>
+5:      </head>
+6:    
+7:      <header>
+8:        <h2>Add recipe</h2>
+9:      </header>
+10:    
+11:      <body>
+12:    
+13:        <%= form_for @recipe: do |f| %>
+14:          
+15:        
+16:        # Recipe Name
+17:        <div class="form-group">
+18:          <%= f.label :title %>
+19:          <%= f.text_field :title %>
+20:        </div>
+21:    
+22:        # Number of servings
+23:        <div class="form-group">
+24:          <%= f.label :number_of_servings %>
+25:          <%= f.number_field :number_of_servings %>
+26:        </div>
+27:    
+28:        # Total time (minutes)
+29:        <div class="form-group">
+30:          <%= f.label :time %>
+31:          <%= f.number_field :time %>
+32:        </div>
+33:    
+34:        # Description
+35:        <div class="form-group">
+36:          <%= form.label :description %>
+37:          <%= form.text_area :description %>
+38:        </div>
+39:    
+40:        <div>
+41:          # Ingredients
+42:        </div>
+43:    
+44:        <div>
+45:          # Instructions/Preparation (step by step)
+46:        </div>
+47:    
+48:        # Recipe category (breakfast, lunch, etc.)
+49:        <div>
+50:    
+51:        </div>
+52:    
+53:        # All options that apply to the recipe
+54:         <div class="form-group">
+55:    
+56:          <span>Please select all options that apply to your recipe:<span>
+57:    
+58:          <%= f.check_box :vegeterian %>
+59:          <%= f.label :vegeterian, "Vegeterian" %>
+60:          <%= f.check_box :vegan %>
+61:          <%= f.label :vegan, "Vegan" %>
+62:          <%= f.check_box :gluten_free %>
+63:          <%= f.label :gluten_free, "Gluten-free" %>
+64:          <%= f.check_box :peanut_free %>
+65:          <%= f.label :peanut_free, "Peanut-free" %>
+66:          <%= f.check_box :halal %>
+67:          <%= f.label :halal, "Halal" %>
+68:          <%= f.check_box :kosher %>
+69:          <%= f.label :kosher, "Kosher" %>
+70:        </div>
+71:    
+72:        # Image
+73:        <div class="form-group">
+74:          <%= f.label :photo %>
+75:          <%= f.file_field :photo %>
+76:        </div>
+77:    
+78:        # Link to all recipes:
+79:        <div class="well">
+80:          <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+81:        </div>
+82:    
+83:      </body>
+84:    </html>
+  
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/views/users/recipes/new.html.erb:13: syntax error, unexpected ':', expecting `end'
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:24:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1493)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1570)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2687)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <section class="new-recipe">
+
+  <head>
+    <title>Tasteful Traditions</title>
+  </head>
+
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
+  <body>
+
+    <%= form_for @recipe do |f| %>
+      
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.label :number_of_servings %>
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      # Ingredients
+    </div>
+
+    <div>
+      # Instructions/Preparation (step by step)
+    </div>
+
+    # Recipe category (breakfast, lunch, etc.)
+    <div>
+
+    </div>
+
+    # All options that apply to the recipe
+     <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      <%= f.check_box :vegeterian %>
+      <%= f.label :vegeterian, "Vegeterian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    # Link to all recipes:
+    <div class="well">
+      <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    </div>
+
+  </body>
+</html>
+):
+1:    <section class="new-recipe">
+2:    
+3:      <head>
+4:        <title>Tasteful Traditions</title>
+5:      </head>
+6:    
+7:      <header>
+8:        <h2>Add recipe</h2>
+9:      </header>
+10:    
+11:      <body>
+12:    
+13:        <%= form_for @recipe do |f| %>
+14:          
+15:        
+16:        # Recipe Name
+17:        <div class="form-group">
+18:          <%= f.label :title %>
+19:          <%= f.text_field :title %>
+20:        </div>
+21:    
+22:        # Number of servings
+23:        <div class="form-group">
+24:          <%= f.label :number_of_servings %>
+25:          <%= f.number_field :number_of_servings %>
+26:        </div>
+27:    
+28:        # Total time (minutes)
+29:        <div class="form-group">
+30:          <%= f.label :time %>
+31:          <%= f.number_field :time %>
+32:        </div>
+33:    
+34:        # Description
+35:        <div class="form-group">
+36:          <%= form.label :description %>
+37:          <%= form.text_area :description %>
+38:        </div>
+39:    
+40:        <div>
+41:          # Ingredients
+42:        </div>
+43:    
+44:        <div>
+45:          # Instructions/Preparation (step by step)
+46:        </div>
+47:    
+48:        # Recipe category (breakfast, lunch, etc.)
+49:        <div>
+50:    
+51:        </div>
+52:    
+53:        # All options that apply to the recipe
+54:         <div class="form-group">
+55:    
+56:          <span>Please select all options that apply to your recipe:<span>
+57:    
+58:          <%= f.check_box :vegeterian %>
+59:          <%= f.label :vegeterian, "Vegeterian" %>
+60:          <%= f.check_box :vegan %>
+61:          <%= f.label :vegan, "Vegan" %>
+62:          <%= f.check_box :gluten_free %>
+63:          <%= f.label :gluten_free, "Gluten-free" %>
+64:          <%= f.check_box :peanut_free %>
+65:          <%= f.label :peanut_free, "Peanut-free" %>
+66:          <%= f.check_box :halal %>
+67:          <%= f.label :halal, "Halal" %>
+68:          <%= f.check_box :kosher %>
+69:          <%= f.label :kosher, "Kosher" %>
+70:        </div>
+71:    
+72:        # Image
+73:        <div class="form-group">
+74:          <%= f.label :photo %>
+75:          <%= f.file_field :photo %>
+76:        </div>
+77:    
+78:        # Link to all recipes:
+79:        <div class="well">
+80:          <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+81:        </div>
+82:    
+83:      </body>
+84:    </html>
+  
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:86: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:26:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1955)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2058)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 5.5ms | Allocations: 27357)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <section class="new-recipe">
+
+  <head>
+    <title>Tasteful Traditions</title>
+  </head>
+
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
+  <body>
+
+    <%= form_for :recipe do |f| %>
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.label :number_of_servings %>
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      # Ingredients
+    </div>
+
+    <div>
+      # Instructions/Preparation (step by step)
+    </div>
+
+    # Recipe category (breakfast, lunch, etc.)
+    <div>
+
+    </div>
+
+    # All options that apply to the recipe
+     <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      <%= f.check_box :vegeterian %>
+      <%= f.label :vegeterian, "Vegeterian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    # Link to all recipes:
+    # <div class="well">
+    #   <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    # </div>
+
+  </body>
+</html>
+):
+1:    <section class="new-recipe">
+2:    
+3:      <head>
+4:        <title>Tasteful Traditions</title>
+5:      </head>
+6:    
+7:      <header>
+8:        <h2>Add recipe</h2>
+9:      </header>
+10:    
+11:      <body>
+12:    
+13:        <%= form_for :recipe do |f| %>
+14:        
+15:        # Recipe Name
+16:        <div class="form-group">
+17:          <%= f.label :title %>
+18:          <%= f.text_field :title %>
+19:        </div>
+20:    
+21:        # Number of servings
+22:        <div class="form-group">
+23:          <%= f.label :number_of_servings %>
+24:          <%= f.number_field :number_of_servings %>
+25:        </div>
+26:    
+27:        # Total time (minutes)
+28:        <div class="form-group">
+29:          <%= f.label :time %>
+30:          <%= f.number_field :time %>
+31:        </div>
+32:    
+33:        # Description
+34:        <div class="form-group">
+35:          <%= form.label :description %>
+36:          <%= form.text_area :description %>
+37:        </div>
+38:    
+39:        <div>
+40:          # Ingredients
+41:        </div>
+42:    
+43:        <div>
+44:          # Instructions/Preparation (step by step)
+45:        </div>
+46:    
+47:        # Recipe category (breakfast, lunch, etc.)
+48:        <div>
+49:    
+50:        </div>
+51:    
+52:        # All options that apply to the recipe
+53:         <div class="form-group">
+54:    
+55:          <span>Please select all options that apply to your recipe:<span>
+56:    
+57:          <%= f.check_box :vegeterian %>
+58:          <%= f.label :vegeterian, "Vegeterian" %>
+59:          <%= f.check_box :vegan %>
+60:          <%= f.label :vegan, "Vegan" %>
+61:          <%= f.check_box :gluten_free %>
+62:          <%= f.label :gluten_free, "Gluten-free" %>
+63:          <%= f.check_box :peanut_free %>
+64:          <%= f.label :peanut_free, "Peanut-free" %>
+65:          <%= f.check_box :halal %>
+66:          <%= f.label :halal, "Halal" %>
+67:          <%= f.check_box :kosher %>
+68:          <%= f.label :kosher, "Kosher" %>
+69:        </div>
+70:    
+71:        # Image
+72:        <div class="form-group">
+73:          <%= f.label :photo %>
+74:          <%= f.file_field :photo %>
+75:        </div>
+76:    
+77:        # Link to all recipes:
+78:        # <div class="well">
+79:        #   <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+80:        # </div>
+81:    
+82:      </body>
+83:    </html>
+  
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:26:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1955)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2058)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 5.1ms | Allocations: 27358)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <section class="new-recipe">
+
+  <head>
+    <title>Tasteful Traditions</title>
+  </head>
+
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
+  <body>
+
+    <%= form_for :recipe do |f| %>
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.label :number_of_servings %>
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      # Ingredients
+    </div>
+
+    <div>
+      # Instructions/Preparation (step by step)
+    </div>
+
+    # Recipe category (breakfast, lunch, etc.)
+    <div>
+
+    </div>
+
+    # All options that apply to the recipe
+     <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      <%= f.check_box :vegeterian %>
+      <%= f.label :vegeterian, "Vegeterian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    # Link to all recipes:
+    # <div class="well">
+    #   <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    # </div>
+
+  </body>
+</section>
+):
+1:    <section class="new-recipe">
+2:    
+3:      <head>
+4:        <title>Tasteful Traditions</title>
+5:      </head>
+6:    
+7:      <header>
+8:        <h2>Add recipe</h2>
+9:      </header>
+10:    
+11:      <body>
+12:    
+13:        <%= form_for :recipe do |f| %>
+14:        
+15:        # Recipe Name
+16:        <div class="form-group">
+17:          <%= f.label :title %>
+18:          <%= f.text_field :title %>
+19:        </div>
+20:    
+21:        # Number of servings
+22:        <div class="form-group">
+23:          <%= f.label :number_of_servings %>
+24:          <%= f.number_field :number_of_servings %>
+25:        </div>
+26:    
+27:        # Total time (minutes)
+28:        <div class="form-group">
+29:          <%= f.label :time %>
+30:          <%= f.number_field :time %>
+31:        </div>
+32:    
+33:        # Description
+34:        <div class="form-group">
+35:          <%= form.label :description %>
+36:          <%= form.text_area :description %>
+37:        </div>
+38:    
+39:        <div>
+40:          # Ingredients
+41:        </div>
+42:    
+43:        <div>
+44:          # Instructions/Preparation (step by step)
+45:        </div>
+46:    
+47:        # Recipe category (breakfast, lunch, etc.)
+48:        <div>
+49:    
+50:        </div>
+51:    
+52:        # All options that apply to the recipe
+53:         <div class="form-group">
+54:    
+55:          <span>Please select all options that apply to your recipe:<span>
+56:    
+57:          <%= f.check_box :vegeterian %>
+58:          <%= f.label :vegeterian, "Vegeterian" %>
+59:          <%= f.check_box :vegan %>
+60:          <%= f.label :vegan, "Vegan" %>
+61:          <%= f.check_box :gluten_free %>
+62:          <%= f.label :gluten_free, "Gluten-free" %>
+63:          <%= f.check_box :peanut_free %>
+64:          <%= f.label :peanut_free, "Peanut-free" %>
+65:          <%= f.check_box :halal %>
+66:          <%= f.label :halal, "Halal" %>
+67:          <%= f.check_box :kosher %>
+68:          <%= f.label :kosher, "Kosher" %>
+69:        </div>
+70:    
+71:        # Image
+72:        <div class="form-group">
+73:          <%= f.label :photo %>
+74:          <%= f.file_field :photo %>
+75:        </div>
+76:    
+77:        # Link to all recipes:
+78:        # <div class="well">
+79:        #   <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+80:        # </div>
+81:    
+82:      </body>
+83:    </section>
+  
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/recipes/new.html.erb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:27:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 36.6ms | Allocations: 9746)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 9848)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 5.5ms | Allocations: 35145)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x000000000082a0>
+Did you mean?  for
+               fork):
+    32: 
+    33:     # Description
+    34:     <div class="form-group">
+    35:       <%= form.label :description %>
+    36:       <%= form.text_area :description %>
+    37:     </div>
+    38: 
+  
+app/views/users/recipes/new.html.erb:35
+app/views/users/recipes/new.html.erb:13
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:28:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 11244)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 11346)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 5.6ms | Allocations: 36643)
+
+
+  
+ActionView::Template::Error (undefined method `vegeterian' for #<Recipe id: nil, title: nil, gluten_free: nil, vegan: nil, vegetarian: nil, breakfast: nil, kosher: nil, peanut_free: nil, halal: nil, dinner: nil, lunch: nil, dessert: nil, appetizer: nil, photo: nil, time: nil, number_of_servings: nil, instructions: nil, country: nil, description: nil, user_id: nil, created_at: nil, updated_at: nil, ingredients: nil>
+Did you mean?  vegetarian
+               vegetarian?
+               vegetarian=):
+    54: 
+    55:       <span>Please select all options that apply to your recipe:<span>
+    56: 
+    57:       <%= f.check_box :vegeterian %>
+    58:       <%= f.label :vegeterian, "Vegeterian" %>
+    59:       <%= f.check_box :vegan %>
+    60:       <%= f.label :vegan, "Vegan" %>
+  
+app/views/users/recipes/new.html.erb:57
+app/views/users/recipes/new.html.erb:13
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:29:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 18.9ms | Allocations: 10977)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 11079)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 6.1ms | Allocations: 36376)
+
+
+  
+ActionView::Template::Error (undefined method `vegeterian' for #<Recipe id: nil, title: nil, gluten_free: nil, vegan: nil, vegetarian: nil, breakfast: nil, kosher: nil, peanut_free: nil, halal: nil, dinner: nil, lunch: nil, dessert: nil, appetizer: nil, photo: nil, time: nil, number_of_servings: nil, instructions: nil, country: nil, description: nil, user_id: nil, created_at: nil, updated_at: nil, ingredients: nil>
+Did you mean?  vegetarian
+               vegetarian?
+               vegetarian=):
+    54: 
+    55:     #   <span>Please select all options that apply to your recipe:<span>
+    56: 
+    57:     #   <%= f.check_box :vegeterian %>
+    58:     #   <%= f.label :vegeterian, "Vegeterian" %>
+    59:     #   <%= f.check_box :vegan %>
+    60:     #   <%= f.label :vegan, "Vegan" %>
+  
+app/views/users/recipes/new.html.erb:57
+app/views/users/recipes/new.html.erb:13
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:30:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 9232)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 9334)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 5.7ms | Allocations: 34631)
+
+
+  
+ActionView::Template::Error (undefined method `index_path' for #<ActionView::Base:0x000000000082c8>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  video_path):
+    59: 
+    60:     # Link to all recipes:
+    61:     # <div class="well">
+    62:     #   <%= link_to 'All Recipes', [:index], class: 'btn btn-info' %>
+    63:     # </div>
+    64: 
+    65:     <%= form.submit 'Add recipe', class: 'btn btn-primary' %>
+  
+app/views/users/recipes/new.html.erb:62
+app/views/users/recipes/new.html.erb:13
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:30:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 8878)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 8980)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 6.4ms | Allocations: 34277)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x000000000082a0>
+Did you mean?  for
+               fork):
+    59: 
+    60: 
+    61: 
+    62:     <%= form.submit 'Add recipe', class: 'btn btn-primary' %>
+    63:     
+    64:     <% end %>
+    65:   </body>
+  
+app/views/users/recipes/new.html.erb:62
+app/views/users/recipes/new.html.erb:13
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:31:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 12362)
+Completed 200 OK in 87ms (Views: 54.5ms | ActiveRecord: 6.0ms | Allocations: 37727)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:32:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 4459)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 12093)
+Completed 200 OK in 86ms (Views: 54.9ms | ActiveRecord: 5.9ms | Allocations: 37458)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:32:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5067)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.5ms | Allocations: 6455)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:33:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 4834)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 1.1ms | Allocations: 5994)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:38:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3859)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 11493)
+Completed 200 OK in 79ms (Views: 49.2ms | ActiveRecord: 4.7ms | Allocations: 36858)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:46:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 11813)
+Completed 200 OK in 105ms (Views: 60.5ms | ActiveRecord: 5.4ms | Allocations: 37178)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:47:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 4271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 11904)
+Completed 200 OK in 94ms (Views: 59.8ms | ActiveRecord: 5.5ms | Allocations: 37269)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:48:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 11907)
+Completed 200 OK in 82ms (Views: 49.8ms | ActiveRecord: 6.8ms | Allocations: 37272)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:49:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 8957)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 9059)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 6.0ms | Allocations: 34358)
+
+
+  
+ActionView::Template::Error (undefined method `vegeterian' for #<Recipe id: nil, title: nil, gluten_free: nil, vegan: nil, vegetarian: nil, breakfast: nil, kosher: nil, peanut_free: nil, halal: nil, dinner: nil, lunch: nil, dessert: nil, appetizer: nil, photo: nil, time: nil, number_of_servings: nil, instructions: nil, country: nil, description: nil, user_id: nil, created_at: nil, updated_at: nil, ingredients: nil>
+Did you mean?  vegetarian
+               vegetarian?
+               vegetarian=):
+    45: 
+    46:       <span>Please select all options that apply to your recipe:<span>
+    47: 
+    48:       <%= f.check_box :vegeterian %>
+    49:       <%= f.label :vegeterian, "Vegeterian" %>
+    50:       <%= f.check_box :vegan %>
+    51:       <%= f.label :vegan, "Vegan" %>
+  
+app/views/users/recipes/new.html.erb:48
+app/views/users/recipes/new.html.erb:9
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:50:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 5296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 12929)
+Completed 200 OK in 85ms (Views: 48.3ms | ActiveRecord: 5.6ms | Allocations: 38294)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 02:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 6720)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6822)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 6.3ms | Allocations: 32121)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x000000000082a0>
+Did you mean?  for
+               fork):
+    45: 
+    46:       <span>Please select all options that apply to your recipe:<span>
+    47: 
+    48:       <%= form.radio_button :breakfast, "breakfast" %>
+    49:       <%= form.label :breakfast, "Breakfast" %>
+    50: 
+    51:       <%= f.check_box :vegetarian %>
+  
+app/views/users/recipes/new.html.erb:48
+app/views/users/recipes/new.html.erb:9
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:00:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/vagrant/recipe_app/app/controllers/recipes_controller.rb:19: syntax error, unexpected ')', expecting ']'
+...ast, :lunch, :dinner, :dessert)
+...                              ^
+):
+  
+app/controllers/recipes_controller.rb:19: syntax error, unexpected ')', expecting ']'
+app/controllers/recipes_controller.rb:19: syntax error, unexpected ')', expecting ']'
+app/controllers/recipes_controller.rb:19: syntax error, unexpected ')', expecting ']'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:00:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/vagrant/recipe_app/app/controllers/recipes_controller.rb:20: syntax error, unexpected local variable or method, expecting ')'
+      render 'users/recipes/new'
+      ^~~~~~
+):
+  
+app/controllers/recipes_controller.rb:20: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/recipes_controller.rb:20: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/recipes_controller.rb:20: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:01:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.4ms | Allocations: 12510)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 1)):
+  
+app/controllers/recipes_controller.rb:19:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:16:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.4ms | Allocations: 12505)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 1)):
+  
+app/controllers/recipes_controller.rb:19:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:16:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 9454)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9556)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 5.1ms | Allocations: 34854)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x000000000082a0>
+Did you mean?  for
+               fork):
+    66:       <%= f.file_field :photo %>
+    67:     </div>
+    68: 
+    69:     <%= form.submit 'Add recipe', class: 'btn btn-primary' %>
+    70: 
+    71:     
+    72:     <% end %>
+  
+app/views/users/recipes/new.html.erb:69
+app/views/users/recipes/new.html.erb:9
+app/controllers/recipes_controller.rb:20:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:17:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 5408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 13052)
+Completed 200 OK in 90ms (Views: 57.1ms | ActiveRecord: 6.2ms | Allocations: 38417)
+
+
+Started POST "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:17:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/11/recipes/new"):
+  
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-08-30 03:17:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5730)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.9ms | Allocations: 7063)
+
+
