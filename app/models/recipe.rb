@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
   validates :country, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
-  validates :gluten_free, :vegan, :vegetarian, :breakfast, :kosher, :peanut_free, :halal, :dinner, :lunch, :dessert, :appetizer, presence: true #ensure they are marked as true or false, can't be null
+  validates :gluten_free, :vegan, :vegetarian, :breakfast, :kosher, :peanut_free, :halal, :dinner, :lunch, :dessert, :appetizer, inclusion: [true, false] #ensure they are marked as true or false, can't be null
 
   #QUERIES
 
