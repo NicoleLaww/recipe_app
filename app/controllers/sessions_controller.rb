@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 # Display form for login
   def new
-    puts "hitting new controller"
   end
 
 # Submits login details 
