@@ -10,27 +10,27 @@
   <%= form_for :user, url: '/register' do |f| %>
 
   <div class="form-group">
-    <%= f.label :name, 'Name' %>
+    <%= f.label :name, 'Name:' %>
     <%= f.text_field :name %>
   </div>
 
   <div class="form-group">
-    <%= f.label :username, 'Username' %>
+    <%= f.label :username, 'Username:' %>
     <%= f.text_field :username %>
   </div>
 
   <div class="form-group">
-    <%= f.label :email, 'Email' %>
+    <%= f.label :email, 'Email:' %>
     <%= f.text_field :email %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password, 'Password' %>
+    <%= f.label :password, 'Password:' %>
     <%= f.password_field :password %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation, 'Password Confirmation' %>
+    <%= f.label :password_confirmation, 'Password Confirmation:' %>
     <%= f.password_field :password_confirmation %>
   </div>
     
