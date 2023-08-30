@@ -8,10 +8,10 @@
   <body>
     <!-- List of favourited recipes --> 
     <h2>Your Favourite Recipes</h2>
-    <% @user.favourites.each do |favourite| %>
+    <% @favourites.each do |favourite| %>
       <div>
-        <%= favourite.recipe.photo %>
-        <%= link_to favourite.recipe.title, recipe_path(favourite.recipe) %>
+        <%= favourite.recipe_id %>
+        # <%= link_to favourite.recipe_id.title, recipe_path(favourite.recipe_id) %>
       </div>
     <% end %>
 
