@@ -11,7 +11,7 @@
     <% @favourites.each do |favourite| %>
       <div>
         <%= image_tag favourite.recipe.photo %>
-        <%= link_to favourite.recipe.title, root_path(favourite.recipe) %>
+        <%= link_to favourite.recipe.title, recipe_path(favourite.recipe) %>
       </div>
     <% end %>
 
