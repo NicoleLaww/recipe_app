@@ -5,7 +5,7 @@ class Review < ApplicationRecord
   belongs_to :recipe
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :recipe_id, presence: true, numericality: { only_integer: true }
-  validates :comments, presence: true, length: { maximum: 1000 }
+  validates :comment, presence: true, length: { maximum: 1000 }
   validates :rating, presence: true, numericality: { only_integer: true }
 
   validate :user_exists

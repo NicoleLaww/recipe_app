@@ -1,1 +1,77 @@
-THIS IS THE RECIPE EDIT PAGE
+<section class="edit-recipe">
+
+   <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+   
+  <header>
+    <h2>Add recipe</h2>
+  </header>
+
+  <body>
+
+    <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
+    
+    # Recipe Name
+    <div class="form-group">
+      <%= f.text_field :title %>
+    </div>
+
+    # Number of servings
+    <div class="form-group">
+      <%= f.number_field :number_of_servings %>
+    </div>
+
+    # Total time (minutes)
+    <div class="form-group">
+      <%= f.number_field :time %>
+    </div>
+
+    # Description
+    <div class="form-group">
+      <%= f.text_area :description %>
+    </div>
+
+    # Country
+    <div class="form-group">
+      <%= f.text_field :country %>
+    </div>
+
+    <div>
+      # Ingredients (one at a time)
+    </div>
+
+    <div>
+      # Instructions/Preparation (one at a time)
+    </div>
+
+    <div class="form-group">
+
+      <span>Please select all options that apply to your recipe:<span>
+
+      # the options for breakfast, lunch, dinner and dessert tbd
+
+      <%= f.check_box :vegetarian, {required: true}%>
+      <%= f.label :vegetarian, "Vegetarian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
+
+    # Image
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
+    <%= f.submit 'Update recipe', class: 'btn btn-primary' %>
+
+    
+    <% end %>
+  </body>
+</section>

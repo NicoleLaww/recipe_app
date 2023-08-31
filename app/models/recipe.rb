@@ -12,6 +12,10 @@ class Recipe < ApplicationRecord
   validates :user_id, presence: true
   validates :gluten_free, :vegan, :vegetarian, :breakfast, :kosher, :peanut_free, :halal, :dinner, :lunch, :dessert, :appetizer, inclusion: [true, false] #ensure they are marked as true or false, can't be null
 
+  scope :apply_boolean_filters, ->(filter_params) {
+    where(filter_params.select { |_, value| value == true })
+  } 
+
   #QUERIES
 
   #create recipe

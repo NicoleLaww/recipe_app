@@ -4,7 +4,11 @@ class RecipesController < ApplicationController
 
   # Fetch and list all recipes 
   def index 
-    @recipes = Recipe.where(filter_params)
+    if request.post?
+      @recipes = Recipe.apply_boolean_filters(filter_params)
+    else
+      @recipes = Recipe.all
+    end
   end 
   
   # Fetch and show a specific recipe
@@ -70,7 +74,7 @@ class RecipesController < ApplicationController
 
   # Filter the parameters based on what boxes are checked by user
   def filter_params
-    filtered_params = params.slice(:gluten_free, :vegan, :vegetarian, 
+    filtered_params = params[:filter].slice(:gluten_free, :vegan, :vegetarian, 
                                    :breakfast, :kosher, :peanut_free, :halal,
                                    :dinner, :lunch, :dessert, :appetizer)
 

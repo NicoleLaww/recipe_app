@@ -332,16 +332,14 @@ favourite9 = Favourite.create ({ user_id: 9, recipe_id: 9 })
 favourite10 = Favourite.create ({ user_id: 10, recipe_id: 10 })
 
 ##REVIEWS
-review1 = review.create ({ user_id: 1, recipe_id: 1, comment: "Absolutely love this recipe!", rating: 4 })
-review2 = review.create ({ user_id: 2, recipe_id: 2, comment: "Excellent gluten-free option.", rating: 5 })
-review3 = review.create ({ user_id: 3, recipe_id: 3, comment: "Thanks for sharing!", rating: 4 })
-review4 = review.create ({ user_id: 4, recipe_id: 4, comment: "Such a good peanut-free appy, thanks for sharing!!", rating: 4 })
-review5 = review.create ({ user_id: 5, recipe_id: 5, comment: "Good simple dinner option.", rating: 5 })
-review6 = review.create ({ user_id: 6, recipe_id: 6, comment: "Super easy and quick!! Will be making again!", rating: 5 })
-review7 = review.create ({ user_id: 7, recipe_id: 7, comment: "Love it!", rating: 4 })
-review8 = review.create ({ user_id: 8, recipe_id: 8, comment: "So tasty!", rating: 5 })
-review9 = review.create ({ user_id: 9, recipe_id: 9, comment: "I make this recipe all the time, my kids love it!", rating: 4 })
-review10 = review.create ({ user_id: 10, recipe_id: 10, comment: "Nice, fast, and simple.", rating: 3 })
-
-
+review1 = Review.create ({ user_id: 1, recipe_id: 1, comment: "Absolutely love this recipe!", rating: 4 })
+review2 = Review.create ({ user_id: 2, recipe_id: 2, comment: "Excellent gluten-free option.", rating: 5 })
+review3 = Review.create ({ user_id: 3, recipe_id: 3, comment: "Thanks for sharing!", rating: 4 })
+review4 = Review.create ({ user_id: 4, recipe_id: 4, comment: "Such a good peanut-free appy, thanks for sharing!!", rating: 4 })
+review5 = Review.create ({ user_id: 5, recipe_id: 5, comment: "Good simple dinner option.", rating: 5 })
+review6 = Review.create ({ user_id: 6, recipe_id: 6, comment: "Super easy and quick!! Will be making again!", rating: 5 })
+review7 = Review.create ({ user_id: 7, recipe_id: 7, comment: "Love it!", rating: 4 })
+review8 = Review.create ({ user_id: 8, recipe_id: 8, comment: "So tasty!", rating: 5 })
+review9 = Review.create ({ user_id: 9, recipe_id: 9, comment: "I make this recipe all the time, my kids love it!", rating: 4 })
+review10 = Review.create ({ user_id: 10, recipe_id: 10, comment: "Nice, fast, and simple.", rating: 3 })
 
