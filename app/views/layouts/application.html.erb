@@ -3,15 +3,18 @@
   <head>
     <title>Recipe Website</title>
     <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Security Purposes - to fend off attacks  -->
+    <%= csrf_meta_tags %>
   </head>
   <body>
     <%= render 'layouts/navbar' %>
     
     <%= yield %>
+
     <!-- Needed to load the JavaScript that handles the DELETE method -->
     <%= javascript_pack_tag 'application' %>
-    <!-- Security Purposes - to fend off attacks  -->
-    <%= csrf_meta_tags %>
+
+  
 
   </body>
 </html>

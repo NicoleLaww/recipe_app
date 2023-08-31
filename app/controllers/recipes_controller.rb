@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  # before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+    before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+    before_action :require_authorization, only: [:edit, :update, :destroy]
 
   # Fetch and list all recipes 
   def index 
@@ -13,50 +14,34 @@ class RecipesController < ApplicationController
 
   # Display form for creating a new recipe
   def new 
-     if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    else 
-      @recipe = Recipe.new 
-      render 'users/recipes/new'
-    end 
+    @recipe = Recipe.new 
+    render 'users/recipes/new'
   end 
 
   # Create a new recipe based on submitted form data 
   def create
-    if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    elsif 
-      @recipe = Recipe.new(recipe_params)
-      if @recipe.save
-        redirect_to @recipe, notice: 'Recipe was successfully created.'
-      else 
-        render :new
-      end
-    end 
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to @recipe, notice: 'Recipe was successfully created.'
+    else 
+      render :new
+    end
   end
 
   # Displays form to edit an existing recipe 
   def edit 
-    if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    else 
-      @recipe = Recipe.find(params[:id])
-      render 'users/recipes/edit'
-    end 
+    @recipe = Recipe.find(params[:id])
+    render 'users/recipes/edit'
   end 
 
   # Update an existing recipe based on submitted form data 
   def update
-    if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    elsif
-      @recipe = Recipe.find(params[:id])
-      if @recipe.update(recipe_params)
-        redirect_to recipe_path(@recipe), notice: 'Recipe was successfully updated.'
-      else 
-        render :edit
-      end
-    end 
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe), notice: 'Recipe was successfully updated.'
+    else 
+      render :edit
+    end
   end
 
   # Delete an existing recipe
@@ -66,7 +51,12 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
   end
 
-  
+  # Show users' recipes 
+  def my_recipes
+    @user = current_user
+    @recipes = @user.recipes
+  end
+
   # Specify the only permitted parameters for a recipe, as a security feature
   private 
   def recipe_params

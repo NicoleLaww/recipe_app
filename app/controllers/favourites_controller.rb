@@ -1,22 +1,13 @@
 class FavouritesController < ApplicationController
-  
-  # # Displays all the favourites - MOVED, will delete soon, keeping as a back up
-  # def index 
-  #   if !current_user
-  #     redirect_to login_path, alert: 'Please login!'
-  #   else 
-  #     @favourites = Favourite.where(user_id: current_user.id)
-  #   end 
-  # end 
+before_action :require_login, only [:create, :destroy]
+before_action :require_authorization, only [:create, :destroy]
 
   # Creates new favourite 
   def create
     @favourite = Favourite.new(favourite_params)
     @favourite.user_id = current_user.id
 
-    if !current_user
-      redirect_to login_path, alert: 'Please login!'
-    elsif Favourite.exists?(user_id: @favourite.user_id, recipe_id: @favourite.recipe_id)
+    if Favourite.exists?(user_id: @favourite.user_id, recipe_id: @favourite.recipe_id)
       redirect_back fallback_location: favourites_path, alert: 'You have already favourited this recipe.'
     elsif @favourite.save
       redirect_to favourites_path, notice: 'Favourite was successfully created.'

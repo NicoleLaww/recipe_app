@@ -17,20 +17,5 @@
       <%= link_to "Edit Profile", edit_user_path(@user) %>
     </div> 
 
-    <!-- Favourites button -->
-    <h2>Favourites</h2>
-    <div>
-      <%= link_to "Favourites", favourites_user_path(@user) %>
-    </div>
-
-    <!-- List of user recipes --> 
-    <h2>Your Recipes</h2>
-    <% @user.recipes.each do |recipe| %>
-      <div>
-        <%= image_tag recipe.photo %>
-        <%= link_to recipe.title, recipe_path(recipe) %>
-      </div>
-    <% end %>
-
   </body>
 </html>
