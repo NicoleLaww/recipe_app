@@ -8,11 +8,15 @@ before_action :require_authorization, only [:create, :destroy]
     @favourite.user_id = current_user.id
 
     if Favourite.exists?(user_id: @favourite.user_id, recipe_id: @favourite.recipe_id)
-      redirect_back fallback_location: favourites_path, alert: 'You have already favourited this recipe.'
+      flash[:alert] = 'You have already favourited this recipe.'
+      redirect_back fallback_location: favourites_path
     elsif @favourite.save
-      redirect_to favourites_path, notice: 'Favourite was successfully created.'
+      # flash[:notice] = 'Favourite was successfully created.'
+      redirect_to favourites_path
     else 
-      redirect_back fallback_location: favourites_path, alert: 'Could not favourite the recipe.'
+      flash[:alert] = 'Could not favourite the recipe.'
+      redirect_back fallback_location: favourites_path
+      
     end
   end 
 
@@ -20,7 +24,8 @@ before_action :require_authorization, only [:create, :destroy]
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_to favourites_path, notice: 'Favourite was successfully deleted.'
+    flash[:notice] = 'Favourite was successfully deleted.'
+    redirect_to favourites_path
   end 
 
   # Security feature to return only permitted parameters

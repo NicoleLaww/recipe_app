@@ -8,6 +8,13 @@
 <body>
   <h1>Sign Up</h1>
 
+  <% if flash[:notice] %>
+    <div class="flash notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="flash alert"><%= flash[:alert] %></div>
+  <% end %>
   
   <%= form_for :user, url: '/register' do |f| %>
 

@@ -22,8 +22,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
       if @user.update(user_params)
-        redirect_to @user, notice: 'User was successfully updated.'
+        redirect_to @user
+        # redirect_to @user, notice: 'User was successfully updated.'
       else
+        flash.now[:alert] = 'Invalid submission. Please review form again.. Make sure passwords match.'
         render :edit
       end 
  end
@@ -31,8 +33,13 @@ class UsersController < ApplicationController
   # Delete a user
   def destroy 
     @user = User.find(params[:id])
-    @user.destroy
-    redirect_to recipes_path, notice: 'User was successfully deleted.'
+    if @user.destroy
+      redirect_to recipes_path
+      # redirect_to recipes_path, notice: 'User was successfully deleted.'
+    else
+      flash[:alert] = 'Something went wrong. Please try again.' 
+    end 
+
   end 
 
   # Specify params for updating a user

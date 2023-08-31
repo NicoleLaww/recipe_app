@@ -8,6 +8,15 @@
   <body>
     <!-- List of favourited recipes --> 
     <h2>Your Favourite Recipes</h2>
+
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="flash alert"><%= flash[:alert] %></div>
+    <% end %>
+
     <% @favourites.each do |favourite| %>
       <div>
         <%= image_tag favourite.recipe.photo %>

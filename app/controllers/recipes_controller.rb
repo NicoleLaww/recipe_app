@@ -26,8 +26,10 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe, notice: 'Recipe was successfully created.'
+      redirect_to @recipe
+      # redirect_to @recipe, notice: 'Recipe was successfully created.'
     else 
+      flash[:alert] = 'Something went wrong. Please try again.'
       render :new
     end
   end
@@ -42,8 +44,10 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
-      redirect_to recipe_path(@recipe), notice: 'Recipe was successfully updated.'
+      redirect_to recipe_path(@recipe)
+      # redirect_to recipe_path(@recipe), notice: 'Recipe was successfully updated.'
     else 
+      flash[:alert] = 'Something went wrong. Please try again.'
       render :edit
     end
   end
@@ -51,8 +55,12 @@ class RecipesController < ApplicationController
   # Delete an existing recipe
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy 
-    redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
+    if @recipe.destroy 
+      redirect_to recipes_path
+    # redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
+    else
+      flash[:alert] = 'Something went wrong. Please try again.' 
+    end
   end
 
   # Show users' recipes 

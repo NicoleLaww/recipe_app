@@ -7,6 +7,14 @@
   <body>
   <h1>Edit User Profile</h1>
 
+  <% if flash[:notice] %>
+    <div class="flash notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="flash alert"><%= flash[:alert] %></div>
+  <% end %>
+
   <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
       <div class="form-group">
         <%= f.label :name, 'Name:' %>

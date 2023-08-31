@@ -7,6 +7,15 @@
 
   <body>
     <h1>User Information</h1>
+
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="flash alert"><%= flash[:alert] %></div>
+    <% end %>
+
     <div>Name: <%= @user.name %></div>
     <div>Username: <%= @user.username %></div>
     <div>Email: <%= @user.email %></div>
