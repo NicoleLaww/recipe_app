@@ -1,14 +1,21 @@
-<section>
+<!DOCTYPE html>
+<html>
   <head>
-    <title>Tasteful Traditions</title>
+    <title>All Recipes</title>
+    <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  
-   <h1>Hello</h1>
-
-
-   <%= @recipes.size() %>
+    <!-- List of all recipes --> 
+    <h2>All Recipes</h2>
+    <% @recipes.each do |recipe| %>
+      <div>
+        <%= link_to recipe.title, recipe_path(recipe.id) %>
+        <%= recipe.id %>
+        <%= recipe.photo %>
+        <%= recipe.description %>
+      </div>
+    <% end %>
 
   </body>
-</section>
+</html>
