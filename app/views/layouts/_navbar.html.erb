@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <ul>
+    <li><%= link_to "Recipes", root_path %></li>
+    <% if current_user %>
+      <li><%= link_to "User Profile", user_path(current_user) %></li>
+      <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Register", register_path %></li>
+      <li><%= link_to "Log in", login_path %></li>
+    <% end %> 
+  </ul>
+</nav>

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 # Display form for login
   def new
-      if current_user
+    if current_user
       redirect_to @current_user, notice: 'Already logged in.' 
     else
       render :new, alert: 'Please log in.'

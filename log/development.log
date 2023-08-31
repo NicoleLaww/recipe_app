@@ -17783,3 +17783,1697 @@ Migrating to AddPasswordDigestToUsers (20230824175942)
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+Started GET "/" for ::1 at 2023-08-30 19:55:46 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3174)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 10960)
+Completed 200 OK in 42ms (Views: 19.0ms | ActiveRecord: 9.5ms | Allocations: 17021)
+
+
+Started GET "/login" for ::1 at 2023-08-30 19:55:50 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6420)
+Completed 200 OK in 32ms (Views: 18.1ms | ActiveRecord: 4.5ms | Allocations: 12033)
+
+
+Started POST "/login" for ::1 at 2023-08-30 19:56:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5113)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 1.8ms | Allocations: 6762)
+
+
+Started POST "/login" for ::1 at 2023-08-30 19:56:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1578)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5097)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.8ms | Allocations: 6237)
+
+
+Started POST "/login" for ::1 at 2023-08-30 19:56:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1578)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5097)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 1.0ms | Allocations: 6237)
+
+
+Started GET "/register" for ::1 at 2023-08-30 19:57:00 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 20.2ms | Allocations: 2832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 6404)
+Completed 200 OK in 47ms (Views: 30.2ms | ActiveRecord: 5.4ms | Allocations: 11440)
+
+
+Started GET "/" for ::1 at 2023-08-30 19:58:56 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3168)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 10918)
+Completed 200 OK in 37ms (Views: 17.6ms | ActiveRecord: 5.9ms | Allocations: 16961)
+
+
+Started GET "/login" for ::1 at 2023-08-30 19:59:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6420)
+Completed 200 OK in 37ms (Views: 12.3ms | ActiveRecord: 15.3ms | Allocations: 12006)
+
+
+Started POST "/login" for ::1 at 2023-08-30 19:59:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 420ms (ActiveRecord: 4.7ms | Allocations: 5514)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 19:59:06 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 19.0ms | Allocations: 15748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 19375)
+Completed 200 OK in 28ms (Views: 21.0ms | ActiveRecord: 3.9ms | Allocations: 22437)
+
+
+Started GET "/recipes/2" for ::1 at 2023-08-30 19:59:21 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4435)
+Completed 200 OK in 27ms (Views: 17.7ms | ActiveRecord: 1.3ms | Allocations: 6141)
+
+
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 19:59:25 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.8ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 37.3ms | Allocations: 9954)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 10044)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 9.5ms | Allocations: 15750)
+
+
+  
+ActionView::Template::Error (undefined method `title' for 2:Integer):
+    11:     <% @favourites.each do |favourite| %>
+    12:       <div>
+    13:         <%= favourite.recipe_id %>
+    14:         # <%= link_to favourite.recipe_id.title, recipe_path(favourite.recipe_id) %>
+    15:       </div>
+    16:     <% end %>
+    17: 
+  
+app/views/users/favourites/favourites.html.erb:14
+app/views/users/favourites/favourites.html.erb:11
+app/controllers/users_controller.rb:8:in `favourites'
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:00:58 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (1.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 12.6ms | Allocations: 8333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 12481)
+Completed 200 OK in 48ms (Views: 20.1ms | ActiveRecord: 11.1ms | Allocations: 26603)
+
+
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:01:21 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4998)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5089)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.4ms | Allocations: 7342)
+
+
+  
+ActionView::Template::Error (undefined method `title' for 2:Integer):
+    11:     <% @favourites.each do |favourite| %>
+    12:       <div>
+    13:         <%= favourite.recipe_id %>
+    14:         <%= link_to favourite.recipe_id.title, recipe_path(favourite.recipe_id) %>
+    15:       </div>
+    16:     <% end %>
+    17: 
+  
+app/views/users/favourites/favourites.html.erb:14
+app/views/users/favourites/favourites.html.erb:11
+app/controllers/users_controller.rb:8:in `favourites'
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:02:59 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 6201)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 2.0ms | Allocations: 8480)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:03:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 42.9ms | Allocations: 21333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 24923)
+Completed 200 OK in 80ms (Views: 42.1ms | ActiveRecord: 10.6ms | Allocations: 27776)
+
+
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:03:30 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (4.0ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 95.9ms | Allocations: 2641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 115.0ms | Allocations: 6149)
+Completed 200 OK in 140ms (Views: 111.8ms | ActiveRecord: 4.7ms | Allocations: 7551)
+
+
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:04:52 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (1.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6203)
+Completed 200 OK in 58ms (Views: 17.6ms | ActiveRecord: 13.9ms | Allocations: 8271)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:04:53 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 6070)
+Completed 200 OK in 59ms (Views: 21.7ms | ActiveRecord: 9.6ms | Allocations: 8714)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:04:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:04:55 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:04:55 -0400
+  [1m[36mFavourite Load (16.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 70.9ms | Allocations: 18116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 81.5ms | Allocations: 30463)
+Completed 200 OK in 95ms (Views: 69.9ms | ActiveRecord: 17.5ms | Allocations: 31831)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:04:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:05:40 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:05:40 -0400
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  [1m[36mFavourite Load (1.0ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:13
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 36.8ms | Allocations: 21088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 28722)
+Completed 200 OK in 100ms (Views: 90.2ms | ActiveRecord: 3.2ms | Allocations: 33004)
+
+
+Started GET "/" for ::1 at 2023-08-30 20:05:42 -0400
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 29.7ms | Allocations: 1417)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 5336)
+Completed 200 OK in 46ms (Views: 35.9ms | ActiveRecord: 1.2ms | Allocations: 7314)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:05:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:06:45 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:06:45 -0400
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (1.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:14
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 12783)
+Completed 200 OK in 100ms (Views: 40.8ms | ActiveRecord: 7.7ms | Allocations: 32488)
+
+
+Started GET "/" for ::1 at 2023-08-30 20:06:51 -0400
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1161)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 6001)
+Completed 200 OK in 86ms (Views: 80.5ms | ActiveRecord: 2.5ms | Allocations: 7067)
+
+
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:07:00 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:14
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 7245)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 2.4ms | Allocations: 9427)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:07:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:07:14 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:13
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7245)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 2.6ms | Allocations: 9351)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:07:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/favourites" for ::1 at 2023-08-30 20:11:20 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/favourites/favourites.html.erb:11
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:13
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 6384)
+Completed 200 OK in 26ms (Views: 17.6ms | ActiveRecord: 3.5ms | Allocations: 7612)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:11:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2" for ::1 at 2023-08-30 20:11:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (3.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 6020)
+Completed 200 OK in 38ms (Views: 23.5ms | ActiveRecord: 5.1ms | Allocations: 8058)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:11:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2/edit" for ::1 at 2023-08-30 20:11:42 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 20.6ms | Allocations: 5926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 9515)
+Completed 200 OK in 43ms (Views: 27.2ms | ActiveRecord: 5.2ms | Allocations: 11990)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:11:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:11:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/users/2" for ::1 at 2023-08-30 20:28:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2947)
+  Rendered layouts/_navbar.html.erb (Duration: 16.0ms | Allocations: 5112)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 9795)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 13.8ms | Allocations: 16847)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_recipe_path' for #<ActionView::Base:0x0000000000c030>
+Did you mean?  user_recipe_path
+               user_recipes_path):
+    2:   <ul>
+    3:     <li><%= link_to "Recipes", root_path %></li>
+    4:     <% if current_user %>
+    5:       <li><%= link_to "Create Recipe", new_recipe_path %></li>
+    6:       <li><%= link_to "User Profile", user_path(current_user) %></li>
+    7:       <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+    8:     <% else %>
+  
+app/views/layouts/_navbar.html.erb:5
+app/views/layouts/application.html.erb:8
+Started GET "/users/2" for ::1 at 2023-08-30 20:30:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 359)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4964)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 3.5ms | Allocations: 7683)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:30:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/logout" for ::1 at 2023-08-30 20:30:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/users/2" for ::1 at 2023-08-30 20:30:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2197)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3793)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 3.6ms | Allocations: 5598)
+
+
+Started GET "/" for ::1 at 2023-08-30 20:30:42 -0400
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1166)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 977)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3924)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 4.0ms | Allocations: 4972)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:30:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2237)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3824)
+Completed 200 OK in 14ms (Views: 7.1ms | ActiveRecord: 2.9ms | Allocations: 5647)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:30:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/logout" for ::1 at 2023-08-30 20:30:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/users/2" for ::1 at 2023-08-30 20:35:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2947)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 7149)
+Completed 200 OK in 69ms (Views: 19.8ms | ActiveRecord: 18.1ms | Allocations: 14117)
+
+
+Started DELETE "/logout" for ::1 at 2023-08-30 20:36:00 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 516)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2023-08-30 20:38:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7197)
+Completed 200 OK in 35ms (Views: 19.3ms | ActiveRecord: 4.2ms | Allocations: 9960)
+
+
+Started DELETE "/logout" for ::1 at 2023-08-30 20:38:26 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 422)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:38:26 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 6391)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 6473)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms | Allocations: 8474)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `csrf_token' for #<ActionView::Base:0x0000000000dc50>):
+     8: <h1>Login</h1>
+     9: 
+    10: <%= form_for :session, url:'/login', method: :post do |f|%>
+    11:   <%= csrf_token %>
+    12: 
+    13:   <div class="form-group">
+    14:    <%= f.label :email, 'Email:' %>
+  
+app/views/sessions/new.html.erb:11
+app/views/sessions/new.html.erb:10
+app/controllers/sessions_controller.rb:7:in `new'
+Started GET "/login" for ::1 at 2023-08-30 20:40:25 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2223)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 1074)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7226)
+Completed 200 OK in 51ms (Views: 28.4ms | ActiveRecord: 12.1ms | Allocations: 9578)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:40:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Redirected to http://[::1]:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 1274)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:40:27 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1667)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5941)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 7218)
+
+
+Started GET "/" for ::1 at 2023-08-30 20:40:28 -0400
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:11
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1164)
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 32.0ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 6244)
+Completed 200 OK in 86ms (Views: 55.8ms | ActiveRecord: 18.8ms | Allocations: 7309)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:40:30 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1698)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 6607)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.8ms | Allocations: 7919)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:40:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 409ms (ActiveRecord: 1.0ms | Allocations: 1422)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:40:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2875)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6692)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 2.1ms | Allocations: 9095)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:40:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:40:37 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:40:37 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1690)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5964)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 7284)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:42:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 414ms (ActiveRecord: 1.2ms | Allocations: 1140)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:42:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 7201)
+Completed 200 OK in 46ms (Views: 25.2ms | ActiveRecord: 13.0ms | Allocations: 9844)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:42:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:42:40 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:42:40 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2210)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 6704)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 1.2ms | Allocations: 8662)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:42:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 409ms (ActiveRecord: 1.3ms | Allocations: 1248)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:42:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2881)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7084)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 2.3ms | Allocations: 9748)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:42:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:43:00 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2023-08-30 20:43:17 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms | Allocations: 1049)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:43:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 7078)
+Completed 200 OK in 37ms (Views: 18.8ms | ActiveRecord: 13.8ms | Allocations: 9734)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:43:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:43:19 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2023-08-30 20:43:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7078)
+Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 2.6ms | Allocations: 9751)
+
+
+Started DELETE "/logout" for ::1 at 2023-08-30 20:43:30 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 484)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2023-08-30 20:43:37 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms | Allocations: 1048)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:43:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2197)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 5837)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 3.0ms | Allocations: 7619)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:43:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:43:38 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2023-08-30 20:43:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7196)
+Completed 200 OK in 40ms (Views: 17.7ms | ActiveRecord: 2.6ms | Allocations: 9834)
+
+
+Started DELETE "/logout" for ::1 at 2023-08-30 20:44:00 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:44:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2208)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 6694)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.7ms | Allocations: 8653)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:44:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 426ms (ActiveRecord: 1.3ms | Allocations: 1248)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:44:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2870)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 7180)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 2.6ms | Allocations: 9840)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:44:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:44:12 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:44:12 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2211)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 6706)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 8665)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:44:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 408ms (ActiveRecord: 0.9ms | Allocations: 1249)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:44:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2222)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5944)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.8ms | Allocations: 7728)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:44:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:44:20 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:44:20 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1667)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 711)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 5940)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 1.3ms | Allocations: 7202)
+
+
+Started POST "/login" for ::1 at 2023-08-30 20:44:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jane.smith123@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane.smith123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://[::1]:3000/users/2
+Completed 302 Found in 418ms (ActiveRecord: 1.1ms | Allocations: 1108)
+
+
+Started GET "/users/2" for ::1 at 2023-08-30 20:44:32 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 7081)
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 3.0ms | Allocations: 9721)
+
+
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-08-30 20:44:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started DELETE "/logout" for ::1 at 2023-08-30 20:44:33 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.7.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.4) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.4) lib/rails/engine.rb:539:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2023-08-30 20:47:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2876)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 7201)
+Completed 200 OK in 32ms (Views: 19.8ms | ActiveRecord: 2.8ms | Allocations: 9877)
+
+
+Started DELETE "/logout" for ::1 at 2023-08-30 20:47:01 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/login" for ::1 at 2023-08-30 20:47:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2212)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 6698)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.9ms | Allocations: 8655)
+
+
