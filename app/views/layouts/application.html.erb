@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeWebsite</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Recipe Website</title>
+    <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Security Purposes - to fend off attacks  -->
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <%= render 'layouts/navbar' %>
+    
     <%= yield %>
+
+    <!-- Needed to load the JavaScript that handles the DELETE method -->
+    <%= javascript_pack_tag 'application' %>
+
+  
+
   </body>
 </html>
+
