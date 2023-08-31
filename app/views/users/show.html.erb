@@ -27,7 +27,7 @@
     <h2>Your Recipes</h2>
     <% @user.recipes.each do |recipe| %>
       <div>
-        <%= recipe.photo %>
+        <%= image_tag recipe.photo %>
         <%= link_to recipe.title, recipe_path(recipe) %>
       </div>
     <% end %>
