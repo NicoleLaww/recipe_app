@@ -27,10 +27,10 @@ class RegistrationsController < ApplicationController
     else
       @user = User.new(user_params)
       if @user.save 
-        flash[:notice] = 'User successfully registered.'
+        # flash[:notice] = 'User successfully registered.'
         redirect_to login_path
       elsif  
-        flash.now[:alert] = 'Registration failed. Please correct errors'
+        flash.now[:alert] = 'Registration failed. Please ensure all fields are filled and passwords match.'
         render :new 
       end
     end

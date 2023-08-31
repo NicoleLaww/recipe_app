@@ -14,14 +14,16 @@ class ApplicationController < ActionController::Base
   # Have to be logged in, if not redirects to login page 
   def require_login
     unless current_user
-      redirect_to login_path, alert: 'Please login'
+      flash[:alert] = 'Please login'
+      redirect_to login_path
     end 
   end
 
   # Restricts access to other users' pages 
   def require_authorization
     unless current_user && (current_user.id.to_s == params[:id])
-      redirect_to root_path, alert: "You don't have permission to access this page."
+      flash[:alert] = "You don't have permission to access this page."
+      redirect_to root_path
     end
   end
 
