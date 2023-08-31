@@ -26676,3 +26676,430 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 8248)
 
 
+Started GET "/register" for 127.0.0.1 at 2023-08-31 14:55:30 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 36.9ms | Allocations: 18758)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 2382)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/nicole/lighthouse/finals/recipe_app/public/packs
+[Webpacker] Hash: 9797c49c65cfe5acd521
+Version: webpack 4.46.0
+Time: 523ms
+Built at: 08/31/2023 2:55:32 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a81a01551e2bf088c66c.js    124 KiB  application  [emitted] [immutable]  application
+js/application-a81a01551e2bf088c66c.js.map    135 KiB  application  [emitted] [dev]        application
+    js/hello_react-86332315cf160cbe2a91.js   1.25 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-86332315cf160cbe2a91.js.map   1.42 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-a81a01551e2bf088c66c.js js/application-a81a01551e2bf088c66c.js.map
+Entrypoint hello_react = js/hello_react-86332315cf160cbe2a91.js js/hello_react-86332315cf160cbe2a91.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 493 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 843 bytes {hello_react} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 553 bytes {application} {hello_react} [built]
+    + 20 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 1250.3ms | Allocations: 30773)
+Completed 200 OK in 1288ms (Views: 1254.4ms | ActiveRecord: 7.9ms | Allocations: 41436)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 14:55:43 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Selena", "username"=>"Selenaa", "email"=>"gomez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gomez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Selenaa"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3649)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 8161)
+Completed 200 OK in 298ms (Views: 9.6ms | ActiveRecord: 4.4ms | Allocations: 14600)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 14:58:33 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2310)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 1317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 7238)
+Completed 200 OK in 19ms (Views: 8.0ms | ActiveRecord: 6.0ms | Allocations: 14352)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 14:59:00 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Taylor Lautner", "username"=>"TayTayLautner", "email"=>"test123@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "TayTayLautner"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Taylor Lautner"], ["email", "test123@gmail.com"], ["username", "TayTayLautner"], ["created_at", "2023-08-31 18:59:01.247214"], ["updated_at", "2023-08-31 18:59:01.247214"], ["password_digest", "$2a$12$xYVsIjJkZ9H/mgDLT1ohuesAbsPWhxSkYsF6d..AMwtWxbJrBq5Se"]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 288ms (ActiveRecord: 8.4ms | Allocations: 6452)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-31 14:59:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2363)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6877)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 9083)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 14:59:41 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 6972)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 2382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 13850)
+Completed 200 OK in 76ms (Views: 31.5ms | ActiveRecord: 16.0ms | Allocations: 24519)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 14:59:49 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2178)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 1356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 7139)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 1.2ms | Allocations: 7667)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 14:59:50 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2002)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 9.9ms | Allocations: 1195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6772)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 1.0ms | Allocations: 7184)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:01:42 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Pooh", "username"=>"HoneyBear", "email"=>"honey@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "honey@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HoneyBear"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Pooh"], ["email", "honey@gmail.com"], ["username", "HoneyBear"], ["created_at", "2023-08-31 19:01:43.356272"], ["updated_at", "2023-08-31 19:01:43.356272"], ["password_digest", "$2a$12$iaZOQxvpjhvUoQS9XZOZ1.N5NjUPXhQF0mPhJ1PFjr3QmoMYsQzte"]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 261ms (ActiveRecord: 12.2ms | Allocations: 13440)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-31 15:01:43 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2356)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 6864)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 9070)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 15:01:50 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2467)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 1383)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 7497)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 1.1ms | Allocations: 8613)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 15:03:12 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2316)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 1313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7252)
+Completed 200 OK in 45ms (Views: 7.6ms | ActiveRecord: 4.1ms | Allocations: 14307)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:03:56 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Taylor Swift", "username"=>"Fearless", "email"=>"swift13@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "swift13@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Fearless"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3495)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7971)
+Completed 200 OK in 293ms (Views: 10.7ms | ActiveRecord: 6.4ms | Allocations: 13747)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:04:23 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Taylor Swift", "username"=>"TayTay13", "email"=>"swift13@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "swift13@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "TayTay13"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:28:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 3041)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 7518)
+Completed 200 OK in 297ms (Views: 6.0ms | ActiveRecord: 14.1ms | Allocations: 12837)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:05:23 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Taylor Swift23", "username"=>"TayTay1323", "email"=>"swift1332@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "swift1332@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "TayTay1323"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Taylor Swift23"], ["email", "swift1332@gmail.com"], ["username", "TayTay1323"], ["created_at", "2023-08-31 19:05:24.241984"], ["updated_at", "2023-08-31 19:05:24.241984"], ["password_digest", "$2a$12$w8ymeiHxc0afl8aVczSwv.c2V5tZsp0o5yDVFFb85Th6uhFF95VWi"]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 258ms (ActiveRecord: 8.3ms | Allocations: 12635)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-31 15:05:24 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1943)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6438)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 8229)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 15:05:26 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2488)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 7536)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.8ms | Allocations: 8844)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:05:52 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"jbjbjb", "username"=>"justinzz", "email"=>"biebs@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "biebs@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "justinzz"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "jbjbjb"], ["email", "biebs@gmail.com"], ["username", "justinzz"], ["created_at", "2023-08-31 19:05:53.276515"], ["updated_at", "2023-08-31 19:05:53.276515"], ["password_digest", "$2a$12$dTwiaFiA/WPXzewHDjXH8eS6IsA3bS.f1S3Yh2trs1OEWYMf/EtHO"]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 259ms (ActiveRecord: 10.9ms | Allocations: 12719)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-31 15:05:53 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1946)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 6450)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 8241)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 15:05:58 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2919)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 9.2ms | Allocations: 1523)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 8145)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.7ms | Allocations: 8883)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-08-31 15:10:05 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Selena", "username"=>"Selenaa", "email"=>"gomez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `existing_account'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gomez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Selenaa"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Selena"], ["email", "gomez@gmail.com"], ["username", "Selenaa"], ["created_at", "2023-08-31 19:10:05.641792"], ["updated_at", "2023-08-31 19:10:05.641792"], ["password_digest", "$2a$12$fXBurat5AZiIW5J/GzguB.qbKqBhfFnIf1G1VRdL/2SCFQLktdQGy"]]
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:29:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 262ms (ActiveRecord: 9.1ms | Allocations: 12673)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-08-31 15:10:05 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1946)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6454)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 8250)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-08-31 15:10:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"gomez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gomez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1660)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6213)
+Completed 200 OK in 290ms (Views: 4.9ms | ActiveRecord: 2.9ms | Allocations: 7748)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-08-31 15:10:14 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"gomez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gomez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1660)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 6213)
+Completed 200 OK in 284ms (Views: 6.5ms | ActiveRecord: 1.8ms | Allocations: 7419)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-08-31 15:10:15 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 2554)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 1383)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 7593)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.6ms | Allocations: 8274)
+
+
