@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RecipeWebsite</title>
-  </head>
+  
+  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+
+  <h2><%= @recipe.title %></h2>
 
   <body>
-  
+    <div>
+      <%= image_tag @recipe.photo %>
+
+      <%= @recipe.created_at  %>
+
+      <%= @recipe.number_of_servings %>
+
+      <%= @recipe.time %>
+
+      <%= @recipe.ingredients %>
+
+      <%= @recipe.instructions %>
+
+      <div>
+
+        <% @reviews.each do |review| %>
+
+        <%= review.rating %>
+
+        <%= review.comment %>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
   </body>
 </html>
