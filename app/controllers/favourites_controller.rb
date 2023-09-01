@@ -9,14 +9,12 @@ before_action :require_authorization, only [:create, :destroy]
 
     if Favourite.exists?(user_id: @favourite.user_id, recipe_id: @favourite.recipe_id)
       flash[:alert] = 'You have already favourited this recipe.'
-      redirect_back fallback_location: favourites_path
+      #Do we need to render recipe page? 
     elsif @favourite.save
-      # flash[:notice] = 'Favourite was successfully created.'
       redirect_to favourites_path
     else 
       flash[:alert] = 'Could not favourite the recipe.'
-      redirect_back fallback_location: favourites_path
-      
+      #render recipe page?
     end
   end 
 
@@ -24,7 +22,6 @@ before_action :require_authorization, only [:create, :destroy]
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    flash[:notice] = 'Favourite was successfully deleted.'
     redirect_to favourites_path
   end 
 
