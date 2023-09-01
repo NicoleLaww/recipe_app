@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
   # Fetch and show a specific recipe
   def show 
     @recipe = Recipe.find(params[:id])
-    @reviews = @recipe.reviews if @recipe.present?
   end 
 
   # Display form for creating a new recipe

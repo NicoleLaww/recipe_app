@@ -1,0 +1,115 @@
+/* line 5, app/assets/stylesheets/favourites.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/favourites.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/favourites.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+/* line 5, app/assets/stylesheets/recipes.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/recipes.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/recipes.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+/* line 5, app/assets/stylesheets/registrations.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/registrations.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/registrations.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+/* line 5, app/assets/stylesheets/sessions.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/sessions.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/sessions.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+/* line 5, app/assets/stylesheets/users.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/users.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/users.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */

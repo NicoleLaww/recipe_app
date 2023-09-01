@@ -1,0 +1,20 @@
+/* line 5, app/assets/stylesheets/favourites.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 11, app/assets/stylesheets/favourites.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 17, app/assets/stylesheets/favourites.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}

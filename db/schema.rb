@@ -48,12 +48,14 @@ ActiveRecord::Schema.define(version: 2023_08_31_174052) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.bigint "recipe_id"
+    t.bigint "user_id"
     t.string "comment"
     t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_reviews_on_recipe_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +68,6 @@ ActiveRecord::Schema.define(version: 2023_08_31_174052) do
     t.string "password_digest"
   end
 
+  add_foreign_key "reviews", "recipes"
+  add_foreign_key "reviews", "users"
 end
