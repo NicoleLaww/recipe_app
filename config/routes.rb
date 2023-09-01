@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show, :edit, :update, :destroy] do
-    resources :recipes, only: [:new, :edit, :create, :update, :destroy] do 
+    resources :recipes, only: [:new, :show, :edit, :create, :update, :destroy] do 
       resource :favourite, only: [:create, :destroy] # This sets up the route for creating and destroying a favourite within a recipe.
     end 
     get 'favourites', on: :member # Route to see all favorites for a specific user

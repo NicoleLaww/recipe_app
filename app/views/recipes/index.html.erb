@@ -8,7 +8,7 @@
   <body>
     <!-- List of all recipes --> 
 
-    <h2>All Recipes <%= @recipes.count > 0 ? @recipes.count : "No results found" %></h2> 
+    <h2>All Recipes</h2> 
     
     <div>
       <%= form_for :filter, url: "/", method: :post do |f| %>
@@ -43,7 +43,13 @@
         
       <% end %>
     </div>
-    
+
+    <div>
+      <% if @recipes.count == 0 %>
+        <%= "No results found" %>
+      <% end %>
+    </div>
+
     <% @recipes.each do |recipe| %>
 
       <div>
@@ -51,8 +57,12 @@
         <%= recipe.id %>
         
         <%= recipe.description %>
+
+        <%= link_to recipe.title, recipe %>
+
       </div>
     <% end %>
+
 
   </body>
 </html>

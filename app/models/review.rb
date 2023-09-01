@@ -8,9 +8,6 @@ class Review < ApplicationRecord
   validates :comment, presence: true, length: { maximum: 1000 }
   validates :rating, presence: true, numericality: { only_integer: true }
 
-  validate :user_exists
-  validate :recipe_exists
-
   #QUERIES
 
   #create a review
