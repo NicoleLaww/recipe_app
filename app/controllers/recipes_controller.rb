@@ -24,10 +24,9 @@ class RecipesController < ApplicationController
 
   # Create a new recipe based on submitted form data 
   def create
-    @recipe = Recipe.new(recipe_params)
-    puts @recipe.errors.full_messages
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to recipe_path(@recipe)
     else 
       flash.now[:alert] = 'Something went wrong. Please try again.'
       render 'users/recipes/new'

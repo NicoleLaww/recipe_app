@@ -1,14 +1,16 @@
-<section class="new-recipe">
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
 
-   <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
-   
+<section class="new-recipe">
   <header>
     <h2>Add recipe</h2>
   </header>
 
-  <body>
-
-    <%= form_for :recipe, url: user_recipes_path(current_user.id), method: :post do |f| %>
+  <%= form_for @recipe, url: user_recipes_path(current_user), method: :post do |f| %>
     
     <div class="form-group">
       <%= f.label :title, 'Recipe name:' %>
@@ -46,11 +48,10 @@
     </div>
 
     <div class="form-group">
+      <span>Please select all options that apply to your recipe:</span>
 
-      <span>Please select all options that apply to your recipe:<span>
-
-      # the options for breakfast, lunch, dinner and dessert tbd
-
+      <!-- The options for breakfast, lunch, dinner, and dessert will be added here -->
+      
       <%= f.check_box :vegetarian %>
       <%= f.label :vegetarian, "Vegetarian" %>
       <%= f.check_box :vegan %>
@@ -66,12 +67,23 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :photo %>
-      <%= f.file_field :photo %>
-    </div>
+      <span>What type of meal is this?</span><br>
+      <%= f.check_box :breakfast %>
+      <%= f.label :breakfast, "Breakfast" %>
+      <%= f.check_box :lunch %>
+      <%= f.label :lunch, "Lunch" %>
+      <%= f.check_box :dinner %>
+      <%= f.label :dinner, "Dinner" %>
+      <%= f.check_box :dessert %>
+      <%= f.label :dessert, "Dessert" %>
+      <%= f.check_box :appetizer %>
+      <%= f.label :appetizer, "Appetizer" %>
+     </div>
 
     <%= f.submit 'Add recipe', class: 'btn btn-primary' %>
     
-    <% end %>
-  </body>
+  <% end %>
 </section>
+
+</body>
+</html>
