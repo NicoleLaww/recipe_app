@@ -31362,6 +31362,7 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 96ms (Views: 74.3ms | ActiveRecord: 7.9ms | Allocations: 42606)
 
 
+<<<<<<< HEAD
 Started GET "/users/4/favourites" for ::1 at 2023-09-01 15:43:29 -0400
   [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by UsersController#favourites as HTML
@@ -31443,12 +31444,1100 @@ Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-01 15:43:
 ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
   
 Started GET "/recipes/1" for ::1 at 2023-09-01 15:43:33 -0400
+=======
+Started GET "/" for 10.0.2.2 at 2023-09-01 10:12:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 9408)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1226)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 14210)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 6.4ms | Allocations: 14737)
+
+
+Started DELETE "/logout" for 10.0.2.2 at 2023-09-01 10:38:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (Allocations: 545)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-09-01 10:38:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 123.4ms | Allocations: 5915)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 138.3ms | Allocations: 10497)
+Completed 200 OK in 152ms (Views: 141.0ms | ActiveRecord: 5.4ms | Allocations: 15925)
+
+
+Started GET "/register" for 10.0.2.2 at 2023-09-01 10:38:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 5864)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 10834)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.6ms | Allocations: 12067)
+
+
+Started POST "/register" for 10.0.2.2 at 2023-09-01 10:39:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Chaves do Oito", "username"=>"chaves", "email"=>"chaves@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chaves@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chaves"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chaves do Oito"], ["email", "chaves@email.com"], ["username", "chaves"], ["created_at", "2023-09-01 10:39:00.943848"], ["updated_at", "2023-09-01 10:39:00.943848"], ["password_digest", "$2a$12$JuvJ7qrkyC8nbT16ZQ8W3O5v670Lb13eEwDRbZY569LG6e750TrJW"]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 192ms (ActiveRecord: 3.3ms | Allocations: 6081)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-09-01 10:39:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 710)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 5899)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 0.5ms | Allocations: 7170)
+
+
+Started POST "/login" for 10.0.2.2 at 2023-09-01 10:39:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"chaves@email.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chaves@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 178ms (ActiveRecord: 0.7ms | Allocations: 1388)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 10:39:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 22.4ms | Allocations: 4361)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 9016)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 1.2ms | Allocations: 11227)
+
+
+Started GET "/users/11/edit" for 10.0.2.2 at 2023-09-01 10:39:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2617)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7108)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 1.6ms | Allocations: 8538)
+
+
+Started PATCH "/users/11" for 10.0.2.2 at 2023-09-01 10:39:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Chaves do Oito", "username"=>"chaves", "email"=>"chaves@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "chaves@email.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "chaves"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-09-01 10:39:48.088473"], ["password_digest", "$2a$12$Bjld6zZZkfghorOMMENHsea.4kSMV9K.GHW5wZRUtB7sB0CsEO6Xu"], ["id", 11]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 197ms (ActiveRecord: 4.7ms | Allocations: 6073)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 10:39:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1477)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5967)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 1.0ms | Allocations: 7080)
+
+
+Started GET "/recipes/my_recipes" for 10.0.2.2 at 2023-09-01 10:44:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3343)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 7256)
+Completed 200 OK in 66ms (Views: 30.0ms | ActiveRecord: 2.2ms | Allocations: 12185)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 10:46:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 6503)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.3ms | Allocations: 963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | Allocations: 11000)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 3.5ms | Allocations: 11469)
+
+
+Started POST "/" for 10.0.2.2 at 2023-09-01 10:46:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "filter"=>{"breakfast"=>"0", "lunch"=>"0", "dinner"=>"0", "dessert"=>"0", "appetizer"=>"0", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Apply Filters"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."vegan" = $1[0m  [["vegan", true]]
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."vegan" = $1[0m  [["vegan", true]]
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 5131)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 9632)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 1.6ms | Allocations: 10199)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 10:46:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 8966)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 12799)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.4ms | Allocations: 14154)
+
+
+Started POST "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 10:49:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/11/recipes/new"):
+  
+Started POST "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:16:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/11/recipes/new"):
+  
+Started GET "/users/11/recipes" for 10.0.2.2 at 2023-09-01 11:16:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/11/recipes"):
+  
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:16:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 33.1ms | Allocations: 5595)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 11332)
+Completed 200 OK in 74ms (Views: 51.3ms | ActiveRecord: 5.4ms | Allocations: 23082)
+
+
+Started GET "/users/11/favourites" for 10.0.2.2 at 2023-09-01 11:16:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 139.3ms | Allocations: 5769)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 153.9ms | Allocations: 9581)
+Completed 200 OK in 173ms (Views: 159.4ms | ActiveRecord: 2.4ms | Allocations: 13552)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:16:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5833)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 9829)
+Completed 200 OK in 50ms (Views: 32.1ms | ActiveRecord: 3.5ms | Allocations: 25578)
+
+
+Started GET "/recipes/my_recipes" for 10.0.2.2 at 2023-09-01 11:16:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3342)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 8026)
+Completed 200 OK in 33ms (Views: 23.6ms | ActiveRecord: 1.8ms | Allocations: 10860)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:16:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 6865)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 11369)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 1.7ms | Allocations: 12501)
+
+
+Started DELETE "/logout" for 10.0.2.2 at 2023-09-01 11:16:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 478)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-09-01 11:16:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2613)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7201)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.4ms | Allocations: 9348)
+
+
+Started POST "/login" for 10.0.2.2 at 2023-09-01 11:16:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"chaves@email.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chaves@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 181ms (ActiveRecord: 0.9ms | Allocations: 1539)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:16:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1507)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 958)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 6011)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 1.1ms | Allocations: 7153)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:16:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5819)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 10922)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 1.8ms | Allocations: 11330)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:16:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3015)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 6771)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.8ms | Allocations: 8061)
+
+
+Started POST "/recipe" for 10.0.2.2 at 2023-09-01 11:16:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/recipe"):
+  
+Started GET "/recipes/new" for 10.0.2.2 at 2023-09-01 11:20:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms | Allocations: 1443)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=new):
+  
+app/controllers/recipes_controller.rb:16:in `show'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:20:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2979)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6747)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 7909)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:21:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2979)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 6747)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.7ms | Allocations: 7910)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:21:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 41.3ms | Allocations: 9477)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 613)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 14507)
+Completed 200 OK in 97ms (Views: 62.9ms | ActiveRecord: 5.8ms | Allocations: 40502)
+
+
+Started POST "/users/user_id/recipes/new" for 10.0.2.2 at 2023-09-01 11:21:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/user_id/recipes/new"):
+  
+Started POST "/users/user_id/recipes/new" for 10.0.2.2 at 2023-09-01 11:23:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/user_id/recipes/new"):
+  
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:23:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 35.0ms | Allocations: 5822)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.7ms | Allocations: 1517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 11649)
+Completed 200 OK in 91ms (Views: 60.0ms | ActiveRecord: 4.5ms | Allocations: 24032)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:23:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 6078)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 10074)
+Completed 200 OK in 56ms (Views: 38.6ms | ActiveRecord: 2.4ms | Allocations: 26484)
+
+
+Started POST "/users/:user_id/recipes/new" for 10.0.2.2 at 2023-09-01 11:23:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/:user_id/recipes/new"):
+  
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:24:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3146)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 6936)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.5ms | Allocations: 8264)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:24:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1486)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 5976)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 1.0ms | Allocations: 7097)
+
+
+Started GET "/users/11/edit" for 10.0.2.2 at 2023-09-01 11:24:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 14.3ms | Allocations: 5747)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 1077)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 10429)
+Completed 200 OK in 44ms (Views: 36.4ms | ActiveRecord: 1.6ms | Allocations: 12228)
+
+
+Started GET "/users/11/edit" for 10.0.2.2 at 2023-09-01 11:29:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 35.3ms | Allocations: 7254)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1537)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | Allocations: 13227)
+Completed 200 OK in 82ms (Views: 55.6ms | ActiveRecord: 5.3ms | Allocations: 25609)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:29:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 18909)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 1012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 23623)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 3.7ms | Allocations: 27484)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:29:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3128)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3216)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms | Allocations: 5187)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :id=>nil, :user_id=>"11"}, missing required keys: [:id]):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :post do |f| %>
+    12:     
+    13:     # Recipe Name
+    14:     <div class="form-group">
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11/edit" for 10.0.2.2 at 2023-09-01 11:37:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 33.7ms | Allocations: 7254)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1537)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.8ms | Allocations: 13227)
+Completed 200 OK in 85ms (Views: 60.2ms | ActiveRecord: 4.2ms | Allocations: 25609)
+
+
+Started PATCH "/users/11" for 10.0.2.2 at 2023-09-01 11:37:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Chaves do Oito", "username"=>"chaves", "email"=>"chaves@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "chaves@email.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "chaves"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4202)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 961)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 8643)
+Completed 200 OK in 41ms (Views: 27.9ms | ActiveRecord: 4.0ms | Allocations: 15413)
+
+
+Started GET "/recipes/my_recipes" for 10.0.2.2 at 2023-09-01 11:38:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5078)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 295)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 9056)
+Completed 200 OK in 42ms (Views: 28.5ms | ActiveRecord: 2.6ms | Allocations: 15061)
+
+
+Started GET "/recipes/my_recipes" for 10.0.2.2 at 2023-09-01 11:38:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2044)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 5820)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 1.6ms | Allocations: 7067)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:38:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 5619)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 9741)
+Completed 200 OK in 42ms (Views: 31.8ms | ActiveRecord: 1.4ms | Allocations: 20840)
+
+
+Started POST "/users/11/recipes" for 10.0.2.2 at 2023-09-01 11:38:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms | Allocations: 5367)
+
+
+  
+ActionView::MissingTemplate (Missing template recipes/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/recipe_app/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actiontext-6.1.7.4/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actionmailbox-6.1.7.4/app/views"
+):
+  
+app/controllers/recipes_controller.rb:32:in `create'
+Started POST "/users/11/recipes" for 10.0.2.2 at 2023-09-01 11:41:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 5.4ms | Allocations: 29688)
+
+
+  
+ActionView::MissingTemplate (Missing template recipes/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/recipe_app/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actiontext-6.1.7.4/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actionmailbox-6.1.7.4/app/views"
+):
+  
+app/controllers/recipes_controller.rb:32:in `create'
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:41:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 29.7ms | Allocations: 6039)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 1348)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 11609)
+Completed 200 OK in 56ms (Views: 50.2ms | ActiveRecord: 1.5ms | Allocations: 14823)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:41:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 6640)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6722)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms | Allocations: 9231)
+
+
+  
+ActionView::Template::Error (undefined method `recipes_path' for #<ActionView::Base:0x00000000008818>
+Did you mean?  recipe_path):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for([current_user, @recipe], url: recipes_path(current_user), method: :post) do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:41:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 34.7ms | Allocations: 5813)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 9.0ms | Allocations: 1517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 11640)
+Completed 200 OK in 112ms (Views: 84.3ms | ActiveRecord: 7.4ms | Allocations: 24014)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:41:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3667)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3759)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.3ms | Allocations: 20327)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :user_id=>11}, missing required keys: [:id]
+Did you mean?  user_recipe_url
+               user_recipes_url
+               user_recipes_path
+               user_recipe_favourite_url):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id), method: :post do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:42:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1634)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 962)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6165)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.6ms | Allocations: 7488)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:42:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 33.8ms | Allocations: 10872)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | Allocations: 15483)
+Completed 200 OK in 56ms (Views: 49.4ms | ActiveRecord: 2.2ms | Allocations: 16124)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:43:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2349)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2426)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms | Allocations: 3632)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :user_id=>11}, missing required keys: [:id]
+Did you mean?  user_recipe_url
+               user_recipes_url
+               user_recipes_path
+               user_recipe_favourite_url):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id), method: :post do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:43:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2319)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2395)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms | Allocations: 3529)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :user_id=>11}, missing required keys: [:id]
+Did you mean?  user_recipe_url
+               user_recipes_url
+               user_recipes_path
+               user_recipe_favourite_url):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id), method: :post do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:43:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 33.5ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 7282)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 5.4ms | Allocations: 33214)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :user_id=>11}, missing required keys: [:id]
+Did you mean?  user_recipe_url
+               user_recipes_url
+               user_recipes_path
+               user_recipe_favourite_url):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id), method: :post do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:44:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 7669)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 13334)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 3.9ms | Allocations: 14086)
+
+
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:44:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2596)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2674)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms | Allocations: 4070)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes", :user_id=>11}, missing required keys: [:id]
+Did you mean?  user_recipe_url
+               user_recipes_url
+               user_recipes_path
+               user_recipe_favourite_url):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for :recipe, url: user_recipe_path(current_user.id), method: :post do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:44:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 51.5ms | Allocations: 10819)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 564)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.9ms | Allocations: 15794)
+Completed 200 OK in 108ms (Views: 73.0ms | ActiveRecord: 6.2ms | Allocations: 41789)
+
+
+Started POST "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:47:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/11/recipes/new"):
+  
+Started GET "/users/11/recipes/new" for 10.0.2.2 at 2023-09-01 11:51:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3720)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 237)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 7498)
+Completed 200 OK in 36ms (Views: 25.5ms | ActiveRecord: 5.0ms | Allocations: 12035)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:51:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 35.1ms | Allocations: 7411)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 955)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 11916)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 3.0ms | Allocations: 12535)
+
+
+Started GET "/recipes/1" for 10.0.2.2 at 2023-09-01 11:51:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+>>>>>>> 2bdde310973ee3a0745255cf6f103928385c8e60
 Processing by RecipesController#show as HTML
   Parameters: {"id"=>"1"}
   [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/recipes_controller.rb:16:in `show'
   Rendering layout layouts/application.html.erb
   Rendering recipes/show.html.erb within layouts/application
+<<<<<<< HEAD
   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
   ↳ app/views/recipes/show.html.erb:25
   Rendered recipes/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5952)
@@ -31774,3 +32863,869 @@ Started POST "/users/1/recipes/new" for ::1 at 2023-09-03 10:40:55 -0400
   
 ActionController::RoutingError (No route matches [POST] "/users/1/recipes/new"):
   
+=======
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  Rendered recipes/show.html.erb within layouts/application (Duration: 37.3ms | Allocations: 13902)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 18632)
+Completed 200 OK in 60ms (Views: 51.4ms | ActiveRecord: 4.4ms | Allocations: 20128)
+
+
+Started GET "/users/11" for 10.0.2.2 at 2023-09-01 11:52:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2237)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 1084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6927)
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 1.4ms | Allocations: 9387)
+
+
+Started DELETE "/users/11" for 10.0.2.2 at 2023-09-01 11:52:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:35:in `destroy'
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/users_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:35:in `destroy'
+Redirected to http://localhost:3000/register
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms | Allocations: 3238)
+
+
+Started GET "/register" for 10.0.2.2 at 2023-09-01 11:52:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3048)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 7940)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.6ms | Allocations: 9157)
+
+
+Started POST "/register" for 10.0.2.2 at 2023-09-01 11:52:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Chaves do Oito", "username"=>"chaves", "email"=>"chaves@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chaves@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chaves"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chaves do Oito"], ["email", "chaves@email.com"], ["username", "chaves"], ["created_at", "2023-09-01 11:52:30.407848"], ["updated_at", "2023-09-01 11:52:30.407848"], ["password_digest", "$2a$12$JXa733kNSHgSPRnfKrn/sO4TpmLGGeF.orQDV5Plq1yqIF8YLUo7i"]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 184ms (ActiveRecord: 2.9ms | Allocations: 5943)
+
+
+Started GET "/login" for 10.0.2.2 at 2023-09-01 11:52:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2476)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 6702)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 0.3ms | Allocations: 8686)
+
+
+Started POST "/login" for 10.0.2.2 at 2023-09-01 11:52:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"chaves@email.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chaves@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 185ms (ActiveRecord: 0.6ms | Allocations: 1536)
+
+
+Started GET "/users/12" for 10.0.2.2 at 2023-09-01 11:52:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1486)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5990)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.9ms | Allocations: 7120)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 11:52:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3724)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 7470)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 0.7ms | Allocations: 9122)
+
+
+Started GET "/users/12/favourites" for 10.0.2.2 at 2023-09-01 11:52:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2556)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 6490)
+Completed 200 OK in 37ms (Views: 27.5ms | ActiveRecord: 2.4ms | Allocations: 10064)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 11:52:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3610)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 7357)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.9ms | Allocations: 8580)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 11:52:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3531)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 7277)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.6ms | Allocations: 8440)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 11:52:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3531)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 7277)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.5ms | Allocations: 8440)
+
+
+Started GET "/recipes/my_recipes" for 10.0.2.2 at 2023-09-01 11:52:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2660)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6373)
+Completed 200 OK in 31ms (Views: 24.3ms | ActiveRecord: 1.2ms | Allocations: 8613)
+
+
+Started GET "/users/12/favourites" for 10.0.2.2 at 2023-09-01 11:52:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2036)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5793)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 3.2ms | Allocations: 7426)
+
+
+Started GET "/users/12" for 10.0.2.2 at 2023-09-01 11:52:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1600)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 6103)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 1.0ms | Allocations: 7250)
+
+
+Started GET "/" for 10.0.2.2 at 2023-09-01 11:53:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5940)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 10440)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 1.6ms | Allocations: 10868)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:15:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 4664)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 260.2ms | Allocations: 21455)
+Completed 200 OK in 315ms (Views: 261.0ms | ActiveRecord: 29.9ms | Allocations: 31648)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:15:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3534)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 7421)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.7ms | Allocations: 8582)
+
+
+Started POST "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:15:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/users/12/recipes/new"):
+  
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:16:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 3540)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 7440)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 1.2ms | Allocations: 8602)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:23:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 257.0ms | Allocations: 11741)
+  Rendered layout layouts/application.html.erb (Duration: 257.6ms | Allocations: 11843)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 9.3ms | Allocations: 37775)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/vagrant/recipe_app/app/assets/config/manifest.js" these files were linked:
+  - /vagrant/recipe_app/app/assets/stylesheets/application.css
+  - /vagrant/recipe_app/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.2.0) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:24:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 248.5ms | Allocations: 11450)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 270.3ms | Allocations: 16560)
+Completed 200 OK in 319ms (Views: 280.5ms | ActiveRecord: 7.0ms | Allocations: 42555)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:24:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 5945)
+
+
+  
+ActionView::MissingTemplate (Missing template recipes/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/recipe_app/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actiontext-6.1.7.4/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actionmailbox-6.1.7.4/app/views"
+):
+  
+app/controllers/recipes_controller.rb:32:in `create'
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:25:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 8.0ms | Allocations: 29663)
+
+
+  
+ActionView::MissingTemplate (Missing template recipes/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/recipe_app/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actiontext-6.1.7.4/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actionmailbox-6.1.7.4/app/views"
+):
+  
+app/controllers/recipes_controller.rb:32:in `create'
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:26:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 49.6ms | Allocations: 10935)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 11017)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.9ms | Allocations: 13880)
+
+
+  
+ActionView::Template::Error (undefined method `recipes_path' for #<ActionView::Base:0x000000000086d8>
+
+              recipient.public_send(method, *args)
+                       ^^^^^^^^^^^^
+Did you mean?  recipe_path):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for @recipe do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/" for 10.0.2.2 at 2023-09-01 12:26:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7440)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 13110)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 2.3ms | Allocations: 13853)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:26:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 5930)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 6007)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms | Allocations: 7212)
+
+
+  
+ActionView::Template::Error (undefined method `recipes_path' for #<ActionView::Base:0x00000000008a48>
+
+              recipient.public_send(method, *args)
+                       ^^^^^^^^^^^^
+Did you mean?  recipe_path):
+     8: 
+     9:   <body>
+    10: 
+    11:     <%= form_for @recipe do |f| %>
+    12:     
+    13:     <div class="form-group">
+    14:       <%= f.label :title, 'Recipe name:' %>
+  
+app/views/users/recipes/new.html.erb:11
+app/controllers/recipes_controller.rb:22:in `new'
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:26:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 54.5ms | Allocations: 10202)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.5ms | Allocations: 15171)
+Completed 200 OK in 123ms (Views: 83.1ms | ActiveRecord: 7.1ms | Allocations: 41166)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:26:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 5966)
+
+
+  
+ActionView::MissingTemplate (Missing template recipes/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/recipe_app/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actiontext-6.1.7.4/app/views"
+  * "/home/vagrant/.rvm/gems/ruby-3.1.1/gems/actionmailbox-6.1.7.4/app/views"
+):
+  
+app/controllers/recipes_controller.rb:32:in `create'
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 51.4ms | Allocations: 15016)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 19920)
+Completed 200 OK in 135ms (Views: 87.5ms | ActiveRecord: 6.7ms | Allocations: 49472)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 9401)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 498)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 14066)
+Completed 200 OK in 43ms (Views: 34.9ms | ActiveRecord: 2.4ms | Allocations: 18379)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 7799)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 11486)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 0.9ms | Allocations: 14596)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Aaa", "number_of_servings"=>"1", "time"=>"3", "description"=>"aaaa", "country"=>"aaa", "ingredients"=>"aaa", "instructions"=>"aaaa", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3667)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 7354)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.7ms | Allocations: 9445)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Aaa", "number_of_servings"=>"1", "time"=>"3", "description"=>"aaaa", "country"=>"aaa", "ingredients"=>"aaa", "instructions"=>"aaaa", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3665)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 7351)
+Completed 200 OK in 37ms (Views: 29.2ms | ActiveRecord: 0.9ms | Allocations: 9418)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:27:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Aaa", "number_of_servings"=>"1", "time"=>"3", "description"=>"aaaa", "country"=>"aaa", "ingredients"=>"aaa", "instructions"=>"aaaa", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"1", "peanut_free"=>"1", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3671)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 7358)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.5ms | Allocations: 9447)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:28:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Aaa", "number_of_servings"=>"1", "time"=>"3", "description"=>"aaaa", "country"=>"aaa", "ingredients"=>"aaa", "instructions"=>"aaaa", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"1", "peanut_free"=>"1", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3674)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 7370)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.7ms | Allocations: 9430)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:28:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Aaa", "number_of_servings"=>"1", "time"=>"3", "description"=>"aaaa", "country"=>"aaa", "ingredients"=>"aaa", "instructions"=>"aaaa", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"1", "peanut_free"=>"1", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3674)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 7367)
+Completed 200 OK in 38ms (Views: 31.6ms | ActiveRecord: 0.7ms | Allocations: 9431)
+
+
+Started GET "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:31:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/12/recipes"):
+  
+Started GET "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:31:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/12/recipes"):
+  
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:31:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 58.6ms | Allocations: 9881)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 535)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 85.4ms | Allocations: 14804)
+Completed 200 OK in 134ms (Views: 90.3ms | ActiveRecord: 8.4ms | Allocations: 40148)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:31:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"ccc", "number_of_servings"=>"2", "time"=>"2", "description"=>"aasadas", "country"=>"sasa", "ingredients"=>"sasas", "instructions"=>"saasasa", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3970)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 7714)
+Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 0.6ms | Allocations: 11762)
+
+
+Started GET "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:33:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/12/recipes"):
+  
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:33:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 48.0ms | Allocations: 9881)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 535)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.3ms | Allocations: 14804)
+Completed 200 OK in 139ms (Views: 88.9ms | ActiveRecord: 11.3ms | Allocations: 40149)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:33:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 8486)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 12230)
+Completed 200 OK in 42ms (Views: 34.3ms | ActiveRecord: 0.5ms | Allocations: 17108)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:34:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 48.8ms | Allocations: 10235)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 15204)
+Completed 200 OK in 168ms (Views: 85.7ms | ActiveRecord: 7.1ms | Allocations: 41219)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:34:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 8489)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 12234)
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 0.5ms | Allocations: 17997)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:35:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 51.5ms | Allocations: 10235)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.7ms | Allocations: 15204)
+Completed 200 OK in 126ms (Views: 83.2ms | ActiveRecord: 7.7ms | Allocations: 41200)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:36:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Good", "number_of_servings"=>"", "time"=>"", "description"=>"", "country"=>"", "ingredients"=>"", "instructions"=>"", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 7943)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 11688)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 0.5ms | Allocations: 16580)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:38:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 50.7ms | Allocations: 10235)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.3ms | Allocations: 15204)
+Completed 200 OK in 188ms (Views: 89.5ms | ActiveRecord: 6.9ms | Allocations: 41397)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:39:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Tasty", "number_of_servings"=>"2", "time"=>"3", "description"=>"A good recipe", "country"=>"Canada", "ingredients"=>"1 salt", "instructions"=>"nevermind", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"1", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f134287ce70 @tempfile=#<Tempfile:/tmp/RackMultipart20230901-4575-4smcsa.png>, @original_filename="Vegan-Waffles.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"recipe[photo]\"; filename=\"Vegan-Waffles.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3973)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 7717)
+Completed 200 OK in 36ms (Views: 26.1ms | ActiveRecord: 0.9ms | Allocations: 11808)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:40:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 53.4ms | Allocations: 10235)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 15204)
+Completed 200 OK in 141ms (Views: 90.9ms | ActiveRecord: 6.9ms | Allocations: 41242)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:41:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Good", "number_of_servings"=>"4", "time"=>"4", "description"=>"sdasasdasdas", "country"=>"Canada", "ingredients"=>"sugar", "instructions"=>"do it", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"0", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f65279d6028 @tempfile=#<Tempfile:/tmp/RackMultipart20230901-4651-nu04v5.png>, @original_filename="Lemon-Blueberry-Cheesecake.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"recipe[photo]\"; filename=\"Lemon-Blueberry-Cheesecake.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3970)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 7714)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 0.7ms | Allocations: 11804)
+
+
+Started GET "/users/12/recipes/new" for 10.0.2.2 at 2023-09-01 12:42:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 42.4ms | Allocations: 10235)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.6ms | Allocations: 15204)
+Completed 200 OK in 121ms (Views: 75.7ms | ActiveRecord: 7.1ms | Allocations: 41245)
+
+
+Started POST "/users/12/recipes" for 10.0.2.2 at 2023-09-01 12:42:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Tasty", "number_of_servings"=>"3", "time"=>"3", "description"=>"good", "country"=>"Canada", "ingredients"=>"butter", "instructions"=>"just do it", "vegetarian"=>"0", "vegan"=>"1", "gluten_free"=>"0", "peanut_free"=>"1", "halal"=>"0", "kosher"=>"1"}, "commit"=>"Add recipe", "user_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3976)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 7721)
+Completed 200 OK in 36ms (Views: 27.3ms | ActiveRecord: 0.6ms | Allocations: 11826)
+
+
+>>>>>>> 2bdde310973ee3a0745255cf6f103928385c8e60
