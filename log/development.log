@@ -31362,3 +31362,415 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 96ms (Views: 74.3ms | ActiveRecord: 7.9ms | Allocations: 42606)
 
 
+Started GET "/users/4/favourites" for ::1 at 2023-09-01 15:43:29 -0400
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (1.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:22
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 85.0ms | Allocations: 41788)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 529)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 97.4ms | Allocations: 50967)
+Completed 200 OK in 133ms (Views: 89.4ms | ActiveRecord: 25.3ms | Allocations: 64873)
+
+
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/" for ::1 at 2023-09-01 15:43:32 -0400
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 9998)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 1019)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 14769)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 3.3ms | Allocations: 16812)
+
+
+Started GET "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png" for ::1 at 2023-09-01 15:43:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png"):
+  
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-09-01 15:43:32 -0400
+Started GET "/app/db/seed_assets/Vegan-Waffles.png" for ::1 at 2023-09-01 15:43:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:32 -0400
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-01 15:43:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Waffles.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+Started GET "/app/db/seed_assets/veggie-omelette-08.png" for ::1 at 2023-09-01 15:43:32 -0400
+Started GET "/app/db/seed_assets/Snapseed-3.png" for ::1 at 2023-09-01 15:43:32 -0400
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-01 15:43:32 -0400
+Started GET "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png" for ::1 at 2023-09-01 15:43:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/veggie-omelette-08.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Snapseed-3.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png"):
+  
+Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-01 15:43:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
+  
+Started GET "/recipes/1" for ::1 at 2023-09-01 15:43:33 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  Rendered recipes/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5952)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 10604)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 6.0ms | Allocations: 12662)
+
+
+Started GET "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png"):
+  
+Started GET "/app/db/seed_assets/Vegan-Waffles.png" for ::1 at 2023-09-01 15:43:33 -0400
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-09-01 15:43:33 -0400
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Waffles.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-01 15:43:33 -0400
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-01 15:43:33 -0400
+Started GET "/app/db/seed_assets/Snapseed-3.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
+  
+Started GET "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Snapseed-3.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png"):
+  
+Started GET "/app/db/seed_assets/veggie-omelette-08.png" for ::1 at 2023-09-01 15:43:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/veggie-omelette-08.png"):
+  
+Started GET "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png" for ::1 at 2023-09-01 15:43:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png"):
+  
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-09-01 15:43:35 -0400
+Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-01 15:43:35 -0400
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-01 15:43:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
+  
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/app/db/seed_assets/veggie-omelette-08.png" for ::1 at 2023-09-01 15:43:35 -0400
+Started GET "/app/db/seed_assets/Snapseed-3.png" for ::1 at 2023-09-01 15:43:35 -0400
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-01 15:43:35 -0400
+Started GET "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png" for ::1 at 2023-09-01 15:43:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/veggie-omelette-08.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Snapseed-3.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png"):
+  
+Started GET "/app/db/seed_assets/Vegan-Waffles.png" for ::1 at 2023-09-01 15:43:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Waffles.png"):
+  
+Started POST "/" for ::1 at 2023-09-01 15:43:42 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "filter"=>{"breakfast"=>"0", "lunch"=>"0", "dinner"=>"0", "dessert"=>"0", "appetizer"=>"0", "vegetarian"=>"0", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"0", "halal"=>"0", "kosher"=>"1"}, "commit"=>"Apply Filters"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."kosher" = $1[0m  [["kosher", true]]
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."kosher" = $1[0m  [["kosher", true]]
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4990)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 9542)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 4.4ms | Allocations: 10211)
+
+
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-01 15:43:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-01 15:43:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+Started GET "/users/4/favourites" for ::1 at 2023-09-01 15:43:51 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+  [1m[36mFavourite Load (1.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:22
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3013)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 6833)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 3.6ms | Allocations: 8482)
+
+
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-01 15:43:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-01 15:43:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+Started GET "/recipes/4" for ::1 at 2023-09-01 15:43:52 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:25
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2201)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 6749)
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 4.0ms | Allocations: 8468)
+
+
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/users/4/recipes/new" for ::1 at 2023-09-01 15:43:56 -0400
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 19.2ms | Allocations: 8505)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 12377)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.1ms | Allocations: 14269)
+
+
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/users/4/favourites" for ::1 at 2023-09-01 15:43:57 -0400
+Processing by UsersController#favourites as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/favourites/favourites.html.erb within layouts/application
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-01 15:43:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+  [1m[36mFavourite Load (1.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/favourites/favourites.html.erb:20
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/favourites/favourites.html.erb:22
+  Rendered users/favourites/favourites.html.erb within layouts/application (Duration: 27.8ms | Allocations: 19696)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 30131)
+Completed 200 OK in 40ms (Views: 33.9ms | ActiveRecord: 2.8ms | Allocations: 31545)
+
+
+Started GET "/" for ::1 at 2023-09-03 10:40:25 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:48
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:53
+  Rendered recipes/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 23060)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 12.7ms | Allocations: 8473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 36003)
+Completed 200 OK in 64ms (Views: 37.7ms | ActiveRecord: 15.1ms | Allocations: 42641)
+
+
+Started GET "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png" for ::1 at 2023-09-03 10:40:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png"):
+  
+Started GET "/app/db/seed_assets/Vegan-Waffles.png" for ::1 at 2023-09-03 10:40:26 -0400
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-03 10:40:26 -0400
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-03 10:40:26 -0400
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-09-03 10:40:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Waffles.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+Started GET "/app/db/seed_assets/Snapseed-3.png" for ::1 at 2023-09-03 10:40:26 -0400
+Started GET "/app/db/seed_assets/veggie-omelette-08.png" for ::1 at 2023-09-03 10:40:26 -0400
+Started GET "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png" for ::1 at 2023-09-03 10:40:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Snapseed-3.png"):
+  
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-03 10:40:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/veggie-omelette-08.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-03 10:40:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
+  
+Started GET "/users/1/recipes/new" for ::1 at 2023-09-03 10:40:29 -0400
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 5963)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 9938)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.6ms | Allocations: 12054)
+
+
+Started GET "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png" for ::1 at 2023-09-03 10:40:29 -0400
+Started GET "/app/db/seed_assets/Vegan-Waffles.png" for ::1 at 2023-09-03 10:40:29 -0400
+Started GET "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies" for ::1 at 2023-09-03 10:40:29 -0400
+Started GET "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Chocolate-Chip-Muffins.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Vegan-Waffles.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Raspberry-Curd-Lemon-Cookies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/1070416-a1a6c982aaef4da3acfdda0ae7f3b87f.png"):
+  
+Started GET "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Mini-Blueberry-Lemon-Tarts-600x600.png"):
+  
+Started GET "/app/db/seed_assets/vegan-taco-v2.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/vegan-taco-v2.png"):
+  
+Started GET "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png" for ::1 at 2023-09-03 10:40:29 -0400
+Started GET "/app/db/seed_assets/Snapseed-3.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/45D3A56E-D533-4DBC-B4DB-D633BC1F3BFB-1229x1536.png"):
+  
+Started GET "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/Snapseed-3.png"):
+  
+Started GET "/app/db/seed_assets/veggie-omelette-08.png" for ::1 at 2023-09-03 10:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/hdm-candiedyams-14684-1564436432.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/app/db/seed_assets/veggie-omelette-08.png"):
+  
+Started POST "/users/1/recipes/new" for ::1 at 2023-09-03 10:40:55 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/recipes/new"):
+  
