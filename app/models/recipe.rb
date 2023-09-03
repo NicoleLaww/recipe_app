@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   validates :title, presence: true
   validates :time, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :number_of_servings, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :ingredients, presence: true
   validates :instructions, presence: true
   validates :country, presence: true
   validates :description, presence: true
@@ -20,7 +21,7 @@ class Recipe < ApplicationRecord
   #QUERIES
 
   #create recipe
-  def self.create_recipes(title, gluten_free, vegan, vegetarian, breakfast, kosher, peanut_free, halal, dinner, lunch, dessert, appetizer, photo, time, number_of_servings, instructions, country, description, user_id)
+  def self.create_recipes(title, gluten_free, vegan, vegetarian, breakfast, kosher, peanut_free, halal, dinner, lunch, dessert, appetizer, photo, time, number_of_servings, ingredients, instructions, country, description, user_id)
     recipe = Recipe.create(
       title: title,
       gluten_free: gluten_free,
@@ -37,6 +38,7 @@ class Recipe < ApplicationRecord
       photo: photo,
       time: time,
       number_of_servings: number_of_servings,
+      ingredients: ingredients,
       instructions: instructions,
       country: country,
       description: description,
