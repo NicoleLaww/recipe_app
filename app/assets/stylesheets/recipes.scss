@@ -2,6 +2,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.recipes {
+
+  display: flex;
+  flex-direction: column;
+
+  &__all {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__filter {
+    margin: 1rem;
+  }
+
+  &__checkbox {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+
+  &__option {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__filters-button {
+    margin: 1rem;
+  }
+
+  &__title {
+    color: #2EC4B6;
+    font-weight: bold;
+  }
+
+  &__recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    width: 45rem;
+    height: auto;
+  }
+
+  &__image > img {
+    width: 10rem;
+    height: auto;
+    display: flex;
+    border-radius: 8px;
+  }
+
+  &__name > a {
+    text-decoration: none;
+    color: #2EC4B6;
+    font-weight: bold;
+  }
+  
+  &__text {
+    text-align: center;
+  }
+
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+}
+
 .flash {
   padding: 1em;
   margin: 1em 0;

@@ -1,78 +1,81 @@
-<section class="edit-recipe">
+<html>
+  <section class="edit-recipe">
 
-   <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
-   
-  <header>
-    <h2>Add recipe</h2>
-  </header>
-
-  <body>
-
-    <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
+    <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
     
-    <div class="form-group">
-      <%= f.label :title, 'Recipe name:' %>
-      <%= f.text_field :title %>
-    </div>
+    <header>
+      <h2>Add recipe</h2>
+    </header>
 
-    <div class="form-group">
-      <%= f.label :number_of_servings, 'Number of servings:' %>
-      <%= f.number_field :number_of_servings %>
-    </div>
+    <body>
 
-    <div class="form-group">
-      <%= f.label :time, 'Total time:' %>
-      <%= f.number_field :time %>
-    </div>
+      <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
+      
+      <div class="form-group">
+        <%= f.label :title, 'Recipe name:' %>
+        <%= f.text_field :title %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :description, 'Description:' %>
-      <%= f.text_area :description %>
-    </div>
+      <div class="form-group">
+        <%= f.label :number_of_servings, 'Number of servings:' %>
+        <%= f.number_field :number_of_servings %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :country, 'Country:' %>
-      <%= f.text_field :country %>
-    </div>
+      <div class="form-group">
+        <%= f.label :time, 'Total time:' %>
+        <%= f.number_field :time %>
+      </div>
 
-    <div>
-      <%= f.label :ingredients, 'Ingredients:' %>
-      <%= f.text_area :ingredients %>
-    </div>
+      <div class="form-group">
+        <%= f.label :description, 'Description:' %>
+        <%= f.text_area :description %>
+      </div>
 
-    <div>
-      <%= f.label :instructions, 'Instructions:' %>
-      <%= f.text_area :instructions %>
-    </div>
+      <div class="form-group">
+        <%= f.label :country, 'Country:' %>
+        <%= f.text_field :country %>
+      </div>
 
-    <div class="form-group">
+      <div>
+        <%= f.label :ingredients, 'Ingredients:' %>
+        <%= f.text_area :ingredients %>
+      </div>
 
-      <span>Please select all options that apply to your recipe:<span>
+      <div>
+        <%= f.label :instructions, 'Instructions:' %>
+        <%= f.text_area :instructions %>
+      </div>
 
-      # the options for breakfast, lunch, dinner and dessert tbd
+      <div class="form-group">
 
-      <%= f.check_box :vegetarian, {required: true}%>
-      <%= f.label :vegetarian, "Vegetarian" %>
-      <%= f.check_box :vegan %>
-      <%= f.label :vegan, "Vegan" %>
-      <%= f.check_box :gluten_free %>
-      <%= f.label :gluten_free, "Gluten-free" %>
-      <%= f.check_box :peanut_free %>
-      <%= f.label :peanut_free, "Peanut-free" %>
-      <%= f.check_box :halal %>
-      <%= f.label :halal, "Halal" %>
-      <%= f.check_box :kosher %>
-      <%= f.label :kosher, "Kosher" %>
-    </div>
+        <span>Please select all options that apply to your recipe:<span>
 
-    <div class="form-group">
-      <%= f.label :photo %>
-      <%= f.file_field :photo %>
-    </div>
+        # the options for breakfast, lunch, dinner and dessert tbd
 
-    <%= f.submit 'Update recipe', class: 'btn btn-primary' %>
+        <%= f.check_box :vegetarian, {required: true}%>
+        <%= f.label :vegetarian, "Vegetarian" %>
+        <%= f.check_box :vegan %>
+        <%= f.label :vegan, "Vegan" %>
+        <%= f.check_box :gluten_free %>
+        <%= f.label :gluten_free, "Gluten-free" %>
+        <%= f.check_box :peanut_free %>
+        <%= f.label :peanut_free, "Peanut-free" %>
+        <%= f.check_box :halal %>
+        <%= f.label :halal, "Halal" %>
+        <%= f.check_box :kosher %>
+        <%= f.label :kosher, "Kosher" %>
+      </div>
 
-    
-    <% end %>
-  </body>
-</section>
+      <div class="form-group">
+        <%= f.label :photo %>
+        <%= f.file_field :photo %>
+      </div>
+
+      <%= f.submit 'Update recipe', class: 'btn btn-primary' %>
+
+      
+      <% end %>
+    </body>
+  </section>
+
+</html>
