@@ -33729,3 +33729,242 @@ Completed 200 OK in 36ms (Views: 27.3ms | ActiveRecord: 0.6ms | Allocations: 118
 
 
 >>>>>>> 2bdde310973ee3a0745255cf6f103928385c8e60
+Started GET "/" for ::1 at 2023-09-04 15:00:19 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:86
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:91
+  Rendered recipes/index.html.erb within layouts/application (Duration: 27.5ms | Allocations: 19024)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 9.9ms | Allocations: 4846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8737.7ms | Allocations: 199339)
+Completed 200 OK in 8752ms (Views: 8724.8ms | ActiveRecord: 15.2ms | Allocations: 206073)
+
+
+Started GET "/recipes/6" for ::1 at 2023-09-04 15:01:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  ↳ app/views/recipes/show.html.erb:44
+  Rendered recipes/show.html.erb within layouts/application (Duration: 34.5ms | Allocations: 13074)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 964)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 22327)
+Completed 200 OK in 52ms (Views: 40.2ms | ActiveRecord: 8.6ms | Allocations: 24603)
+
+
+Started GET "/login" for ::1 at 2023-09-04 15:01:08 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5011)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 693)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 13902)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 1.0ms | Allocations: 16807)
+
+
+Started POST "/login" for ::1 at 2023-09-04 15:01:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"d.champagne@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d.champagne@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 413ms (ActiveRecord: 2.7ms | Allocations: 5169)
+
+
+Started GET "/users/4" for ::1 at 2023-09-04 15:01:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4468)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 14200)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 1.4ms | Allocations: 16658)
+
+
+Started GET "/recipes/my_recipes" for ::1 at 2023-09-04 15:01:53 -0400
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 23.4ms | Allocations: 6142)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 14412)
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 1.8ms | Allocations: 17264)
+
+
+Started GET "/recipes/4" for ::1 at 2023-09-04 15:01:54 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:37
+  Rendered recipes/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4315)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 12587)
+Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 3.5ms | Allocations: 14497)
+
+
+Started DELETE "/recipes/4" for ::1 at 2023-09-04 15:01:56 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/recipes/4"):
+  
+Started GET "/recipes/4" for ::1 at 2023-09-04 15:01:58 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:37
+  Rendered recipes/show.html.erb within layouts/application (Duration: 12.7ms | Allocations: 3690)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 12022)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 4.9ms | Allocations: 13394)
+
+
+Started GET "/users/4/recipes/4/edit" for ::1 at 2023-09-04 15:01:59 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/edit.html.erb within layouts/application
+  Rendered users/recipes/edit.html.erb within layouts/application (Duration: 11.5ms | Allocations: 5978)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 14430)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 1.5ms | Allocations: 16893)
+
+
+Started PATCH "/users/4/recipes/4" for ::1 at 2023-09-04 15:02:02 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Mini Lemon Blueberry Tarts", "number_of_servings"=>"20", "time"=>"25", "description"=>"This Mini Lemon Blueberry Tarts recipe is so quick and easy, featuring a homemade ricotta cheese filling dolloped and baked into phyllo dough cups. Finished with fresh blueberries and ready in less than 30 minutes, it’s a gorgeous and elegant mini dessert that is great for serving a crowd.", "country"=>"Canada", "ingredients"=>"¾ cup whole milk ricotta cheese\r\n3 large eggs\r\n2 tablespoons honey or maple syrup\r\n¾ teaspoon vanilla extract\r\n1 tablespoon lemon zest from 1 large or 2 small lemons, freshly grated\r\n1 teaspoon lemon juice\r\nPinch of salt\r\n24 mini phyllo shells\r\n1 cup blueberries\r\nA handful of pomegranate seeds as garnish (optional)", "instructions"=>"1. Mix the nut milk, vanilla extract and the lemon juice or ACV together in a small bowl/measuring cup. Set aside for about 5 minutes - this will make the vegan buttermilk. 2. In a large bowl, sift the flour, baking powder and salt. The sifting really helps to make the waffles fluffy. 3. Add the sugar, melted butter/oil, buttermilk mixture into the dry ingredients and using a spatula, gently mix the batter until JUST combined. It's okay (and normal) to have some lumps. The batter should be thick and scoopable. 4. Turn on and preheat your waffle maker according to which done level that you want. I set mine to about medium because I like mine crisp and golden but also very fluffy. 3. Using a ½ cup (125mL) measuring cup, scoop out some batter and pour/spread into the middle of the greased waffle maker. You don’t need to push it to the edges. Close and let cook until the steam has COMPLETELY stopped from the waffle maker. Don't open it before the steam is finished! 4. Remove each waffle and place on a baking sheet in your oven or toaster oven on warm or 200F/95C to keep warm and crispy until finished with the entire batter. Continue with the rest of the batter. 5. Serve with your favourite toppings like blueberry sauce and enjoy!", "vegetarian"=>"1", "vegan"=>"0", "gluten_free"=>"0", "peanut_free"=>"1", "halal"=>"0", "kosher"=>"0"}, "commit"=>"Update recipe", "user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:44:in `update'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:45:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:45:in `update'
+  [1m[36mRecipe Update (2.2ms)[0m  [1m[33mUPDATE "recipes" SET "number_of_servings" = $1, "updated_at" = $2, "ingredients" = $3 WHERE "recipes"."id" = $4[0m  [["number_of_servings", 20], ["updated_at", "2023-09-04 19:02:02.674021"], ["ingredients", "¾ cup whole milk ricotta cheese\r\n3 large eggs\r\n2 tablespoons honey or maple syrup\r\n¾ teaspoon vanilla extract\r\n1 tablespoon lemon zest from 1 large or 2 small lemons, freshly grated\r\n1 teaspoon lemon juice\r\nPinch of salt\r\n24 mini phyllo shells\r\n1 cup blueberries\r\nA handful of pomegranate seeds as garnish (optional)"], ["id", 4]]
+  ↳ app/controllers/recipes_controller.rb:45:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:45:in `update'
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 21ms (ActiveRecord: 6.8ms | Allocations: 6420)
+
+
+Started GET "/recipes/4" for ::1 at 2023-09-04 15:02:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:37
+  Rendered recipes/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3618)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 236)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 11920)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 3.1ms | Allocations: 13111)
+
+
+Started GET "/recipes/my_recipes" for ::1 at 2023-09-04 15:02:08 -0400
+Processing by RecipesController#my_recipes as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/my_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/recipes/my_recipes.html.erb:20
+  Rendered recipes/my_recipes.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2244)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 10966)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 2.1ms | Allocations: 12163)
+
+
+Started GET "/recipes/4" for ::1 at 2023-09-04 15:02:09 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (8.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:25
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:37
+  Rendered recipes/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3477)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 12362)
+Completed 200 OK in 35ms (Views: 20.5ms | ActiveRecord: 12.2ms | Allocations: 13515)
+
+
+Started GET "/users/4/recipes/new" for ::1 at 2023-09-04 15:02:12 -0400
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/recipes/new.html.erb within layouts/application
+  Rendered users/recipes/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 5056)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 13339)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 1.2ms | Allocations: 15173)
+
+

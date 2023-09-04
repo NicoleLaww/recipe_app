@@ -1,62 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Klee+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload', 'data-turbolinks-permanent': true %>
-  </head>
+<head>
+  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
 
-  <body>
+<h2><%= @recipe.title %></h2>
 
-    <div class="recipes__recipe">
-      
-      <h2 class="recipes__title"><%= @recipe.title %></h2>
+<div>
+  
 
-      <div class="recipes__image">
-        <%= image_tag @recipe.photo %>
-      </div>
+  <%= @recipe.created_at.strftime("%Y-%m-%d") %>
 
-      <div class="recipes__date">
-        <span>Posted on:</span>
-        <%= @recipe.created_at.strftime("%Y-%m-%d") %>
-      </div>
-      
-      <div class="recipes__servings">
-        <span>Number of servings:</span>
-        <%= @recipe.number_of_servings %>
-      </div>
+  <%= @recipe.number_of_servings %>
 
-      <div class="recipes__time">
-        <span>Total time:</span>
-        <%= @recipe.time %>
-      </div>  
-        
-      <div class="recipes__ingredients">
-        <span>Ingredients:</span>
-        <%= @recipe.ingredients %>
-      </div>
+  <%= @recipe.time %>
 
-      <div class="recipes__instructions">
-        <span>Instructions:</span>
-        <%= @recipe.instructions %>
-      </div>
+  <%= @recipe.ingredients %>
 
-      <div class="recipes__reviews">
+  <%= @recipe.instructions %>
 
-        <% @recipe.reviews.each do |review| %>
 
-        <div class="recipes__rating">
-          <%= review.rating %>
-          <span>out of 5</span>
-        </div>
 
-        <div class="recipes__comment">
-          <%= review.comment %>
-        </div>
+  <% if current_user == @recipe.user %>
+    <div>
+      <!-- Edit Button -->
+    <%= link_to 'Edit', edit_user_recipe_path(@recipe)%>
 
-        <% end %>
+    <!-- Delete Button -->
+    <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-      </div>
+  </div>
+  <% end %>
 
-    </div>
+  <div>
+    <% @recipe.reviews.each do |review| %>
 
-  </body>
+    <%= review.rating %>
+
+    <%= review.comment %>
+
+    <% end %>
+  </div>
+</div>
+
+</body>
 </html>
