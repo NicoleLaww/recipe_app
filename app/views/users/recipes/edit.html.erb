@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <section class="edit-recipe">
+<head>
+  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
-    
-    <header>
-      <h2>Add recipe</h2>
-    </header>
-
-    <body>
+<section class="edit-recipe">
+  <header>
+    <h2>Edit recipe</h2>
+  </header>
 
       <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
       
@@ -46,25 +47,24 @@
         <%= f.text_area :instructions %>
       </div>
 
-      <div class="form-group">
+    <div class="form-group">
+      <span>Please select all options that apply to your recipe:</span>
 
-        <span>Please select all options that apply to your recipe:<span>
-
-        # the options for breakfast, lunch, dinner and dessert tbd
-
-        <%= f.check_box :vegetarian, {required: true}%>
-        <%= f.label :vegetarian, "Vegetarian" %>
-        <%= f.check_box :vegan %>
-        <%= f.label :vegan, "Vegan" %>
-        <%= f.check_box :gluten_free %>
-        <%= f.label :gluten_free, "Gluten-free" %>
-        <%= f.check_box :peanut_free %>
-        <%= f.label :peanut_free, "Peanut-free" %>
-        <%= f.check_box :halal %>
-        <%= f.label :halal, "Halal" %>
-        <%= f.check_box :kosher %>
-        <%= f.label :kosher, "Kosher" %>
-      </div>
+      <!-- The options for breakfast, lunch, dinner, and dessert will be added here -->
+      
+      <%= f.check_box :vegetarian, {required: true}%>
+      <%= f.label :vegetarian, "Vegetarian" %>
+      <%= f.check_box :vegan %>
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :gluten_free %>
+      <%= f.label :gluten_free, "Gluten-free" %>
+      <%= f.check_box :peanut_free %>
+      <%= f.label :peanut_free, "Peanut-free" %>
+      <%= f.check_box :halal %>
+      <%= f.label :halal, "Halal" %>
+      <%= f.check_box :kosher %>
+      <%= f.label :kosher, "Kosher" %>
+    </div>
 
       <div class="form-group">
         <%= f.label :photo %>
@@ -73,9 +73,9 @@
 
       <%= f.submit 'Update recipe', class: 'btn btn-primary' %>
 
-      
-      <% end %>
-    </body>
-  </section>
+    
+  <% end %>
+</section>
 
+</body>
 </html>
