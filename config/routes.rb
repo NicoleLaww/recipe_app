@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'recipes#index', via: [:get, :post]
-  resources :recipes, only: [:show] do
+  resources :recipes, only: [:show, :destroy] do
     collection do
       get 'my_recipes', to: 'recipes#my_recipes'
     end
@@ -22,3 +22,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
 end
+
+

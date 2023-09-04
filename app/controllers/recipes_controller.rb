@@ -53,8 +53,15 @@ class RecipesController < ApplicationController
   # Delete an existing recipe
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy 
-      redirect_to recipes_path
+
+    @recipe.reviews.destroy_all
+    @recipe.favourites.destroy_all
+
+    if @recipe.destroy
+      redirect_to root_path
+    else
+      flash[:alert] = 'Something went wrong. Please try again.' 
+    end 
   end
 
   # Show users' recipes 

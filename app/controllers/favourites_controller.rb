@@ -1,29 +1,41 @@
 class FavouritesController < ApplicationController
-before_action :require_login, only [:create, :destroy]
-before_action :require_authorization, only [:create, :destroy]
+before_action :require_login, only: [:create, :destroy]
+before_action :require_authorization, only: [:create, :destroy]
 
-  # Creates new favourite 
-  def create
-    @favourite = Favourite.new(favourite_params)
-    @favourite.user_id = current_user.id
+ # Creates a new favorite
+    def create
+      @recipe = Recipe.find(params[:recipe_id])
+      @existing_favorite = @recipe.favourites.find_by(user_id: current_user.id)
 
-    if Favourite.exists?(user_id: @favourite.user_id, recipe_id: @favourite.recipe_id)
-      flash[:alert] = 'You have already favourited this recipe.'
-      #Do we need to render recipe page? 
-    elsif @favourite.save
-      redirect_to favourites_path
-    else 
-      flash[:alert] = 'Could not favourite the recipe.'
-      #render recipe page?
+      if @existing_favorite
+        flash[:notice] = 'This recipe is already in your favorites.'
+      else
+        @favourite = @recipe.favourites.build(user_id: current_user.id)
+
+        if @favourite.save
+          flash[:notice] = 'Added to favorites!'
+          redirect_to favourites_user_path(current_user, @recipe)
+        else
+          flash[:alert] = 'Failed to add to favorites.'
+          redirect_to favourites_user_path(current_user, @recipe)
+        end
+      end
     end
-  end 
 
-  # Remove a favourite 
+  # Removes a favourite
   def destroy
-    @favourite = Favourite.find(params[:id])
-    @favourite.destroy
-    redirect_to favourites_path
-  end 
+    @recipe = Recipe.find(params[:recipe_id])
+    @favourite = @recipe.favourites.find_by(user_id: current_user.id)
+
+    if @favourite
+      @favourite.destroy
+      flash[:notice] = 'Removed from favourites!'
+      redirect_to favourites_user_path(current_user, @recipe)
+    else
+      flash[:alert] = 'Favorite not found!'
+      redirect_to favourites_user_path(current_user, @recipe)
+    end
+  end
 
   # Security feature to return only permitted parameters
   private 

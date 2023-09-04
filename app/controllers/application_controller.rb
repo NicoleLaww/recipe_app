@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
   
+  # def existing_favourite
+  #   @recipe = Recipe.find(params[:recipe_id])
+  #   @existing_favourite = @recipe.favourites.find_by(user_id: current_user.id)
+  # end
+
   def existing_account
     @existing_account = User.find_by(email: params[:user][:email])
   end
@@ -21,8 +26,8 @@ class ApplicationController < ActionController::Base
   # Restricts access to other users' pages 
   def require_authorization
     unless current_user && (current_user.id.to_s == params[:id])
-      flash[:alert] = "You don't have permission to access this page."
-      redirect_to root_path
+      flash.now[:alert] = "You don't have permission to access this page."
+      # redirect_to root_path
     end
   end
 

@@ -33,6 +33,22 @@
   </div>
   <% end %>
 
+<div>
+  <!-- Favourites Create Button -->
+  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
+    <%= form.hidden_field :recipe_id, value: @recipe.id %>
+    <%= form.submit 'Add to Favorites' %>
+  <% end %>
+</div>
+
+<div>
+  <!-- Favourites Remove Button -->
+  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
+    <%= form.hidden_field :recipe_id, value: @recipe.id %>
+    <%= form.submit 'Remove from Favorites' %>
+  <% end %>
+</div>
+
   <div>
     <% @recipe.reviews.each do |review| %>
 
