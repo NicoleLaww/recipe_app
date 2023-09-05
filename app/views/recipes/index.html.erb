@@ -11,102 +11,103 @@
 
     <h2 class="recipes__all">All Recipes</h2> 
     
-    <div>
-      <%= form_for :filter, url: "/", method: :post do |f| %>
+    <section class="recipes__container"> 
+      <div class="recipes__form">
+        <%= form_for :filter, url: "/", method: :post do |f| %>
 
-        <h3 class="recipes__filter">Filter by:</h3>
-        
-          <div class="recipes__checkbox">
-
-            <div class="recipes__option">
-              <%= f.check_box :breakfast %>
-              <%= f.label :breakfast, "Breakfast" %>
-            </div>
-            
-            <div class="recipes__option">
-              <%= f.check_box :lunch %>
-              <%= f.label :lunch, "Lunch" %>
-            </div>
-
-            <div class="recipes__option">
-              <%= f.check_box :dinner %>
-              <%= f.label :dinner, "Dinner" %>
-            </div>
-
-            <div class="recipes__option">
-              <%= f.check_box :dessert %>
-              <%= f.label :dessert, "Dessert" %>
-            </div>
-            
-            <div class="recipes__option">
-              <%= f.check_box :appetizer %>
-              <%= f.label :appetizer, "Appetizer" %>
-            </div>  
+          <h3 class="recipes__filter">Filter by:</h3>
           
-            <div class="recipes__option">
-              <%= f.check_box :vegetarian %>
-              <%= f.label :vegetarian, "Vegetarian" %>
+            <div class="recipes__checkbox">
+
+              <div class="recipes__option">
+                <%= f.check_box :breakfast %>
+                <%= f.label :breakfast, "Breakfast" %>
+              </div>
+              
+              <div class="recipes__option">
+                <%= f.check_box :lunch %>
+                <%= f.label :lunch, "Lunch" %>
+              </div>
+
+              <div class="recipes__option">
+                <%= f.check_box :dinner %>
+                <%= f.label :dinner, "Dinner" %>
+              </div>
+
+              <div class="recipes__option">
+                <%= f.check_box :dessert %>
+                <%= f.label :dessert, "Dessert" %>
+              </div>
+              
+              <div class="recipes__option">
+                <%= f.check_box :appetizer %>
+                <%= f.label :appetizer, "Appetizer" %>
+              </div>  
+            
+              <div class="recipes__option">
+                <%= f.check_box :vegetarian %>
+                <%= f.label :vegetarian, "Vegetarian" %>
+              </div>
+              
+              <div class="recipes__option">
+                <%= f.check_box :vegan %>
+                <%= f.label :vegan, "Vegan" %>
+              </div>
+              
+              <div class="recipes__option">
+                <%= f.check_box :gluten_free %>
+                <%= f.label :gluten_free, "Gluten-free" %>
+              </div> 
+              
+              <div class="recipes__option">
+                <%= f.check_box :peanut_free %>
+                <%= f.label :peanut_free, "Peanut-free" %>
+              </div> 
+              
+              <div class="recipes__option">
+                <%= f.check_box :halal %>
+                <%= f.label :halal, "Halal" %>
+              </div> 
+              
+              <div class="recipes__option">
+                <%= f.check_box :kosher %>
+                <%= f.label :kosher, "Kosher" %>
+              </div>
+              
             </div>
-            
-            <div class="recipes__option">
-              <%= f.check_box :vegan %>
-              <%= f.label :vegan, "Vegan" %>
-            </div>
-            
-            <div class="recipes__option">
-              <%= f.check_box :gluten_free %>
-              <%= f.label :gluten_free, "Gluten-free" %>
-            </div> 
-            
-            <div class="recipes__option">
-              <%= f.check_box :peanut_free %>
-              <%= f.label :peanut_free, "Peanut-free" %>
-            </div> 
-            
-            <div class="recipes__option">
-              <%= f.check_box :halal %>
-              <%= f.label :halal, "Halal" %>
-            </div> 
-            
-            <div class="recipes__option">
-              <%= f.check_box :kosher %>
-              <%= f.label :kosher, "Kosher" %>
-            </div>
-            
+          
+          <div class="recipes__filters-button">
+            <%= submit_tag 'Apply Filters' %>
           </div>
-        
-        <div class="recipes__filters-button">
-          <%= submit_tag 'Apply Filters' %>
-        </div>
-        
-      <% end %>
-    </div>
-
-    <div class="recipes__search">
-      <% if @recipes.count == 0 %>
-        <%= "No results found" %>
-      <% end %>
-    </div>
-
-    <% @recipes.each do |recipe| %>
-
-      <div class="recipes__recipe">
-
-      <div class="recipes__image">
-        <%= image_tag recipe.photo %>
+          
+        <% end %>
       </div>
 
-      <div class="recipes__name">
-        <%= link_to recipe.title, recipe_path(recipe.id) %>
+      <div class="recipes__search">
+        <% if @recipes.count == 0 %>
+          <%= "No results found" %>
+        <% end %>
       </div>
 
-        <div class="recipes__text">
-          <%= recipe.description %>
+      <% @recipes.each do |recipe| %>
+
+        <div class="recipes__recipe">
+
+        <div class="recipes__image">
+          <%= image_tag recipe.photo %>
         </div>
 
-      </div>
-    <% end %>
+        <div class="recipes__name">
+          <%= link_to recipe.title, recipe_path(recipe.id) %>
+        </div>
 
+          <div class="recipes__text">
+            <%= recipe.description %>
+          </div>
 
+        </div>
+      <% end %>
+
+    </section>    
   </body>
 </html>

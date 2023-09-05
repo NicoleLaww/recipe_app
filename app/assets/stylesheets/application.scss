@@ -28,9 +28,12 @@
 
 // Fonts
 // Global
-body {
+html, body {
   font-size: 20px;
   font-family: 'Klee One', cursive;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 // Bootstrap adjustments
