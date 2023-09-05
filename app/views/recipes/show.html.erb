@@ -9,7 +9,6 @@
       <h2 class="recipes__name"><%= @recipe.title %></h2>
 
       <!-- Recipe photo to be displayed here -->
-
       <div class="recipes__recipe-info">
       
         <div class="recipes__date">
@@ -51,6 +50,8 @@
     </div>
 
     <div>
+    <!-- Favourites Button (Conditional) -->
+    <% if current_user %>
       <% if @existing_favorite %>
         <!-- Favourites Remove Button -->
         <%= form_for :favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
@@ -59,12 +60,29 @@
         <% end %>
       <% else %>
         <!-- Favourites Create Button -->
-          <%= form_for :favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
+        <%= form_for :favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
           <%= form.hidden_field :recipe_id, value: @recipe.id %>
           <%= form.submit 'Add to Favourites', class: 'button' %>
         <% end %>
       <% end %>
+    <% end %>
+  </div>
+
+  <!-- Review Form -->
+  <%= form_for [@recipe, @review], url: recipe_path(@recipe, @review), method: :post do |f| %>
+    <div>
+      <%= f.label :comment, 'Comment:' %>
+      <%= f.text_field :comment %>
     </div>
+    <div>
+      <%= f.label :rating, 'Rating:' %>
+      <%= f.number_field :rating %>
+    </div>
+    <div>
+      <%= f.submit 'Submit Review' %>
+    </div>
+  <% end %>
+
 
 
     <div class="recipes__reviews">
