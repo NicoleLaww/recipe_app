@@ -78,6 +78,11 @@
       <%= f.label :appetizer, "Appetizer" %>
      </div>
 
+    <div class="form-group">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+
     <%= f.submit 'Add recipe', class: 'btn btn-primary' %>
     
   <% end %>

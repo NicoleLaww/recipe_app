@@ -21,43 +21,47 @@
   <%= @recipe.instructions %>
 
 
-
+<div>
   <% if current_user == @recipe.user %>
-    <div>
-      <!-- Edit Button -->
+    <!-- Edit Button -->
     <%= link_to 'Edit', edit_user_recipe_path(@recipe)%>
 
-    <!-- Delete Button -->
+  <!-- Delete Button -->
     <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-  </div>
-  <% end %>
-
-<div>
-  <!-- Favourites Create Button -->
-  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
-    <%= form.hidden_field :recipe_id, value: @recipe.id %>
-    <%= form.submit 'Add to Favorites' %>
   <% end %>
 </div>
 
 <div>
-  <!-- Favourites Remove Button -->
-  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
-    <%= form.hidden_field :recipe_id, value: @recipe.id %>
-    <%= form.submit 'Remove from Favorites' %>
-  <% end %>
-</div>
-
-  <div>
-    <% @recipe.reviews.each do |review| %>
-
-    <%= review.rating %>
-
-    <%= review.comment %>
-
+  <% if @existing_favorite %>
+    <!-- Favourites Remove Button -->
+    <%= form_for :favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
+      <%= form.hidden_field :recipe_id, value: @recipe.id %>
+      <%= form.submit 'Remove from Favorites' %>
     <% end %>
+  <% else %>
+    <!-- Favourites Create Button -->
+      <%= form_for :favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
+      <%= form.hidden_field :recipe_id, value: @recipe.id %>
+      <%= form.submit 'Add to Favorites' %>
+    <% end %>
+  <% end %>
+</div>
+
+
+<div>
+<% @recipe.reviews.each do |review| %>
+  <div>
+    <!-- Fetch and display the username -->
+    <%= User.find(review.user_id).username %>:
+    
+    <!-- Display the rating -->
+    <%= review.rating %> / 5 
+    <!-- Display the review comment -->
+    <%= review.comment %>
   </div>
+<% end %>
+</div>
+
 </div>
 
 </body>
