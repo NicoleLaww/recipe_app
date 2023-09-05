@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title class="recipes__title">All Recipes</title>
       <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Klee+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload', 'data-turbolinks-permanent': true %>
 
   </head>
@@ -9,7 +8,7 @@
   <body class="recipes">
     <!-- List of all recipes --> 
 
-    <h2 class="recipes__all">All Recipes</h2> 
+    <h2 class="recipes__title">All Recipes</h2> 
     
     <section class="recipes__container"> 
       <div class="recipes__form">
@@ -76,8 +75,8 @@
               
             </div>
           
-          <div class="recipes__filters-button">
-            <%= submit_tag 'Apply Filters' %>
+          <div>
+            <%= submit_tag 'Apply Filters', class: 'button' %>
           </div>
           
         <% end %>
