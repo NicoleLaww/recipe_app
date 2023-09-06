@@ -4,31 +4,45 @@
 
 .recipes {
 
-  display: flex;
-  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // gap: 20px;
 
-  &__all {
+  &__title {
     text-align: center;
     font-weight: bold;
   }
 
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__form > form {
+    display: flex;
+    align-items: center;
+    width: 115%;
+  }
+
   &__filter {
     margin: 1rem;
+    width: 12%;
+    font-size: 1.5rem;
   }
 
   &__checkbox {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 1rem 1rem 0;
   }
 
   &__option {
     display: flex;
     gap: 8px;
-  }
-
-  &__filters-button {
-    margin: 1rem;
   }
 
   &__title {
@@ -40,10 +54,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    width: 45rem;
-    height: auto;
+    width: calc(50% - 10px);
+    margin-bottom: 30px;
   }
 
   &__image > img {
@@ -53,25 +65,50 @@
     border-radius: 8px;
   }
 
-  &__name > a {
+  &__name, &__name > a {
     text-decoration: none;
     color: #2EC4B6;
     font-weight: bold;
+    margin-left: 1.5rem;
   }
   
   &__text {
     text-align: center;
   }
 
-  &__ingredients {
+  &__recipe-info {
     display: flex;
     flex-direction: column;
+    margin: 1.5rem;
+  }
+
+  &__date > span, &__servings > span, &__time > span {
+    font-style: italic;
+  }
+
+  &__preparation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1.3rem 0;
+  }
+
+  &__ingredients > span, &__instructions > span {
+    font-weight: bold;
+    
+  }
+
+  &__ingredients, &__instructions {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    // padding: 1rem;
   }
 
   &__reviews {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin-top: 1rem;
   }
 }
 

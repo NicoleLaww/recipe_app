@@ -14,7 +14,15 @@ class RecipesController < ApplicationController
   # Fetch and show a specific recipe
   def show 
     @recipe = Recipe.find(params[:id])
+    @review = Review.new
+
+    if current_user
+      @existing_favorite = @recipe.favourites.find_by(user_id: current_user.id)
+    else
+      @existing_favorite = nil # or set it to some default value
+    end
   end 
+
 
   # Display form for creating a new recipe
   def new 
@@ -99,4 +107,6 @@ class RecipesController < ApplicationController
     transformed_params
   end
 end
+
+
 

@@ -23,13 +23,13 @@
     <!-- Edit button -->
     <h2>Edit Profile</h2>
     <div>
-      <%= link_to "Edit Profile", edit_user_path(@user) %>
+      <%= link_to "Edit Profile", edit_user_path(@user), class: 'button' %>
     </div> 
 
     <!-- Delete button -->
     <h2>Delete Account</h2>
     <div>
-       <%= button_to "Delete Profile", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete your profile?" }%>
+       <%= button_to "Delete Profile", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete your profile?" }, class: 'button'%>
     </div> 
 
   </body>

@@ -28,13 +28,69 @@
 
 // Fonts
 // Global
-body {
+html, body {
   font-size: 20px;
   font-family: 'Klee One', cursive;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #CBF3F0;
 }
 
-// Bootstrap adjustments
-form.button_to {
+// buttons style
+.button {
   display: inline;
+  background-color: #FFBF69;
+  color: #FFFFFF;
+  border-style: none;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
+.navbar {
+  
+  background-color: #FFBF69;
+  padding: 1rem;
+  // display: flex;
+  // justify-content: flex-end;
+
+  &__:after {
+    background: (-45deg, #ffffff 6px, transparent 0),
+      linear-gradient(45deg, #ffffff 6px, transparent 0);
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+  }
+
+  &__container {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__logo > img {
+    width: 240px;
+    height: auto;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+
+  &__item > a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+}

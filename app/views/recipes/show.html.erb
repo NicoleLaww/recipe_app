@@ -1,64 +1,114 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
+  <html>
+    <head>
+      <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+    </head>
+    
+    <body class="recipes__recipe-container">
 
-<h2><%= @recipe.title %></h2>
+      <h2 class="recipes__name"><%= @recipe.title %></h2>
 
-<div>
-  
+      <!-- Recipe photo to be displayed here -->
+      <div class="recipes__recipe-info">
+      
+        <div class="recipes__date">
+          <span>Created on:</span>
+          <%= @recipe.created_at.strftime("%Y-%m-%d") %>
+        </div>
 
-  <%= @recipe.created_at.strftime("%Y-%m-%d") %>
+        <div class="recipes__servings">
+          <span>Number of servings:</span>
+          <%= @recipe.number_of_servings %>
+        </div>
 
-  <%= @recipe.number_of_servings %>
+        <div class="recipes__time">
+          <span>Total time (minutes):</span>
+          <%= @recipe.time %>
+        </div>
 
-  <%= @recipe.time %>
+        <div class="recipes__preparation">
+          <div class="recipes__ingredients">
+            <span>Ingredients:</span>
+            <%= @recipe.ingredients %>
+          </div>
 
-  <%= @recipe.ingredients %>
+          <div class="recipes__instructions">
+            <span>Instructions:</span>
+            <%= @recipe.instructions %>
+          </div>
+        </div>
 
-  <%= @recipe.instructions %>
+      <div>
 
+      <% if current_user == @recipe.user %>
+        <!-- Edit Button -->
+        <%= link_to 'Edit', edit_user_recipe_path(@recipe), class: 'button'%>
 
+      <!-- Delete Button -->
+        <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+      <% end %>
+    </div>
 
-  <% if current_user == @recipe.user %>
     <div>
-      <!-- Edit Button -->
-    <%= link_to 'Edit', edit_user_recipe_path(@recipe)%>
-
-    <!-- Delete Button -->
-    <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-  </div>
-  <% end %>
-
-<div>
-  <!-- Favourites Create Button -->
-  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
-    <%= form.hidden_field :recipe_id, value: @recipe.id %>
-    <%= form.submit 'Add to Favorites' %>
-  <% end %>
-</div>
-
-<div>
-  <!-- Favourites Remove Button -->
-  <%= form_with model: @favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
-    <%= form.hidden_field :recipe_id, value: @recipe.id %>
-    <%= form.submit 'Remove from Favorites' %>
-  <% end %>
-</div>
-
-  <div>
-    <% @recipe.reviews.each do |review| %>
-
-    <%= review.rating %>
-
-    <%= review.comment %>
-
+    <!-- Favourites Button (Conditional) -->
+    <% if current_user %>
+      <% if @existing_favorite %>
+        <!-- Favourites Remove Button -->
+        <%= form_for :favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
+          <%= form.hidden_field :recipe_id, value: @recipe.id %>
+          <%= form.submit 'Remove from Favourites', class: 'button' %>
+        <% end %>
+      <% else %>
+        <!-- Favourites Create Button -->
+        <%= form_for :favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
+          <%= form.hidden_field :recipe_id, value: @recipe.id %>
+          <%= form.submit 'Add to Favourites', class: 'button' %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
-</div>
 
-</body>
+  <!-- Review Form -->
+  <%= form_for [@recipe, @review], url: recipe_path(@recipe, @review), method: :post do |f| %>
+    <div>
+      <%= f.label :comment, 'Comment:' %>
+      <%= f.text_field :comment %>
+    </div>
+    <div>
+      <%= f.label :rating, 'Rating:' %>
+      <%= f.number_field :rating %>
+    </div>
+    <div>
+      <%= f.submit 'Submit Review' %>
+    </div>
+  <% end %>
+
+
+
+    <div class="recipes__reviews">
+      <% @recipe.reviews.each do |review| %>
+        <div>
+
+        <!-- Fetch and display the username -->
+          <div class="recipes__username">
+            <%= User.find(review.user_id).username %>:
+          </div>
+
+          <!-- Display the rating -->
+          <div class="recipes__rating">
+            <%= review.rating %> / 5
+          </div>
+        
+          <!-- Display the review comment -->
+          <div class="recipes__comment">
+            <%= review.comment %>
+          </div>
+
+      </div>
+    <% end %>
+    </div>
+
+    </div>
+
+  </body>
 </html>

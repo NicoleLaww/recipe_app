@@ -1,14 +1,8 @@
 class ApplicationController < ActionController::Base
  helper_method :current_user, :existing_account
-
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
-  
-  # def existing_favourite
-  #   @recipe = Recipe.find(params[:recipe_id])
-  #   @existing_favourite = @recipe.favourites.find_by(user_id: current_user.id)
-  # end
 
   def existing_account
     @existing_account = User.find_by(email: params[:user][:email])

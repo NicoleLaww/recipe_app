@@ -1,15 +1,25 @@
 <nav class="navbar">
-  <ul class="navbar-links">
-    <li class="link"><%= link_to "Recipes", root_path %></li>
-    <% if current_user %>
-      <li class="link"><%= link_to "Create Recipe", new_user_recipe_path(current_user) %></li>
-      <li class="link"><%= link_to "My Recipes", my_recipes_recipes_path %></li>
-      <li class="link"><%= link_to "Favourites", favourites_user_path(current_user) %></li>
-      <li class="link"><%= link_to "User Profile", user_path(current_user) %></li>
-      <li class="link"><%= link_to "Log Out", logout_path, method: :delete %></li>
-    <% else %>
-      <li class="link"><%= link_to "Register", register_path %></li>
-      <li class="link"><%= link_to "Log in", login_path %></li>
-    <% end %> 
+  
+  <ul class="navbar__container">
+    
+    <div class="navbar__logo">
+      <%= image_tag 'tasteful-traditions.png', alt: 'Tasteful Traditions logo' %>
+    </div>
+
+    <div class="navbar__items">
+      <li class="navbar__item"><%= link_to "Recipes | ", root_path %></li>
+      <% if current_user %>
+        <li class="navbar__item"><%= link_to "Create Recipe | ", new_user_recipe_path(current_user) %></li>
+        <li class="navbar__item"><%= link_to "My Recipes | ", my_recipes_recipes_path %></li>
+        <li class="navbar__item"><%= link_to "My Favourites | ", favourites_user_path(current_user) %></li>
+        <li class="navbar__item"><%= link_to "My Profile | ", user_path(current_user) %></li>
+        <li class="navbar__item"><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li class="navbar__item"><%= link_to "Register | ", register_path %></li>
+        <li class="navbar__item"><%= link_to "Log in", login_path %></li>
+      <% end %> 
+    </div>
+  
   </ul>
+
 </nav>
