@@ -6,8 +6,10 @@ class RecipesController < ApplicationController
   def index 
     if request.post?
       @recipes = Recipe.apply_boolean_filters(filter_params)
+      @filter_params = filter_params
     else
       @recipes = Recipe.all
+      @filter_params = {}
     end
   end 
   
