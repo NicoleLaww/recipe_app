@@ -1,0 +1,138 @@
+/* line 11, app/assets/stylesheets/recipes.scss */
+.recipes__title {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 16, app/assets/stylesheets/recipes.scss */
+.recipes__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* line 23, app/assets/stylesheets/recipes.scss */
+.recipes__form > form {
+  display: flex;
+  align-items: center;
+  width: 115%;
+}
+
+/* line 29, app/assets/stylesheets/recipes.scss */
+.recipes__filter {
+  margin: 1rem;
+  width: 12%;
+  font-size: 1.5rem;
+}
+
+/* line 35, app/assets/stylesheets/recipes.scss */
+.recipes__checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 1rem 1rem 0;
+}
+
+/* line 43, app/assets/stylesheets/recipes.scss */
+.recipes__option {
+  display: flex;
+  gap: 8px;
+}
+
+/* line 48, app/assets/stylesheets/recipes.scss */
+.recipes__title {
+  color: #2EC4B6;
+  font-weight: bold;
+}
+
+/* line 53, app/assets/stylesheets/recipes.scss */
+.recipes__recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(50% - 10px);
+  margin-bottom: 30px;
+}
+
+/* line 61, app/assets/stylesheets/recipes.scss */
+.recipes__image > img {
+  width: 10rem;
+  height: auto;
+  display: flex;
+  border-radius: 8px;
+}
+
+/* line 68, app/assets/stylesheets/recipes.scss */
+.recipes__name, .recipes__name > a {
+  text-decoration: none;
+  color: #2EC4B6;
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+
+/* line 75, app/assets/stylesheets/recipes.scss */
+.recipes__text {
+  text-align: center;
+}
+
+/* line 79, app/assets/stylesheets/recipes.scss */
+.recipes__recipe-info {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+}
+
+/* line 85, app/assets/stylesheets/recipes.scss */
+.recipes__date > span, .recipes__servings > span, .recipes__time > span {
+  font-style: italic;
+}
+
+/* line 89, app/assets/stylesheets/recipes.scss */
+.recipes__preparation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1.3rem 0;
+}
+
+/* line 96, app/assets/stylesheets/recipes.scss */
+.recipes__ingredients > span, .recipes__instructions > span {
+  font-weight: bold;
+}
+
+/* line 101, app/assets/stylesheets/recipes.scss */
+.recipes__ingredients, .recipes__instructions {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+/* line 108, app/assets/stylesheets/recipes.scss */
+.recipes__reviews {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+/* line 115, app/assets/stylesheets/recipes.scss */
+.flash {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* line 121, app/assets/stylesheets/recipes.scss */
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+/* line 127, app/assets/stylesheets/recipes.scss */
+.flash.alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}

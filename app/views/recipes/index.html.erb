@@ -19,57 +19,57 @@
             <div class="recipes__checkbox">
 
               <div class="recipes__option">
-                <%= f.check_box :breakfast %>
+                <%= f.check_box :breakfast, :checked => @filter_params["breakfast"] %>
                 <%= f.label :breakfast, "Breakfast" %>
               </div>
               
               <div class="recipes__option">
-                <%= f.check_box :lunch %>
+                <%= f.check_box :lunch, :checked => @filter_params["lunch"] %>
                 <%= f.label :lunch, "Lunch" %>
               </div>
 
               <div class="recipes__option">
-                <%= f.check_box :dinner %>
+                <%= f.check_box :dinner, :checked => @filter_params["dinner"] %>
                 <%= f.label :dinner, "Dinner" %>
               </div>
 
               <div class="recipes__option">
-                <%= f.check_box :dessert %>
+                <%= f.check_box :dessert, :checked => @filter_params["dessert"] %>
                 <%= f.label :dessert, "Dessert" %>
               </div>
               
               <div class="recipes__option">
-                <%= f.check_box :appetizer %>
+                <%= f.check_box :appetizer, :checked => @filter_params["appetizer"] %>
                 <%= f.label :appetizer, "Appetizer" %>
               </div>  
             
               <div class="recipes__option">
-                <%= f.check_box :vegetarian %>
+                <%= f.check_box :vegetarian, :checked => @filter_params["vegetarian"] %>
                 <%= f.label :vegetarian, "Vegetarian" %>
               </div>
               
               <div class="recipes__option">
-                <%= f.check_box :vegan %>
+                <%= f.check_box :vegan, :checked => @filter_params["vegan"] %>
                 <%= f.label :vegan, "Vegan" %>
               </div>
               
               <div class="recipes__option">
-                <%= f.check_box :gluten_free %>
+                <%= f.check_box :gluten_free, :checked => @filter_params["gluten_free"] %>
                 <%= f.label :gluten_free, "Gluten-free" %>
               </div> 
               
               <div class="recipes__option">
-                <%= f.check_box :peanut_free %>
+                <%= f.check_box :peanut_free, :checked => @filter_params["peanut_free"] %>
                 <%= f.label :peanut_free, "Peanut-free" %>
               </div> 
               
               <div class="recipes__option">
-                <%= f.check_box :halal %>
+                <%= f.check_box :halal, :checked => @filter_params["halal"] %>
                 <%= f.label :halal, "Halal" %>
               </div> 
               
               <div class="recipes__option">
-                <%= f.check_box :kosher %>
+                <%= f.check_box :kosher, :checked => @filter_params["kosher"] %>
                 <%= f.label :kosher, "Kosher" %>
               </div>
               
