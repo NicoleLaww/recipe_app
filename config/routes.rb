@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy] do
     resources :recipes, only: [:new, :show, :edit, :create, :update, :destroy] do 
      # Define nested resource reviews with create, update, and destroy actions
-      resources :review, only: [:create, :update, :destroy]
+      resources :reviews, only: [:create, :update, :destroy]
       # Define a singular resource favorite with create and destroy actions
       resource :favourite, only: [:create, :destroy] # This sets up the route for creating and destroying a favourite within a recipe.
       end 

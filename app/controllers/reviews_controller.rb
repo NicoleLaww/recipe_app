@@ -4,11 +4,9 @@ class ReviewsController < ApplicationController
   
     def create
       @recipe = Recipe.find(params[:recipe_id])
-      @review = @recipe.review.new(review_params)
+      @review = @recipe.reviews.new(review_params)
       @review.user = current_user
-      Rails.logger.debug("Debugging message: #{variable_to_inspect}")
       if @review.save
-        Rails.logger.debug("Debugging message: #{variable_to_inspect}")
         redirect_to @recipe
       else
         flash[:alert] = 'Review and rating did not save properly.'
@@ -27,10 +25,10 @@ class ReviewsController < ApplicationController
         redirect_to @recipe
       end
     end 
-  
+
     def destroy 
       @recipe = Recipe.find(params[:recipe_id])
-      @review = Review.find(params[:id])
+      @review = @recipe.reviews.find(params[:id])
   
       if @review.destroy
         redirect_to @recipe
