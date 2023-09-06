@@ -37,7 +37,7 @@ html, body {
   background-color: #CBF3F0;
 }
 
-// buttons style
+// all buttons style
 .button {
   display: inline;
   background-color: #FFBF69;
@@ -54,7 +54,7 @@ html, body {
   // display: flex;
   // justify-content: flex-end;
 
-  &__:after {
+  &__::after {
     background: (-45deg, #ffffff 6px, transparent 0),
       linear-gradient(45deg, #ffffff 6px, transparent 0);
     background-repeat: repeat-x;
@@ -91,6 +91,10 @@ html, body {
   &__item > a {
     text-decoration: none;
     color: #FFFFFF;
+
+    :hover {
+      color: #FF9F1C;
+    }
   }
 
 }

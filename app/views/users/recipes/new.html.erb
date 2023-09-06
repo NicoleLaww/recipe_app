@@ -1,11 +1,11 @@
 <html>
 
-  <section class="new-recipe">
+  <section class="recipes">
 
     <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
     
     <header>
-      <h2>Add recipe</h2>
+      <h2 class="recipes__add-container">Add recipe</h2>
     </header>
 
   <%= form_for @recipe, url: user_recipes_path(current_user), method: :post do |f| %>
@@ -80,10 +80,10 @@
 
     <div class="form-group">
       <%= f.label :photo %>
-      <%= f.file_field :photo %>
+      <%= f.file_field :photo, class: 'button' %>
     </div>
 
-    <%= f.submit 'Add recipe', class: 'btn btn-primary' %>
+    <%= f.submit 'Add recipe', class: 'button' %>
     
   <% end %>
 </section>
