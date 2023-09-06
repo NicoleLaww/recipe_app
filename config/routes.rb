@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root to: 'recipes#index', via: [:get, :post]
   
   # Define a resource for recipes with only the show and destroy actions
-  resources :recipes, only: [:show, :destroy] do
+  resources :recipes, only: [:show] do
+    # Define nested resource reviews with create, update, and destroy actions
+    resources :reviews, only: [:create, :update, :destroy]
     # Define a custom route 'my_recipes' that maps to 'recipes#my_recipes'
     collection do
       get 'my_recipes', to: 'recipes#my_recipes'
@@ -15,8 +17,6 @@ Rails.application.routes.draw do
    # Define a resource for users with only show, edit, update, and destroy actions
   resources :users, only: [:show, :edit, :update, :destroy] do
     resources :recipes, only: [:new, :show, :edit, :create, :update, :destroy] do 
-     # Define nested resource reviews with create, update, and destroy actions
-      resources :reviews, only: [:create, :update, :destroy]
       # Define a singular resource favorite with create and destroy actions
       resource :favourite, only: [:create, :destroy] # This sets up the route for creating and destroying a favourite within a recipe.
       end 

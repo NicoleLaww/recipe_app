@@ -94,21 +94,22 @@
       
       
       <h3>Reviews:</h3>
-
-      <!-- Review Form -->
-      <%= form_for [@recipe, @review], url: user_recipe_reviews_path(current_user, @recipe), method: :post do |f| %>
-      <div>
-        <%= f.label :comment, 'Comment:' %>
-        <%= f.text_field :comment %>
-      </div>
-      <div>
-        <%= f.label :rating, 'Rating:' %>
-        <%= f.number_field :rating, min: 1 , max: 5, step: 1 %>
-      </div>
-      <div>
-        <%= f.submit 'Submit Review' %>
-      </div>
-    <% end %>
+      <% if current_user %>
+        <!-- Review Form -->
+        <%= form_for [@recipe, @review], url: recipe_reviews_path(@recipe), method: :post do |f| %>
+        <div>
+          <%= f.label :comment, 'Comment:' %>
+          <%= f.text_field :comment %>
+        </div>
+        <div>
+          <%= f.label :rating, 'Rating:' %>
+          <%= f.number_field :rating, min: 1 , max: 5, step: 1 %>
+        </div>
+        <div>
+          <%= f.submit 'Submit Review' %>
+        </div>
+        <% end %>
+      <% end %>
 
     <div class="recipes__reviews">
       <% @recipe.reviews.each do |review| %>
@@ -129,7 +130,7 @@
           </div>
           <!-- Edit and Delete buttons -->
           <% if current_user == review.user %>
-            <%= button_to 'Delete', url: user_recipe_reviews_path(current_user, @recipe, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Delete', url: recipe_reviews_path(@recipe, review), method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
 
         </div>
