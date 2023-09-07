@@ -26,35 +26,37 @@
 @import "sessions";
 @import "users";
 
-// Fonts
-// Global
-html, body {
-  font-size: 20px;
-  font-family: 'Klee One', cursive;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: #CBF3F0;
-}
 
-// all buttons style
-.button {
-  display: inline;
-  background-color: #FFBF69;
-  color: #FFFFFF;
-  border-style: none;
-  border-radius: 10px;
-  text-decoration: none;
+@media (min-width: 62.5rem) {
+// Global
+  html, body {
+    font-size: 20px;
+    font-family: 'Klee One', cursive;
+    // width: 100vw;
+    // height: 100vh;
+    box-sizing: border-box;
+    // background-color: #CBF3F0;
+    max-width: 80rem;
+    margin: 0 auto;
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+  }
 }
 
 .navbar {
   
   background-color: #FFBF69;
-  padding: 1rem;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
   // display: flex;
   // justify-content: flex-end;
 
-  &__::after {
+  &::after {
     background: (-45deg, #ffffff 6px, transparent 0),
       linear-gradient(45deg, #ffffff 6px, transparent 0);
     background-repeat: repeat-x;
@@ -75,6 +77,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    margin: 0;
   }
 
   &__logo > img {
@@ -97,4 +100,14 @@ html, body {
     }
   }
 
+}
+
+// all buttons style
+.button {
+  display: inline;
+  background-color: #FFBF69;
+  color: #FFFFFF;
+  border-style: none;
+  border-radius: 10px;
+  text-decoration: none;
 }

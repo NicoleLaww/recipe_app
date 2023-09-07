@@ -1,48 +1,59 @@
+@use "./partials/breakpoints" as *;
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .recipes {
 
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  // gap: 20px;
+  margin: 0 auto;
 
   &__title {
     text-align: center;
     font-weight: bold;
+    margin: 2rem
   }
 
-  &__container {
+  &__container-card {
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // margin-top: 20px;
+    display: grid;
+    grid-gap: 6rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__form-checkbox > form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  &__form > form {
-    display: flex;
-    align-items: center;
-    width: 115%;
-  }
-
-  &__filter {
-    margin: 1rem;
-    width: 12%;
-    font-size: 1.5rem;
+    flex-direction: column;
+    width: 100%;
+    min-width: 75%;
+    margin-left: 1.5rem;
   }
 
   &__checkbox {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 1rem 1rem 1rem 0;
+    align-items: flex-start;
+    width: 40%;
+    margin: 1rem 1rem 2rem 0;
+  }
+
+  &__meal-type, &__meal-restriction {
+    display: flex;
+    flex-direction: column;
   }
 
   &__option {
     display: flex;
-    gap: 8px;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  &__search-result {
+    margin: 2rem 1.5rem;
+    font-weight: bold;
+
   }
 
   &__title {
@@ -50,26 +61,43 @@
     font-weight: bold;
   }
 
-  &__recipe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(50% - 10px);
-    margin-bottom: 30px;
-  }
+  // @media (min-width: 41.25em) {
+
+    &__recipe {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      // align-items: center;
+      // width: calc(45% - 10px);
+      // margin: 2.5rem;
+      // padding: 0 3rem;
+      text-align: center;
+    }
+
+    &__recipe-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  // }
 
   &__image > img {
-    width: 10rem;
-    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     display: flex;
     border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
   }
 
   &__name, &__name > a {
     text-decoration: none;
     color: #2EC4B6;
     font-weight: bold;
-    margin-left: 1.5rem;
+    margin: 1rem 0;
   }
   
   &__text {
@@ -110,6 +138,37 @@
     flex-direction: column;
     margin-top: 1rem;
   }
+
+  &__add-recipe {
+    text-align: center;
+    color: #FF9F1C;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  &__form {
+    margin: 2rem 7rem;
+  }
+
+  &__form-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-group > input, &__form-group > textarea {
+    border: 3px dotted #2EC4B6;
+    border-radius: 10px;
+    
+    &:focus {
+      border-color: #2EC4B6;
+    }
+  }
+
+  &__checkbox-options {
+    margin: 2rem 7rem;
+  }
+
 }
 
 .flash {

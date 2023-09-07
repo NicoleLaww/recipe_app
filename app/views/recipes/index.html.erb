@@ -2,6 +2,7 @@
 <html>
   <head>
       <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Klee+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload', 'data-turbolinks-permanent': true %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
 
@@ -11,68 +12,71 @@
     <h2 class="recipes__title">All Recipes</h2> 
     
     <section class="recipes__container"> 
-      <div class="recipes__form">
+      <div class="recipes__form-checkbox">
         <%= form_for :filter, url: "/", method: :post do |f| %>
 
-          <h3 class="recipes__filter">Filter by:</h3>
+          <span class="recipes__filter">Filter by:</span>
           
             <div class="recipes__checkbox">
+              <div class="recipes__meal-type">
+                <div class="recipes__option">
+                  <%= f.check_box :breakfast, :checked => @filter_params["breakfast"] %>
+                  <%= f.label :breakfast, "Breakfast" %>
+                </div>
+                
+                <div class="recipes__option">
+                  <%= f.check_box :lunch, :checked => @filter_params["lunch"] %>
+                  <%= f.label :lunch, "Lunch" %>
+                </div>
 
-              <div class="recipes__option">
-                <%= f.check_box :breakfast, :checked => @filter_params["breakfast"] %>
-                <%= f.label :breakfast, "Breakfast" %>
-              </div>
-              
-              <div class="recipes__option">
-                <%= f.check_box :lunch, :checked => @filter_params["lunch"] %>
-                <%= f.label :lunch, "Lunch" %>
+                <div class="recipes__option">
+                  <%= f.check_box :dinner, :checked => @filter_params["dinner"] %>
+                  <%= f.label :dinner, "Dinner" %>
+                </div>
+
+                <div class="recipes__option">
+                  <%= f.check_box :dessert, :checked => @filter_params["dessert"] %>
+                  <%= f.label :dessert, "Dessert" %>
+                </div>
+                
+                <div class="recipes__option">
+                  <%= f.check_box :appetizer, :checked => @filter_params["appetizer"] %>
+                  <%= f.label :appetizer, "Appetizer" %>
+                </div>
               </div>
 
-              <div class="recipes__option">
-                <%= f.check_box :dinner, :checked => @filter_params["dinner"] %>
-                <%= f.label :dinner, "Dinner" %>
+              <div class="recipes__meal-restriction">
+                <div class="recipes__option">
+                  <%= f.check_box :vegetarian, :checked => @filter_params["vegetarian"] %>
+                  <%= f.label :vegetarian, "Vegetarian" %>
+                </div>
+                
+                <div class="recipes__option">
+                  <%= f.check_box :vegan, :checked => @filter_params["vegan"] %>
+                  <%= f.label :vegan, "Vegan" %>
+                </div>
+                
+                <div class="recipes__option">
+                  <%= f.check_box :gluten_free, :checked => @filter_params["gluten_free"] %>
+                  <%= f.label :gluten_free, "Gluten-free" %>
+                </div> 
+                
+                <div class="recipes__option">
+                  <%= f.check_box :peanut_free, :checked => @filter_params["peanut_free"] %>
+                  <%= f.label :peanut_free, "Peanut-free" %>
+                </div> 
+                
+                <div class="recipes__option">
+                  <%= f.check_box :halal, :checked => @filter_params["halal"] %>
+                  <%= f.label :halal, "Halal" %>
+                </div> 
+                
+                <div class="recipes__option">
+                  <%= f.check_box :kosher, :checked => @filter_params["kosher"] %>
+                  <%= f.label :kosher, "Kosher" %>
+                </div>
               </div>
 
-              <div class="recipes__option">
-                <%= f.check_box :dessert, :checked => @filter_params["dessert"] %>
-                <%= f.label :dessert, "Dessert" %>
-              </div>
-              
-              <div class="recipes__option">
-                <%= f.check_box :appetizer, :checked => @filter_params["appetizer"] %>
-                <%= f.label :appetizer, "Appetizer" %>
-              </div>  
-            
-              <div class="recipes__option">
-                <%= f.check_box :vegetarian, :checked => @filter_params["vegetarian"] %>
-                <%= f.label :vegetarian, "Vegetarian" %>
-              </div>
-              
-              <div class="recipes__option">
-                <%= f.check_box :vegan, :checked => @filter_params["vegan"] %>
-                <%= f.label :vegan, "Vegan" %>
-              </div>
-              
-              <div class="recipes__option">
-                <%= f.check_box :gluten_free, :checked => @filter_params["gluten_free"] %>
-                <%= f.label :gluten_free, "Gluten-free" %>
-              </div> 
-              
-              <div class="recipes__option">
-                <%= f.check_box :peanut_free, :checked => @filter_params["peanut_free"] %>
-                <%= f.label :peanut_free, "Peanut-free" %>
-              </div> 
-              
-              <div class="recipes__option">
-                <%= f.check_box :halal, :checked => @filter_params["halal"] %>
-                <%= f.label :halal, "Halal" %>
-              </div> 
-              
-              <div class="recipes__option">
-                <%= f.check_box :kosher, :checked => @filter_params["kosher"] %>
-                <%= f.label :kosher, "Kosher" %>
-              </div>
-              
             </div>
           
           <div>
@@ -82,30 +86,39 @@
         <% end %>
       </div>
 
-      <div class="recipes__search">
+      <div class="recipes__search-result">
         <% if @recipes.count == 0 %>
-          <%= "No results found" %>
+          <%= "No results found :(" %>
         <% end %>
       </div>
 
-      <% @recipes.each do |recipe| %>
+      <div class="recipes__container-card"> 
+        
+        <% @recipes.each do |recipe| %>
 
-        <div class="recipes__recipe">
+          <article class="recipes__recipe">
 
-        <div class="recipes__image">
-          <%= image_tag recipe.photo %>
-        </div>
+            <div class="recipes__recipe-wrapper">
 
-        <div class="recipes__name">
-          <%= link_to recipe.title, recipe_path(recipe.id) %>
-        </div>
+              <div class="recipes__image">
+                <%= image_tag recipe.photo %>
+              </div>
 
-          <div class="recipes__text">
-            <%= recipe.description %>
-          </div>
+              <div class="recipes__name">
+                <%= link_to recipe.title, recipe_path(recipe.id) %>
+              </div>
 
-        </div>
-      <% end %>
+              <div class="recipes__text">
+                <%= recipe.description %>
+              </div>
+                
+            </div>
+                
+          </article>
+                
+        <% end %>
+      
+      </div>
 
     </section>    
   </body>
