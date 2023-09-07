@@ -81,8 +81,9 @@
   }
 
   &__logo > img {
-    width: 240px;
+    width: 300px;
     height: auto;
+    padding: .5rem;
   }
 
   &__items {
@@ -110,4 +111,5 @@
   border-radius: 10px;
   text-decoration: none;
   padding: 0.3rem;
+  margin: .5rem 0 2rem auto;
 }
