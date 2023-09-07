@@ -2,6 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.user {
+
+  &__user-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2EC4B6;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  &__user-info {
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px solid #CBF3F0;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+    width: 40%;
+    box-sizing: content-box;
+  }
+
+  &__name, &__username, &__email {
+    padding: .5rem 0;
+    font-weight: bold;
+  }
+
+  &__name-input, &__username-input, &__email-input {
+    font-weight: lighter;
+  }
+
+  &__edit-profile > a {
+    text-decoration: none;
+    color: #FF9F1C;
+    font-weight: bold;
+
+      &:hover {
+        color: #FFBF69;
+        border-bottom: 1px dotted #2EC4B6;
+      }
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__delete-profile > form > input {
+    background-color: #FF9F1C;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    padding: 0.3rem;
+
+    &:hover {
+      background-color: rgba(238, 86, 86, 0.877);
+    }
+  }
+}
+
 .flash {
   padding: 1em;
   margin: 1em 0;
