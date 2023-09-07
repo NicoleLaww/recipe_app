@@ -27,8 +27,12 @@ class ReviewsController < ApplicationController
     end 
 
     def destroy 
+      logger.debug "Hello Review"
       @recipe = Recipe.find(params[:recipe_id])
       @review = @recipe.reviews.find(params[:id])
+      
+      puts @recipe 
+      puts @review
   
       if @review.destroy
         redirect_to @recipe

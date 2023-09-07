@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   
   # Delete a user
   def destroy 
+    logger.debug "Hello User"
     @user = User.find(params[:id])
     if @user.destroy
       redirect_to register_path

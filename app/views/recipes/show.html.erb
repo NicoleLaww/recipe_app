@@ -10,6 +10,10 @@
 
       <!-- Recipe photo to be displayed here -->
       <div class="recipes__recipe-info">
+        <div>
+          <img src="<%= @recipe.photo %>"/> 
+        </div>
+
       
         <div>
           <!-- Favourites Button (Conditional) -->
@@ -68,7 +72,7 @@
           <%= link_to 'Edit', edit_user_recipe_path(@recipe), class: 'button'%>
 
           <!-- Delete Button -->
-          <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+          <%= link_to 'Delete', user_recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
         <% end %>
       </div>
 
@@ -128,10 +132,11 @@
           <div class="recipes__comment">
             <%= review.comment %>
           </div>
-          <!-- Edit and Delete buttons -->
+          
+          <!-- Delete button -->
           <% if current_user == review.user %>
-            <%= link_to 'Delete', url: recipe_reviews_path(@recipe, review), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+            <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %> 
 
         </div>
       <% end %>
