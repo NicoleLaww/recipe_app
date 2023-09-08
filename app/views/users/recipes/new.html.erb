@@ -14,37 +14,37 @@
     
       <div class="recipes__form-group">
         <%= f.label :title, 'Recipe name:' %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :number_of_servings, 'Number of servings:' %>
-        <%= f.number_field :number_of_servings %>
+        <%= f.number_field :number_of_servings, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :time, 'Total time (minutes):' %>
-        <%= f.text_field :time %>
+        <%= f.text_field :time, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :description, 'Description:' %>
-        <%= f.text_area :description %>
+        <%= f.text_area :description, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :country, 'Country:' %>
-        <%= f.text_field :country %>
+        <%= f.text_field :country, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :ingredients, 'Ingredients:' %>
-        <%= f.text_area :ingredients %>
+        <%= f.text_area :ingredients, required: true %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :instructions, 'Instructions:' %>
-        <%= f.text_area :instructions %>
+        <%= f.text_area :instructions, required: true %>
       </div>
 
     </div>  
@@ -118,7 +118,7 @@
 
       <div class="recipes__form-group">
         <%= f.label :photo %>
-        <%= f.text_field :photo, class: 'button' %>
+        <%= f.text_field :photo, class: 'button', required: true %>
       </div>
     
     </div>

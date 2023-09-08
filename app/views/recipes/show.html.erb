@@ -24,7 +24,7 @@
               <% end %>
             <% end %>
           <% end %>
-        
+
           <!-- Recipe photo to be displayed here -->
           <div class="recipes__image">
             <img src="<%= @recipe.photo %>"/> 
@@ -65,20 +65,6 @@
       </div>
 
       <div class="recipes__buttons">
-        <!-- Favourites Button (Conditional) -->
-        <% if current_user %>
-          <% if @existing_favorite %>
-            <!-- Favourites Remove Button -->
-            <%= button_to user_recipe_favourite_path(current_user, @recipe), method: :delete do %>
-              <i class="fa fa-heart recipes__fav-button"></i>
-            <% end %>
-          <% else %>
-            <!-- Favourites Create Button -->
-            <%= button_to user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do %>
-              <i class="fa fa-heart-o recipes__fav-button"></i>
-            <% end %>
-          <% end %>
-        <% end %>
 
         <% if current_user == @recipe.user %>
           <!-- Edit Button -->
@@ -91,12 +77,6 @@
 
       <div class="recipes__share-container">
         <h3 class="recipes__share">Share this recipe:</h3>
-
-        <!-- Share Link -->
-        <div class="recipes__share-link">
-           <label for="share-link">Copy link:</label>
-           <input type="text" id="share-link" value="<%= request.original_url %>" readonly>
-        </div>
 
         <!-- Social Media -->
         <div class="recipes__twitter">
