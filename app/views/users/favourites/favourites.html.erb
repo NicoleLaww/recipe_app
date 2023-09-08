@@ -5,9 +5,9 @@
     <%= stylesheet_link_tag 'favourites', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="favourites">
     <!-- List of favourited recipes --> 
-    <h2>Your Favourite Recipes</h2>
+    <h2 class="favourites__title">My Favourite Recipes</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -17,12 +17,12 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
 
-    <% @favourites.each do |favourite| %>
-      <div>
+    <div class="favourites__favourite">
+      <% @favourites.each do |favourite| %>
+        <%= link_to favourite.recipe.title, recipe_path(favourite.recipe), class: 'favourites__button' %>
         <%= image_tag favourite.recipe.photo %>
-        <%= link_to favourite.recipe.title, recipe_path(favourite.recipe), class: 'button' %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
 
   </body>
 </html>

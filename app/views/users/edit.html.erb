@@ -5,9 +5,9 @@
     <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="user">
+  <body class="users">
 
-    <h1 class="user__edit-title">Edit User Profile</h1>
+    <h1 class="users__edit-title">Edit User Profile</h1>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -17,37 +17,37 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="user__edit-form">
+    <div class="users__edit-form">
     
       <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
         
-        <div class="user__form-group">
+        <div class="users__form-group">
           <%= f.label :name, 'Name:' %>
           <%= f.text_field :name %>
         </div>
 
-        <div class="user__form-group">
+        <div class="users__form-group">
           <%= f.label :username, 'Username:' %>
           <%= f.text_field :username %>
         </div>
         
-        <div class="user__form-group">
+        <div class="users__form-group">
           <%= f.label :email, 'Email:' %>
           <%= f.text_field :email %>
         </div>
 
-        <div class="user__form-group">
+        <div class="users__form-group">
           <%= f.label :password, 'New Password:' %>
           <%= f.password_field :password %>
         </div>
 
-        <div class="user__form-group">
+        <div class="users__form-group">
           <%= f.label :password_confirmation, 'New Password Confirmation:' %>
           <%= f.password_field :password_confirmation %>
         </div>
         
         <div>
-          <%= f.submit "Update Profile", class: 'button' %>
+          <%= f.submit "Update Profile", class: 'users__edit-button' %>
         </div>
       <% end %>
 

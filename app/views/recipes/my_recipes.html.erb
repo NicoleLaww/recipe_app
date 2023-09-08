@@ -7,7 +7,7 @@
 
   <body class="recipes__my-recipes">
     <!-- List of user recipes --> 
-    <h2 class="recipes__my-rec-title">My Recipes</h2>
+    <h2 class="recipes__my-recipes-title">My Recipes</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -17,12 +17,10 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
  
-    <div class="recipes__my-recipe">
+    <div class="recipes__my-recipe-item">
       <% @user.recipes.each do |recipe| %>
-        <div>
-          <%= image_tag recipe.photo %>
-          <%= link_to recipe.title, recipe_path(recipe) %>
-        </div>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+        <%= image_tag recipe.photo %>
       <% end %>
     </div>
 

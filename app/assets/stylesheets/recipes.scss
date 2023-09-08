@@ -46,6 +46,16 @@
     gap: 10px;
   }
 
+  &__filters-button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: .3rem .4rem;
+  }
+
   &__search-result {
     margin: 2rem 1.5rem;
     font-weight: bold;
@@ -235,7 +245,6 @@
   
   &__add-recipe {
     text-align: center;
-    color: #FF9F1C;
     font-weight: bold;
     margin: 2rem;
   }
@@ -264,11 +273,50 @@
     margin: 2rem 7rem;
   }
 
+  &__add-button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 7rem 3rem 7rem;
+    padding: .3rem .4rem;
+  }
+  
   // My recipes page
+  
+  &__my-recipes-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 2rem;
+  }
 
+  &__my-recipe-item {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12.5rem;
+  }
 
+  &__my-recipe-item > a {
+    text-decoration: none;
+    color: #2EC4B6;
+    font-weight: bold;
+    margin: .5rem 0;
+  }
 
+  &__my-recipe-item > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
 }
+
 
 .flash {
   padding: 1em;
