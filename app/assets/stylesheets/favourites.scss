@@ -2,6 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.favourites {
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  &__favourite {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12.5rem;
+  }
+
+  &__favourite > a {
+    text-decoration: none;
+    color: #2EC4B6;
+    font-weight: bold;
+    margin: .5rem 0;
+  }
+
+  &__favourite > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
+}
+
 .flash {
   padding: 1em;
   margin: 1em 0;
