@@ -14,10 +14,6 @@
   }
 
   &__container-card {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
-    // margin-top: 20px;
     display: grid;
     grid-gap: 6rem;
     grid-template-columns: repeat(3, 1fr);
@@ -56,32 +52,23 @@
 
   }
 
-  &__title {
-    color: #2EC4B6;
-    font-weight: bold;
-  }
-
   // @media (min-width: 41.25em) {
 
-    &__recipe {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      // align-items: center;
-      // width: calc(45% - 10px);
-      // margin: 2.5rem;
-      // padding: 0 3rem;
-      text-align: center;
-    }
+  &__recipe {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 
-    &__recipe-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
+  &__recipe-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
   // }
 
   &__image > img {
@@ -97,7 +84,7 @@
     text-decoration: none;
     color: #2EC4B6;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: .5rem 0;
   }
   
   &__text {
@@ -106,19 +93,34 @@
 
   &__recipe-info {
     display: flex;
-    flex-direction: column;
-    margin: 1.5rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 2rem auto;
+    padding: 2rem .5rem;
+    width: 80%;
+    box-sizing: content-box;
+    border: 2px solid #CBF3F0;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
   }
 
-  &__date > span, &__servings > span, &__time > span {
+  &__info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+    width: 40%;
+  }
+
+  &__date > span, &__user > span, &__servings > span, &__time > span {
     font-style: italic;
   }
 
   &__preparation {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: flex-end;
+    width: 85%;
     margin: 1.3rem 0;
+    padding-top: 1rem;
   }
 
   &__ingredients > span, &__instructions > span {
@@ -129,8 +131,98 @@
   &__ingredients, &__instructions {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 45%;
-    // padding: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    gap: 4rem;
+  }
+
+  &__fav-button {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+  }
+
+  &__edit-button, &__delete-button {
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+
+    :hover {
+      color: #FF9F1C;
+    }
+  }
+
+  &__share-container {
+    border-top: 2px dotted #2EC4B6;
+    border-bottom: 2px dotted #2EC4B6;
+    padding: 3rem;
+  }
+  
+  &__reviews-container {
+    margin: 2rem 0 3rem 3rem;
+  }
+
+  &__share, &__reviews-title {
+    color: #2EC4B6;
+    padding-bottom: 1rem;
+  }
+
+  &__share-link > input {
+    border: 3px dotted #2EC4B6;
+    border-radius: 10px;
+  
+    &:focus {
+      border-color: #2EC4B6;
+    }
+  }
+
+  &__twitter > a, &__email > a {
+    text-decoration: none;
+    color: #FF9F1C;
+    font-weight: bold;
+  
+    &:hover {
+      color: #FFBF69;
+      border-bottom: 1px dotted #2EC4B6;
+    }
+  }
+
+  &__twitter, &__email {
+    margin: .5rem 0;
+  }
+
+  &__form-comment, &__form-rating {
+    margin: .5rem 0;
+  }
+
+  &__review-button > input {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+    margin-top: 1rem;
   }
 
   &__reviews {
@@ -158,7 +250,8 @@
     flex-direction: column;
   }
 
-  &__form-group > input, &__form-group > textarea {
+  &__form-group > input, &__form-group > textarea, &__form-comment>input,
+  &__form-rating>input {
     border: 3px dotted #2EC4B6;
     border-radius: 10px;
     
@@ -170,6 +263,10 @@
   &__checkbox-options {
     margin: 2rem 7rem;
   }
+
+  // My recipes page
+
+
 
 }
 
