@@ -1,81 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
+  <head>
+    <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<section class="edit-recipe">
-  <header>
-    <h2>Edit recipe</h2>
-  </header>
+  <section class="recipes__edit-recipe">
+    <header>
+      <h2 class="recipes__title">Edit recipe</h2>
+    </header>
 
-      <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
+    <%= form_for :recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch do |f| %>
       
-      <div class="form-group">
+    <div class="recipes__form">
+
+      <div class="recipes__form-group">
         <%= f.label :title, 'Recipe name:' %>
         <%= f.text_field :title, required: true %>
       </div>
 
-      <div class="form-group">
+      <div class="recipes__form-group">
         <%= f.label :number_of_servings, 'Number of servings:' %>
         <%= f.number_field :number_of_servings, required: true %>
       </div>
 
-      <div class="form-group">
+      <div class="recipes__form-group">
         <%= f.label :time, 'Total time:' %>
         <%= f.number_field :time, required: true %>
       </div>
 
-      <div class="form-group">
+      <div class="recipes__form-group">
         <%= f.label :description, 'Description:' %>
         <%= f.text_area :description, required: true %>
       </div>
 
-      <div class="form-group">
+      <div class="recipes__form-group">
         <%= f.label :country, 'Country:' %>
         <%= f.text_field :country, required: true %>
       </div>
 
-      <div>
+      <div class="recipes__form-group">
         <%= f.label :ingredients, 'Ingredients:' %>
         <%= f.text_area :ingredients, required: true %>
       </div>
 
-      <div>
+      <div class="recipes__form-group">
         <%= f.label :instructions, 'Instructions:' %>
         <%= f.text_area :instructions, required: true %>
       </div>
-
-    <div class="form-group">
-      <span>Please select all options that apply to your recipe:</span>
-
-      <!-- The options for breakfast, lunch, dinner, and dessert will be added here -->
-      
-      <%= f.check_box :vegetarian, {required: true}%>
-      <%= f.label :vegetarian, "Vegetarian" %>
-      <%= f.check_box :vegan %>
-      <%= f.label :vegan, "Vegan" %>
-      <%= f.check_box :gluten_free %>
-      <%= f.label :gluten_free, "Gluten-free" %>
-      <%= f.check_box :peanut_free %>
-      <%= f.label :peanut_free, "Peanut-free" %>
-      <%= f.check_box :halal %>
-      <%= f.label :halal, "Halal" %>
-      <%= f.check_box :kosher %>
-      <%= f.label :kosher, "Kosher" %>
-    </div>
-
-    <div class="recipes__form-group">
-      <%= f.label :photo %>
-      <%= f.text_field :photo, class: 'button', required: true %>
-    </div>
-
-      <%= f.submit 'Update recipe', class: 'btn btn-primary' %>
-
     
-  <% end %>
-</section>
+    </div>
+      
+    <div class="recipes__checkbox-options">
 
-</body>
+      <div class="recipes__form-group">
+        <span>Please select all options that apply to your recipe:</span>
+
+        <!-- The options for breakfast, lunch, dinner, and dessert will be added here -->
+        
+        <div class="recipes__option">
+          <%= f.check_box :vegetarian, {required: true}%>
+          <%= f.label :vegetarian, "Vegetarian" %>
+        </div>
+        
+        <div class="recipes__option">
+          <%= f.check_box :vegan %>
+          <%= f.label :vegan, "Vegan" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :gluten_free %>
+          <%= f.label :gluten_free, "Gluten-free" %>
+        </div>
+        
+        <div class="recipes__option">
+          <%= f.check_box :peanut_free %>
+          <%= f.label :peanut_free, "Peanut-free" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :halal %>
+          <%= f.label :halal, "Halal" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :kosher %>
+          <%= f.label :kosher, "Kosher" %>
+        </div>
+      </div>
+
+      <div class="recipes__form-group">
+        <%= f.label :photo %>
+        <%= f.text_field :photo, required: true %>
+      </div>
+
+    </div>
+
+    <%= f.submit 'Update recipe', class: 'recipes__update-button' %>
+
+    <% end %>
+  </section>
+
 </html>

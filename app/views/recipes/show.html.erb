@@ -8,22 +8,29 @@
     
       <div class="recipes__recipe-info">
         <div class="recipes__info-left">
-          <span class="recipes__name"><%= @recipe.title %></span>
 
-          <!-- Favourites Button (Conditional) -->
-          <% if current_user %>
-            <% if @existing_favorite %>
-              <!-- Favourites Remove Button -->
-              <%= button_to user_recipe_favourite_path(current_user, @recipe), method: :delete do %>
-                <i class="fa fa-heart recipes__fav-button"></i>
-              <% end %>
-            <% else %>
-              <!-- Favourites Create Button -->
-              <%= button_to user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do %>
-                <i class="fa fa-heart-o recipes__fav-button"></i>
+          <div class="recipes__info-left-header">
+            <span class="recipes__name"><%= @recipe.title %></span>
+
+            <!-- Favourites Button (Conditional) -->
+            <% if current_user %>
+              <% if @existing_favorite %>
+                <!-- Favourites Remove Button -->
+                <div class="recipes__fav-icon">
+                  <%= button_to user_recipe_favourite_path(current_user, @recipe), method: :delete do %>
+                    <i class="fa fa-heart fa-lg recipes__fav-button"></i>
+                  </div>
+                <% end %>
+              <% else %>
+                <!-- Favourites Create Button -->
+                <div class="recipes__fav-icon">
+                  <%= button_to user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do %>
+                    <i class="fa fa-heart fa-lg recipes__fav-button"></i>
+                </div>
+                <% end %>
               <% end %>
             <% end %>
-          <% end %>
+          </div
 
           <!-- Recipe photo to be displayed here -->
           <div class="recipes__image">
@@ -91,7 +98,7 @@
       
       <div class="recipes__reviews-container">
         
-        <h3 class="recipes__reviews-title">Reviews:</h3>
+        <h3 class="recipes__reviews-title">Leave a review:</h3>
 
         <div class="recipes__review-form">
           <% if current_user %>
@@ -113,29 +120,40 @@
         </div>
 
         <div class="recipes__reviews">
-          <% @recipe.reviews.each do |review| %>
+
+          <h3 class="recipes__reviews-title">Reviews</h3>
+
+          <div class="recipes__review">
+            <% @recipe.reviews.each do |review| %>
       
-            <!-- Fetch and display the username -->
-            <div class="recipes__username">
-              <%= User.find(review.user_id).username %>:
-            </div>
+              <div class="recipes__review-item">
+                <!-- Fetch and display the username -->
+                <div class="recipes__username">
+                  <%= User.find(review.user_id).username %>:
+                </div>
 
-            <!-- Display the rating -->
-            <div class="recipes__rating">
-              <%= review.rating %> / 5
-            </div>
-            
-            <!-- Display the review comment -->
-            <div class="recipes__comment">
-              <%= review.comment %>
-            </div>
-            
-            <!-- Delete button -->
-            <% if current_user == review.user %>
+                <div class="recipes__review-right">
+                  <!-- Display the rating -->
+                  <div class="recipes__rating">
+                  <%= review.rating %> / 5
+                  <i class="fa fa-star recipes__rating-icon"></i>
+                  </div>
+                  
+                  <!-- Display the review comment -->
+                  <div class="recipes__comment">
+                    "<%= review.comment %>"
+                  </div>
+                </div>  
+              </div>
+              
+              <!-- Delete button -->
+              <% if current_user == review.user %>
               <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %> 
+              <% end %> 
+              
+            <% end %>
+          </div>
 
-          <% end %>
         </div>
       
       </div>    

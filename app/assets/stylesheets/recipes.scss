@@ -121,14 +121,20 @@
     width: 40%;
   }
 
+  &__info-left-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   &__date > span, &__user > span, &__servings > span, &__time > span {
     font-style: italic;
   }
 
   &__preparation {
     display: flex;
-    justify-content: flex-end;
-    width: 85%;
+    justify-content: space-around;
+    width: 90%;
     margin: 1.3rem 0;
     padding-top: 1rem;
   }
@@ -153,15 +159,13 @@
     gap: 4rem;
   }
 
+  &__fav-icon > form > button {
+    border-color: transparent;
+    background-color: #FFFFFF;
+  }
+
   &__fav-button {
-    text-align: center;
-    font-weight: bold;
-    background-color: #FFBF69;
-    color: #FFFFFF;
-    border-style: none;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: .3rem;
+    color: pink;
   }
 
   &__edit-button, &__delete-button {
@@ -187,12 +191,16 @@
   }
   
   &__reviews-container {
-    margin: 2rem 0 3rem 3rem;
+    margin: 2rem 0 3rem 0;
   }
 
   &__share, &__reviews-title {
     color: #2EC4B6;
     padding-bottom: 1rem;
+  }
+
+  &__reviews-title {
+    margin-left: 3rem;
   }
 
   &__share-link > input {
@@ -235,10 +243,45 @@
     margin-top: 1rem;
   }
 
+  &__review-form > form {
+    border-bottom: 2px dotted #2EC4B6;
+    padding: 0 0 3rem 3rem;
+  }
+
   &__reviews {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+  }
+  
+  &__review-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin: 0 3rem 1rem 3rem;
+    width: 55%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
+
+  &__review-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__username {
+    color: #FF9F1C;
+    font-weight: bold;
+    padding-left: 2rem;
+  }
+
+  &__rating-icon {
+    color: #FFBF69;
+  }
+
+  &__comment {
+    font-style: italic;
+    padding-bottom: 1rem;
   }
 
   // New recipe page
@@ -263,6 +306,7 @@
   &__form-rating>input {
     border: 3px dotted #2EC4B6;
     border-radius: 10px;
+    list-style-type: disc;
     
     &:focus {
       border-color: #2EC4B6;
@@ -273,7 +317,7 @@
     margin: 2rem 7rem;
   }
 
-  &__add-button {
+  &__add-button, &__update-button {
     background-color: #FFBF69;
     color: #FFFFFF;
     border-style: none;
