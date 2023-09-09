@@ -61,12 +61,12 @@
         <div class="recipes__preparation">
           <div class="recipes__ingredients">
             <span>Ingredients:</span>
-            <%= @recipe.ingredients %>
+            <%= simple_format(@recipe.ingredients) %>
           </div>
 
           <div class="recipes__instructions">
             <span>Instructions:</span>
-            <%= @recipe.instructions %>
+            <%= simple_format(@recipe.instructions) %>
           </div>
         </div>
       </div>

@@ -14,37 +14,47 @@
     
       <div class="recipes__form-group">
         <%= f.label :title, 'Recipe name:' %>
-        <%= f.text_field :title, required: true %>
+        <%= f.text_field :title, required: true, placeholder: 'Ex: Banana mix' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :number_of_servings, 'Number of servings:' %>
-        <%= f.number_field :number_of_servings, required: true %>
+        <%= f.number_field :number_of_servings, required: true, placeholder: 'Ex: 10' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :time, 'Total time (minutes):' %>
-        <%= f.text_field :time, required: true %>
+        <%= f.text_field :time, required: true, placeholder: 'Ex: 45' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :description, 'Description:' %>
-        <%= f.text_area :description, required: true %>
+        <%= f.text_area :description, required: true, placeholder: 'Ex: This recipe is my favourite, because it is tasty, takes only 10 minutes to be ready, and you need only 4 ingredients.' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :country, 'Country:' %>
-        <%= f.text_field :country, required: true %>
+        <%= f.text_field :country, required: true, placeholder: 'Ex: Canada' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :ingredients, 'Ingredients:' %>
-        <%= f.text_area :ingredients, required: true %>
+        <%= f.text_area :ingredients, required: true, placeholder: 'Ex:
+        3 eggs
+        1 cup flour
+        1/2 tsp baking powder
+        3 bananas' %>
       </div>
 
       <div class="recipes__form-group">
         <%= f.label :instructions, 'Instructions:' %>
-        <%= f.text_area :instructions, required: true %>
+        <%= f.text_area :instructions, required: true, placeholder: 'Ex:
+        1. Preheat the oven at 300°C
+        2. Smash the bananas
+        3. In a medium bowl, mix the flour and the baking powder
+        4. Add the eggs to the bowl and mix well
+        5. Add the smashed bananas and mix well
+        6. Take the mixture to the oven for 5 minutes' %>
       </div>
 
     </div>  
