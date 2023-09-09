@@ -19,15 +19,15 @@
                 <div class="recipes__fav-icon">
                   <%= button_to user_recipe_favourite_path(current_user, @recipe), method: :delete do %>
                     <i class="fa fa-heart fa-lg recipes__fav-button"></i>
+                    <% end %>
                   </div>
-                <% end %>
               <% else %>
                 <!-- Favourites Create Button -->
                 <div class="recipes__fav-icon">
                   <%= button_to user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do %>
-                    <i class="fa fa-heart fa-lg recipes__fav-button"></i>
+                    <i class="fa fa-heart-o fa-lg recipes__fav-button-blank"></i>
+                    <% end %>
                 </div>
-                <% end %>
               <% end %>
             <% end %>
           </div
