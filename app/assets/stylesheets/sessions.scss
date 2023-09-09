@@ -4,11 +4,11 @@
 
 .login {
 
-  &__new-session{
+  &__title {
     font-weight: bold;
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 6rem 2rem 1rem 2rem;
   }
 
   &__form {

@@ -5,7 +5,7 @@
     <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
     
     <header>
-      <h2 class="recipes__add-recipe">Add a new recipe</h2>
+      <h2 class="recipes__title">Add a new recipe</h2>
     </header>
 
     <%= form_for @recipe, url: user_recipes_path(current_user), method: :post do |f| %>

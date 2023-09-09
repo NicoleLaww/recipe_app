@@ -7,7 +7,7 @@
   &__title {
     text-align: center;
     font-weight: bold;
-    margin: 2rem;
+    margin: 6rem 2rem 1rem 2rem;
   }
 
   &__container-card {
@@ -15,6 +15,7 @@
     grid-gap: 6rem;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 4rem;
+    padding-bottom: 14rem;
   }
 
   &__recipe {
