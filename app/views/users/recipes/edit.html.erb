@@ -53,7 +53,7 @@
     <div class="recipes__checkbox-options">
 
       <div class="recipes__form-group">
-        <span>Please select all options that apply to your recipe:</span>
+        <span>Please select all options that apply to your recipe:</span><br>
 
         <!-- The options for breakfast, lunch, dinner, and dessert will be added here -->
         
@@ -85,6 +85,35 @@
         <div class="recipes__option">
           <%= f.check_box :kosher %>
           <%= f.label :kosher, "Kosher" %>
+        </div>
+      </div>
+
+      <div class="recipes__form-group">
+        <span>What type of meal is this?</span><br>
+
+        <div class="recipes__option">
+          <%= f.check_box :breakfast %>
+          <%= f.label :breakfast, "Breakfast" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :lunch %>
+          <%= f.label :lunch, "Lunch" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :dinner %>
+          <%= f.label :dinner, "Dinner" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :dessert %>
+          <%= f.label :dessert, "Dessert" %>
+        </div>
+
+        <div class="recipes__option">
+          <%= f.check_box :appetizer %>
+          <%= f.label :appetizer, "Appetizer" %>
         </div>
       </div>
 

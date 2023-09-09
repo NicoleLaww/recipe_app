@@ -148,7 +148,7 @@
               
               <!-- Delete button -->
               <% if current_user == review.user %>
-              <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure you want to delete your review?' }, class: 'recipes__delete-review-button' %>
               <% end %> 
               
             <% end %>

@@ -264,6 +264,20 @@
     box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
   }
 
+  &__delete-review-button {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+    margin: 1rem 0 0 3rem;
+    width: 150px;
+    display: block;
+  }
+
   &__review-right {
     display: flex;
     flex-direction: column;
