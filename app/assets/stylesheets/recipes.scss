@@ -17,6 +17,7 @@
     display: grid;
     grid-gap: 6rem;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
   }
 
   &__form-checkbox > form {
@@ -62,8 +63,6 @@
 
   }
 
-  // @media (min-width: 41.25em) {
-
   &__recipe {
     display: flex;
     flex-direction: column;
@@ -79,7 +78,6 @@
     width: 100%;
     height: 100%;
   }
-  // }
 
   &__image > img {
     width: 200px;
@@ -348,30 +346,6 @@
     text-align: center;
     font-weight: bold;
     margin: 2rem;
-  }
-
-  &__my-recipe-item {
-    margin-left: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 12.5rem;
-  }
-
-  &__my-recipe-item > a {
-    text-decoration: none;
-    color: #2EC4B6;
-    font-weight: bold;
-    margin: .5rem 0;
-  }
-
-  &__my-recipe-item > img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    display: flex;
-    border-radius: 8px;
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
   }
 }
 

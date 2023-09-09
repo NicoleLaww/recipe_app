@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>My Favourites</title>
     <%= stylesheet_link_tag 'favourites', 'data-turbolinks-track': 'reload' %>
-  </head>
+    </head>
 
   <body class="favourites">
     <!-- List of favourited recipes --> 
@@ -17,11 +18,28 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="favourites__favourite">
+    <div class="favourites__container-card"> 
+      
       <% @favourites.each do |favourite| %>
-        <%= link_to favourite.recipe.title, recipe_path(favourite.recipe), class: 'favourites__button' %>
-        <%= image_tag favourite.recipe.photo %>
+
+        <article class="favourites__recipe">
+
+          <div class="favourites__recipe-wrapper">
+      
+            <div class="favourites__name">
+              <%= link_to favourite.recipe.title, recipe_path(favourite.recipe), class: 'favourites__button' %>
+            </div>
+          
+            <div class="favourites__image">
+              <%= image_tag favourite.recipe.photo %>
+            </div>
+
+          </div> 
+
+        </article>
+
       <% end %>
+    
     </div>
 
   </body>

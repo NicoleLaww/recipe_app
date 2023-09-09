@@ -17,11 +17,25 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
  
-    <div class="recipes__my-recipe-item">
+    <div class="recipes__container-card"> 
+
       <% @user.recipes.each do |recipe| %>
-        <%= link_to recipe.title, recipe_path(recipe) %>
-        <%= image_tag recipe.photo %>
+        
+        <article class="recipes__recipe">
+
+          <div class="recipes__recipe-wrapper">
+            <div class="recipes__name">
+              <%= link_to recipe.title, recipe_path(recipe) %>
+            </div>
+
+            <div class="recipes__image">
+              <%= image_tag recipe.photo %>
+            </div>
+          </div>
+
+        </article>
       <% end %>
+
     </div>
 
   </body>
