@@ -97,11 +97,10 @@
       </div>
       
       <div class="recipes__reviews-container">
-        
-        <h3 class="recipes__reviews-title">Leave a review:</h3>
 
         <div class="recipes__review-form">
           <% if current_user %>
+            <h3 class="recipes__reviews-title">Leave a review:</h3>
             <!-- Review Form -->
             <%= form_for [@recipe, @review], url: recipe_reviews_path(@recipe), method: :post do |f| %>
             <div class="recipes__form-comment">
