@@ -2,15 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.user {
+.users {
 
-  &__user-title{
-    font-size: 1.5rem;
+  &__title {
     font-weight: bold;
-    color: #2EC4B6;
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 6rem 2rem 1rem 2rem;
   }
 
   &__user-info {
@@ -49,18 +47,69 @@
     align-items: center;
   }
 
+  &__edit-button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: .3rem .4rem;
+    margin-bottom: 2rem;
+  }
+
   &__delete-profile > form > input {
     background-color: #FF9F1C;
     color: #FFFFFF;
     border-style: none;
     border-radius: 10px;
     padding: 0.3rem;
+    font-weight: bold;
 
     &:hover {
       background-color: rgba(238, 86, 86, 0.877);
     }
   }
+
+  // Edit profile:
+
+  &__edit-title {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  &__edit-form {
+    margin: 0 auto;
+    width: 55%;
+    box-sizing: content-box;
+    border: 2px solid #CBF3F0;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
+
+  &__edit-form > form {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  &__form-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-group > input {
+    border: 3px dotted #2EC4B6;
+    border-radius: 10px;
+
+    &:focus {
+      border-color: #2EC4B6;
+    }
+  }
 }
+
+
 
 .flash {
   padding: 1em;

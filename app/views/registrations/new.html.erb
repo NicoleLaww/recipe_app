@@ -5,9 +5,9 @@
     <%= stylesheet_link_tag 'registrations', 'data-turbolinks-track': 'reload' %>
   </head>
    
-  <body class="registration">
+  <body class="registrations">
     
-    <h1 class="registration__sign-up">Sign Up</h1>
+    <h2 class="registrations__title">Sign Up</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -17,37 +17,37 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
     
-    <div class="registration__form">
+    <div class="registrations__form">
 
       <%= form_for :user, url: '/register' do |f| %>
 
-      <div class="registration__form-group">
+      <div class="registrations__form-group">
         <%= f.label :name, 'Name:' %>
         <%= f.text_field :name %>
       </div>
 
-      <div class="registration__form-group">
+      <div class="registrations__form-group">
         <%= f.label :username, 'Username:' %>
         <%= f.text_field :username %>
       </div>
 
-      <div class="registration__form-group">
+      <div class="registrations__form-group">
         <%= f.label :email, 'Email:' %>
         <%= f.text_field :email %>
       </div>
 
-      <div class="registration__form-group">
+      <div class="registrations__form-group">
         <%= f.label :password, 'Password:' %>
         <%= f.password_field :password %>
       </div>
 
-      <div class="registration__form-group">
+      <div class="registrations__form-group">
         <%= f.label :password_confirmation, 'Password Confirmation:' %>
         <%= f.password_field :password_confirmation %>
       </div>
 
       <div>
-        <%= f.submit "Submit", class: 'button' %>
+        <%= f.submit "Submit", class: 'registrations__button' %>
       </div>
       
       <% end %>

@@ -4,48 +4,54 @@
     <title>Edit User Profile</title>
     <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-  <h1>Edit User Profile</h1>
 
-  <% if flash[:notice] %>
-    <div class="flash notice"><%= flash[:notice] %></div>
-  <% end %>
+  <body class="users">
 
-  <% if flash[:alert] %>
-    <div class="flash alert"><%= flash[:alert] %></div>
-  <% end %>
+    <h2 class="users__title">Edit Profile</h2>
 
-  <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
-      <div class="form-group">
-        <%= f.label :name, 'Name:' %>
-        <%= f.text_field :name %>
-      </div>
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= flash[:notice] %></div>
+    <% end %>
 
-      <div class="form-group">
-        <%= f.label :username, 'Username:' %>
-        <%= f.text_field :username %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :email, 'Email:' %>
-        <%= f.text_field :email %>
-      </div>
+    <% if flash[:alert] %>
+      <div class="flash alert"><%= flash[:alert] %></div>
+    <% end %>
 
-      <div class="form-group">
-        <%= f.label :password, 'New Password:' %>
-        <%= f.password_field :password %>
-      </div>
+    <div class="users__edit-form">
+    
+      <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+        
+        <div class="users__form-group">
+          <%= f.label :name, 'Name:' %>
+          <%= f.text_field :name %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, 'New Password Confirmation:' %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.submit "Update Profile", class: 'button' %>
-      </div>
-  <% end %>
+        <div class="users__form-group">
+          <%= f.label :username, 'Username:' %>
+          <%= f.text_field :username %>
+        </div>
+        
+        <div class="users__form-group">
+          <%= f.label :email, 'Email:' %>
+          <%= f.text_field :email %>
+        </div>
 
+        <div class="users__form-group">
+          <%= f.label :password, 'New Password:' %>
+          <%= f.password_field :password %>
+        </div>
+
+        <div class="users__form-group">
+          <%= f.label :password_confirmation, 'New Password Confirmation:' %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        
+        <div>
+          <%= f.submit "Update Profile", class: 'users__edit-button' %>
+        </div>
+      <% end %>
+
+    </div>
 
   </body>
 </html>

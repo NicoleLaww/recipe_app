@@ -5,9 +5,9 @@
     <%= stylesheet_link_tag 'recipes', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="recipes__my-recipes">
     <!-- List of user recipes --> 
-    <h2>Your Recipes</h2>
+    <h2 class="recipes__title">My Recipes</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -16,16 +16,27 @@
     <% if flash[:alert] %>
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
+ 
+    <div class="recipes__container-card"> 
 
-   
-      
+      <% @user.recipes.each do |recipe| %>
+        
+        <article class="recipes__recipe">
 
-    <% @user.recipes.each do |recipe| %>
-      <div>
-        <%= image_tag recipe.photo %>
-        <%= link_to recipe.title, recipe_path(recipe) %>
-      </div>
-    <% end %>
+          <div class="recipes__recipe-wrapper">
+            <div class="recipes__name">
+              <%= link_to recipe.title, recipe_path(recipe) %>
+            </div>
+
+            <div class="recipes__image">
+              <%= image_tag recipe.photo %>
+            </div>
+          </div>
+
+        </article>
+      <% end %>
+
+    </div>
 
   </body>
 </html>

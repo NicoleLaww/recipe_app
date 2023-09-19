@@ -2,6 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.favourites {
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    margin: 6rem 2rem 1rem 2rem;
+  }
+
+  &__container-card {
+    display: grid;
+    grid-gap: 6rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
+    padding-bottom: 14rem;
+  }
+
+  &__recipe {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &__recipe-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__name, &__name > a {
+    text-decoration: none;
+    color: #2EC4B6;
+    font-weight: bold;
+    margin: .5rem 0;
+  }
+
+  &__image>img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
+}
+
 .flash {
   padding: 1em;
   margin: 1em 0;

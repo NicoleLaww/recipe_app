@@ -10,17 +10,15 @@
   &__title {
     text-align: center;
     font-weight: bold;
-    margin: 2rem
+    margin: 6rem 2rem 1rem 2rem;
   }
 
   &__container-card {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
-    // margin-top: 20px;
     display: grid;
     grid-gap: 6rem;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
+    padding-bottom: 14rem;
   }
 
   &__form-checkbox > form {
@@ -36,7 +34,7 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 40%;
-    margin: 1rem 1rem 2rem 0;
+    margin: 1rem 1rem 1rem 0;
   }
 
   &__meal-type, &__meal-restriction {
@@ -50,39 +48,37 @@
     gap: 10px;
   }
 
+  &__filters-button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: .3rem .4rem;
+  }
+
   &__search-result {
     margin: 2rem 1.5rem;
     font-weight: bold;
 
   }
 
-  &__title {
-    color: #2EC4B6;
-    font-weight: bold;
+  &__recipe {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
   }
 
-  // @media (min-width: 41.25em) {
-
-    &__recipe {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      // align-items: center;
-      // width: calc(45% - 10px);
-      // margin: 2.5rem;
-      // padding: 0 3rem;
-      text-align: center;
-    }
-
-    &__recipe-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
-  // }
+  &__recipe-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
 
   &__image > img {
     width: 200px;
@@ -97,7 +93,7 @@
     text-decoration: none;
     color: #2EC4B6;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: .5rem 0;
   }
   
   &__text {
@@ -106,19 +102,40 @@
 
   &__recipe-info {
     display: flex;
-    flex-direction: column;
-    margin: 1.5rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 6rem auto;
+    padding: 2rem .5rem;
+    width: 80%;
+    box-sizing: content-box;
+    border: 2px solid #CBF3F0;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
   }
 
-  &__date > span, &__servings > span, &__time > span {
+  &__info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+    width: 40%;
+  }
+
+  &__info-left-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__date > span, &__user > span, &__servings > span, &__time > span {
     font-style: italic;
   }
 
   &__preparation {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-around;
+    width: 90%;
     margin: 1.3rem 0;
+    padding-top: 1rem;
   }
 
   &__ingredients > span, &__instructions > span {
@@ -129,8 +146,109 @@
   &__ingredients, &__instructions {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 45%;
-    // padding: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    gap: 4rem;
+  }
+
+  &__fav-icon > form > button {
+    border-color: transparent;
+    background-color: #FFFFFF;
+  }
+
+  &__fav-button {
+    color: pink;
+  }
+
+  &__edit-button, &__delete-button {
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+
+    :hover {
+      color: #FF9F1C;
+    }
+  }
+
+  &__share-container {
+    border-top: 2px dotted #2EC4B6;
+    border-bottom: 2px dotted #2EC4B6;
+    padding: 3rem;
+  }
+  
+  &__reviews-container {
+    margin: 2rem 0 3rem 0;
+  }
+
+  &__share, &__reviews-title {
+    color: #2EC4B6;
+    padding-bottom: 1rem;
+  }
+
+  &__reviews-title {
+    margin-left: 3rem;
+  }
+
+  &__review {
+    margin-bottom: 9rem;
+  }
+
+  &__share-link > input {
+    border: 3px dotted #2EC4B6;
+    border-radius: 10px;
+  
+    &:focus {
+      border-color: #2EC4B6;
+    }
+  }
+
+  &__twitter > a, &__email > a {
+    text-decoration: none;
+    color: #FF9F1C;
+    font-weight: bold;
+  
+    &:hover {
+      color: #FFBF69;
+      border-bottom: 1px dotted #2EC4B6;
+    }
+  }
+
+  &__twitter, &__email {
+    margin: .5rem 0;
+  }
+
+  &__form-comment, &__form-rating {
+    margin: .5rem 0;
+  }
+
+  &__review-button > input {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+    margin-top: 1rem;
+  }
+
+  &__review-form > form {
+    border-bottom: 2px dotted #2EC4B6;
+    padding: 0 0 3rem 3rem;
   }
 
   &__reviews {
@@ -138,12 +256,59 @@
     flex-direction: column;
     margin-top: 1rem;
   }
+  
+  &__review-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin: 0 3rem 1rem 3rem;
+    width: 55%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .15);
+  }
+
+  &__delete-review-button {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: .3rem;
+    margin: 1rem 0 0 3rem;
+    width: 150px;
+    display: block;
+
+    :hover {
+      text-decoration: none;
+    }
+  }
+
+  &__review-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__username {
+    color: #FF9F1C;
+    font-weight: bold;
+    padding-left: 2rem;
+  }
+
+  &__rating-icon {
+    color: #FFBF69;
+  }
+
+  &__comment {
+    font-style: italic;
+    padding-bottom: 1rem;
+  }
 
   // New recipe page
   
   &__add-recipe {
     text-align: center;
-    color: #FF9F1C;
     font-weight: bold;
     margin: 2rem;
   }
@@ -158,9 +323,11 @@
     flex-direction: column;
   }
 
-  &__form-group > input, &__form-group > textarea {
+  &__form-group > input, &__form-group > textarea, &__form-comment>input,
+  &__form-rating>input {
     border: 3px dotted #2EC4B6;
     border-radius: 10px;
+    list-style-type: disc;
     
     &:focus {
       border-color: #2EC4B6;
@@ -171,7 +338,26 @@
     margin: 2rem 7rem;
   }
 
+  &__add-button, &__update-button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 7rem 8rem 7rem;
+    padding: .3rem .4rem;
+  }
+  
+  // My recipes page
+  
+  &__my-recipes-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 2rem;
+  }
 }
+
 
 .flash {
   padding: 1em;

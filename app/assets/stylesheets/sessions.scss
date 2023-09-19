@@ -4,12 +4,11 @@
 
 .login {
 
-  &__new-session{
+  &__title {
     font-weight: bold;
-    color: #2EC4B6;
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 6rem 2rem 1rem 2rem;
   }
 
   &__form {
@@ -38,6 +37,17 @@
     &:focus {
       border-color: #2EC4B6;
     }
+  }
+
+  &__button {
+    background-color: #FFBF69;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: .3rem .4rem;
   }
 }
 

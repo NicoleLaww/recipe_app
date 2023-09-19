@@ -7,7 +7,7 @@
   
   <body class="login">
     
-    <h1 class="login__new-session">Login</h1>
+    <h2 class="login__title">Log in</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -34,7 +34,7 @@
       </div>
 
       <div>
-        <%= f.submit "Submit", class: 'button' %>
+        <%= f.submit "Submit", class: 'login__button' %>
       </div>
 
       <% end %>

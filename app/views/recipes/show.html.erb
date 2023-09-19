@@ -5,144 +5,158 @@
     </head>
     
     <body class="recipes__recipe-container">
-
-      <h2 class="recipes__name"><%= @recipe.title %></h2>
-
-      <!-- Recipe photo to be displayed here -->
+    
       <div class="recipes__recipe-info">
-        <div>
-          <img src="<%= @recipe.photo %>"/> 
-        </div>
+        <div class="recipes__info-left">
 
-      
-        <div>
-          <!-- Favourites Button (Conditional) -->
-          <% if current_user %>
-            <% if @existing_favorite %>
-              <!-- Favourites Remove Button -->
-              <%= form_for :favourite, url: user_recipe_favourite_path(current_user, @recipe), method: :delete do |form| %>
-                <%= form.hidden_field :recipe_id, value: @recipe.id %>
-                <%= form.submit 'Remove from Favourites', class: 'button' %>
-              <% end %>
-            <% else %>
-              <!-- Favourites Create Button -->
-              <%= form_for :favourite, url: user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do |form| %>
-                <%= form.hidden_field :recipe_id, value: @recipe.id %>
-                <%= form.submit 'Add to Favourites', class: 'button' %>
+          <div class="recipes__info-left-header">
+            <span class="recipes__name"><%= @recipe.title %></span>
+
+            <!-- Favourites Button (Conditional) -->
+            <% if current_user %>
+              <% if @existing_favorite %>
+                <!-- Favourites Remove Button -->
+                <div class="recipes__fav-icon">
+                  <%= button_to user_recipe_favourite_path(current_user, @recipe), method: :delete do %>
+                    <i class="fa fa-heart fa-lg recipes__fav-button"></i>
+                    <% end %>
+                  </div>
+              <% else %>
+                <!-- Favourites Create Button -->
+                <div class="recipes__fav-icon">
+                  <%= button_to user_recipe_favourite_path(current_user, recipe_id: @recipe.id), method: :post do %>
+                    <i class="fa fa-heart-o fa-lg recipes__fav-button-blank"></i>
+                    <% end %>
+                </div>
               <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div
 
-        <div class="recipes__date">
-          <span>Created on:</span>
-          <%= @recipe.created_at.strftime("%Y-%m-%d") %> 
-        </div>
+          <!-- Recipe photo to be displayed here -->
+          <div class="recipes__image">
+            <img src="<%= @recipe.photo %>"/> 
+          </div>
 
-        <div>
-          <span>Created by:</span>
-          <%= @recipe.user.username %>
-        </div>
+          <div class="recipes__date">
+            <span>Created on:</span>
+            <%= @recipe.created_at.strftime("%Y-%m-%d") %> 
+          </div>
 
-        <div class="recipes__servings">
-          <span>Number of servings:</span>
-          <%= @recipe.number_of_servings %>
-        </div>
+          <div class="recipes__user">
+            <span>Created by:</span>
+            <%= @recipe.user.username %>
+          </div>
 
-        <div class="recipes__time">
-          <span>Total time (minutes):</span>
-          <%= @recipe.time %>
+          <div class="recipes__servings">
+            <span>Number of servings:</span>
+            <%= @recipe.number_of_servings %>
+          </div>
+
+          <div class="recipes__time">
+            <span>Total time (minutes):</span>
+            <%= @recipe.time %>
+          </div>
         </div>
 
         <div class="recipes__preparation">
           <div class="recipes__ingredients">
             <span>Ingredients:</span>
-            <%= @recipe.ingredients %>
+            <%= simple_format(@recipe.ingredients) %>
           </div>
-          
+
           <div class="recipes__instructions">
             <span>Instructions:</span>
-            <%= @recipe.instructions %>
+            <%= simple_format(@recipe.instructions) %>
           </div>
+        </div>
       </div>
 
-      <div>
+      <div class="recipes__buttons">
+
         <% if current_user == @recipe.user %>
           <!-- Edit Button -->
-          <%= link_to 'Edit', edit_user_recipe_path(@recipe), class: 'button'%>
+          <%= link_to 'Edit', edit_user_recipe_path(@recipe), class: 'recipes__edit-button button'%>
 
           <!-- Delete Button -->
-          <%= link_to 'Delete', user_recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+          <%= link_to 'Delete', user_recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'recipes__delete-button' %>
         <% end %>
       </div>
 
-      <div>
-        <h3>Share this recipe:</h3>
-
-        <!-- Share Link -->
-        <div>
-           <label for="share-link">Copy link:</label>
-           <input type="text" id="share-link" value="<%= request.original_url %>" readonly>
-        </div>
+      <div class="recipes__share-container">
+        <h3 class="recipes__share">Share this recipe:</h3>
 
         <!-- Social Media -->
-        <div>
+        <div class="recipes__twitter">
           <a href="https://twitter.com/intent/tweet?text=<%= @recipe.title %>&url=<%= request.original_url %>" target="_blank">Share on Twitter</a>
         </div>
 
         <!-- Email -->
-        <div>
+        <div class="recipes__email">
           <a href="mailto:?subject=Check out this recipe: <%= @recipe.title %>&body=I thought you might like this recipe: <%= request.original_url %>">Share via Email</a>
         </div>
       </div>
       
+      <div class="recipes__reviews-container">
+
+        <div class="recipes__review-form">
+          <% if current_user %>
+            <h3 class="recipes__reviews-title">Leave a review:</h3>
+            <!-- Review Form -->
+            <%= form_for [@recipe, @review], url: recipe_reviews_path(@recipe), method: :post do |f| %>
+            <div class="recipes__form-comment">
+              <%= f.label :comment, 'Comment:' %>
+              <%= f.text_field :comment %>
+            </div>
+            <div class="recipes__form-rating">
+              <%= f.label :rating, 'Rating:' %>
+              <%= f.number_field :rating, min: 1 , max: 5, step: 1 %>
+            </div>
+            <div class="recipes__review-button">
+              <%= f.submit 'Submit Review' %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="recipes__reviews">
+
+          <h3 class="recipes__reviews-title">Reviews</h3>
+
+          <div class="recipes__review">
+            <% @recipe.reviews.each do |review| %>
       
-      <h3>Reviews:</h3>
-      <% if current_user %>
-        <!-- Review Form -->
-        <%= form_for [@recipe, @review], url: recipe_reviews_path(@recipe), method: :post do |f| %>
-        <div>
-          <%= f.label :comment, 'Comment:' %>
-          <%= f.text_field :comment %>
-        </div>
-        <div>
-          <%= f.label :rating, 'Rating:' %>
-          <%= f.number_field :rating, min: 1 , max: 5, step: 1 %>
-        </div>
-        <div>
-          <%= f.submit 'Submit Review' %>
-        </div>
-        <% end %>
-      <% end %>
+              <div class="recipes__review-item">
+                <!-- Fetch and display the username -->
+                <div class="recipes__username">
+                  <%= User.find(review.user_id).username %>:
+                </div>
 
-    <div class="recipes__reviews">
-      <% @recipe.reviews.each do |review| %>
-        <div>
-          <!-- Fetch and display the username -->
-          <div class="recipes__username">
-            <%= User.find(review.user_id).username %>:
+                <div class="recipes__review-right">
+                  <!-- Display the rating -->
+                  <div class="recipes__rating">
+                  <%= review.rating %> / 5
+                  <i class="fa fa-star recipes__rating-icon"></i>
+                  </div>
+                  
+                  <!-- Display the review comment -->
+                  <div class="recipes__comment">
+                    "<%= review.comment %>"
+                  </div>
+                </div>  
+              </div>
+              
+              <!-- Delete button -->
+              <% if current_user == review.user %>
+              <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure you want to delete your review?' }, class: 'recipes__delete-review-button' %>
+              <% end %> 
+              
+            <% end %>
           </div>
 
-          <!-- Display the rating -->
-          <div class="recipes__rating">
-            <%= review.rating %> / 5
-          </div>
-          
-          <!-- Display the review comment -->
-          <div class="recipes__comment">
-            <%= review.comment %>
-          </div>
-          
-          <!-- Delete button -->
-          <% if current_user == review.user %>
-            <%= link_to 'Delete', "/recipes/#{@recipe.id}/reviews/#{review.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %> 
-
         </div>
-      <% end %>
+      
+      </div>    
     </div>
-
-  </div>
 
   </body>
 </html>

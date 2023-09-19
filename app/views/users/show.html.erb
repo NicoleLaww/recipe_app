@@ -5,8 +5,8 @@
     <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="user">
-    <h1 class="user__user-title">User Information</h1>
+  <body class="users">
+    <h2 class="users__title">User Information</h2>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -16,25 +16,25 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="user__user-info">
-      <div class="user__name">Name:
-        <div class="user__name-input"><%= @user.name %></div>
+    <div class="users__user-info">
+      <div class="users__name">Name:
+        <div class="users__name-input"><%= @user.name %></div>
       </div>
-      <div class="user__username">Username:
-        <div class="user__username-input"><%= @user.username %></div>
+      <div class="users__username">Username:
+        <div class="users__username-input"><%= @user.username %></div>
       </div>
-      <div class="user__email">Email:
-        <div class="user__email-input"><%= @user.email %></div>
+      <div class="users__email">Email:
+        <div class="users__email-input"><%= @user.email %></div>
       </div>
 
-      <div class="user__buttons">
+      <div class="users__buttons">
         <!-- Edit button -->
-        <div class="user__edit-profile">
+        <div class="users__edit-profile">
           <%= link_to "Edit Profile", edit_user_path(@user) %>
         </div> 
 
         <!-- Delete button -->
-        <div class="user__delete-profile">
+        <div class="users__delete-profile">
           <%= button_to "Delete Profile", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete your profile?" }%>
         </div>
       </div>
