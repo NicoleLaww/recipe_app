@@ -1,6 +1,9 @@
 # README
 
-Tasteful Traditions 
+# Tasteful Traditions 
+
+A recipe sharing app, built using Ruby on Rails 6.0.0, powered by ActiveRecord, designed to help users discover, share, and organize their favourite recipes. Whether you're a seasoned chef or just getting started in the kitchen, this app provides an easy-to-use platform for creating, searching, and sharing delicious recipes with a vibrant community of food enthusiasts.
+
 
 As a non-registered user, I can see...
 * Recipe Page
